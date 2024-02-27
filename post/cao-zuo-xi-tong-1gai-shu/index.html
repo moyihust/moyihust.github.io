@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>操作系统(1）概述 | moyihust的小站</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://moyihust.github.io/favicon.ico?v=1709003230734">
+<link rel="stylesheet" href="https://moyihust.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="CPU的态
+
+用户态
+
+有限的指令
+
+
+核态
+
+全部指令
+最高权限
+
+
+用户态向核态
+
+用户请求os提供服务
+发生错误
+发生中断
+
+存储体系
+
+实际体系
+
+寄存器
+高速缓存
+主存
+磁盘
+
+
+
+中断机制
+
+定义
+
+指CPU对突发的外部信号的反..." />
+    <meta name="keywords" content="os" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://moyihust.github.io">
+        <img src="https://moyihust.github.io/images/avatar.png?v=1709003230734" class="site-logo">
+        <h1 class="site-title">moyihust的小站</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="https://moyihust.github.io/post/moyihust" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://moyihust.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">操作系统(1）概述</h2>
+            <div class="post-date">2023-10-19</div>
+            
+            <div class="post-content" v-pre>
+              <h3 id="cpu的态">CPU的态</h3>
+<ul>
+<li>用户态
+<ul>
+<li>有限的指令</li>
+</ul>
+</li>
+<li>核态
+<ul>
+<li>全部指令</li>
+<li>最高权限</li>
+</ul>
+</li>
+<li>用户态向核态
+<ul>
+<li>用户请求os提供服务</li>
+<li>发生错误</li>
+<li>发生中断</li>
+</ul>
+<h3 id="存储体系">存储体系</h3>
+<ul>
+<li>实际体系
+<ul>
+<li>寄存器</li>
+<li>高速缓存</li>
+<li>主存</li>
+<li>磁盘</li>
+</ul>
+</li>
+</ul>
+<h3 id="中断机制">中断机制</h3>
+<ul>
+<li>定义
+<ul>
+<li>指CPU对突发的外部信号的反应过程或机制</li>
+<li>CPU收到外部信号后，停止当前操作，处理外部事件，处理完回到原来工作的中断处。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>中断源
+<ul>
+<li>引发中断的事件</li>
+</ul>
+</li>
+<li>中断类型
+<ul>
+<li>强迫中断和自愿中断
+<ul>
+<li>强迫：程序没预期，（外部中断</li>
+<li>自愿：程序有预期。（int 21h 访管指令)</li>
+</ul>
+</li>
+<li>外中断，内中断
+<ul>
+<li>外：外部事件引起，I/O
+<ul>
+<li>不可屏蔽中断：中断原因很紧要，CPU必须相应</li>
+<li>可屏蔽中断：CPU可以选择响应</li>
+</ul>
+</li>
+<li>内：内部事件引起</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>断点
+<ul>
+<li>程序中断的地方
+<ul>
+<li>将要执行的下一条指令位置(CS:IP)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>现场
+<ul>
+<li>程序正确运行所依赖的信息集合
+<ul>
+<li>PSW（程序状态字），相关寄存器，断点</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>现场处理
+<ul>
+<li>保护：状态-&gt;栈</li>
+<li>恢复：栈-&gt;状态</li>
+</ul>
+</li>
+<li>中断响应过程
+<ol>
+<li>中断信号</li>
+<li>断电入栈</li>
+<li>现场入栈</li>
+<li>进入中断服务</li>
+<li>现场出栈</li>
+<li>中断返回</li>
+</ol>
+</li>
+<li>中断程序</li>
+<li>填写中断向量表</li>
+<li>填写中断描述符表</li>
+<li>中断嵌套处理
+<ul>
+<li>高优先级打断低优先级中断服务</li>
+</ul>
+</li>
+<li>中断响应的实质
+<ul>
+<li>交换指令执行的地址</li>
+<li>交换CPU的态</li>
+<li>工作
+<ul>
+<li>现场保护和恢复</li>
+<li>参数传递</li>
+</ul>
+</li>
+<li>引入中断的目的
+<ul>
+<li>实现并发</li>
+<li>实现实时处理</li>
+<li>故障自动处理</li>
+</ul>
+</li>
+</ul>
+<h3 id="bios">BIOS</h3>
+<ul>
+<li>系统BIOS
+<ul>
+<li>固件</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>功能
+<ul>
+<li>加电自检
+<ul>
+<li>初始化基本硬件</li>
+<li>自检错误通过喇叭鸣叫</li>
+<li>按下PowerON开始执行POST</li>
+<li>计算首条指令在<em>FFFF0</em>单元</li>
+<li><code>JMP POST</code></li>
+</ul>
+</li>
+<li>设置CMOS</li>
+<li>基本I/O功能</li>
+<li>post之后
+<ul>
+<li>依次查找其他设备并初始化
+<ul>
+<li>查找显卡，执行显卡BIOS</li>
+<li>查找IDE控制器</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="mode">mode</h3>
+</li>
+<li>实模式
+<ul>
+<li>按照8086访问1MB空间</li>
+<li>寻址方式：物理地址（20）=段地址：偏移地址</li>
+<li>CPU单任务运行</li>
+</ul>
+</li>
+<li>保护模式
+<ul>
+<li>寻址方式：断（16bit）和偏移量，寻址4gb</li>
+<li>CPU支持多任务</li>
+</ul>
+<h3 id="启动过程">启动过程</h3>
+</li>
+</ul>
+<ol>
+<li>初始引导
+<ul>
+<li>把OS内核装入内存并使之接管计算机系统</li>
+<li>引导程序：MBR</li>
+</ul>
+</li>
+<li>核心初始化
+<ul>
+<li>OS内核准备数据.</li>
+</ul>
+</li>
+<li>系统初始化</li>
+</ol>
+<ul>
+<li>为用户使用系统作准备</li>
+</ul>
+<h3 id="mbr">MBR</h3>
+<ul>
+<li>主启动扇区</li>
+<li>存放引导代码
+<ul>
+<li>启动相关的数据和代码
+<ul>
+<li>512B=510字节+AA55h</li>
+</ul>
+</li>
+<li></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://moyihust.github.io/tag/kYoZtlqLN/" class="tag">
+                    os
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://moyihust.github.io/post/dai-ma-sui-xiang-lu-day9/">
+                  <h3 class="post-title">
+                    代码随想录day9
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

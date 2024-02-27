@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>代码随想录day12-栈与队列2 | moyihust的小站</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://moyihust.github.io/favicon.ico?v=1709003230734">
+<link rel="stylesheet" href="https://moyihust.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="栈与队列2
+有效的括号
+给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串 s ，判断字符串是否有效。
+有效字符串需满足：
+左括号必须用相同类型的右括号闭合。
+左括号必须以正确的顺序闭合。
+每个右括号都有一个对应的相同..." />
+    <meta name="keywords" content="algorithm" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://moyihust.github.io">
+        <img src="https://moyihust.github.io/images/avatar.png?v=1709003230734" class="site-logo">
+        <h1 class="site-title">moyihust的小站</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="https://moyihust.github.io/post/moyihust" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://moyihust.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">代码随想录day12-栈与队列2</h2>
+            <div class="post-date">2023-10-21</div>
+            
+            <div class="post-content" v-pre>
+              <h2 id="栈与队列2">栈与队列2</h2>
+<h3 id="有效的括号"><a href="https://leetcode.cn/problems/valid-parentheses/">有效的括号</a></h3>
+<p>给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串 s ，判断字符串是否有效。</p>
+<p>有效字符串需满足：</p>
+<p>左括号必须用相同类型的右括号闭合。<br>
+左括号必须以正确的顺序闭合。<br>
+每个右括号都有一个对应的相同类型的左括号。</p>
+<p>思路：</p>
+<ol>
+<li>遇到左符号就压入栈，遇到右符号就和栈顶匹配，如果匹配就出栈，到最后如果栈非空就错误。</li>
+</ol>
+<pre><code class="language-C++">class Solution {
+public:
+    bool isValid(string s) {
+        stack&lt;char&gt; stc;
+        for(char node:s)
+        {
+            if(node=='('||node=='['||node=='{')
+            {
+                stc.push(node);
+            }
+            if(node==']'||node=='}')
+            {
+                if(stc.empty()||stc.top()!=node-2)
+                {
+                    return false;
+                }
+                else
+                {
+                    stc.pop();
+                }
+            }
+            if(node==')')
+            {
+                if(stc.empty()||stc.top()!=node-1)
+                {
+                    return false;
+                }
+                else
+                {
+                    stc.pop();
+                }
+            }
+        }
+        if(stc.empty())
+        return true;
+        else return false;
+    }
+};
+</code></pre>
+<ol start="2">
+<li>遇到左边符号就把右边符号压入栈，遇到右符号就和栈匹配</li>
+</ol>
+<pre><code class="language-C++">class Solution {
+public:
+    bool isValid(string s) {
+        stack&lt;char&gt; stc;
+        for(char node:s)
+        {
+            if(node=='('){stc.push(')');}
+            else if(node=='['){stc.push(']');}
+            else if(node=='{'){stc.push('}');}
+            else {
+                if(stc.empty()||node!=stc.top())return false;
+                else stc.pop();
+            }
+        }
+        if(stc.empty())
+        return true;
+        else return false;
+    }
+};
+</code></pre>
+<h3 id="删除字符串中的所有相邻重复项"><a href="https://leetcode.cn/problems/remove-all-adjacent-duplicates-in-string/">删除字符串中的所有相邻重复项</a></h3>
+<p>给出由小写字母组成的字符串 S，重复项删除操作会选择两个相邻且相同的字母，并删除它们。<br>
+在 S 上反复执行重复项删除操作，直到无法继续删除。<br>
+在完成所有重复项删除操作后返回最终的字符串。答案保证唯一</p>
+<p>思路：<br>
+读入一个字符，与栈顶匹配，匹配就pop,不匹配就压入栈，最后再反转得到结果</p>
+<pre><code class="language-C++">class Solution {
+public:
+    string removeDuplicates(string s) {
+        stack&lt;char&gt; cp;
+        string ans;
+        for(char node:s)
+        {
+            if(!cp.empty()&amp;&amp;node==cp.top())
+            {
+                cp.pop();
+            }
+            else
+            {
+                cp.push(node);
+            }
+        }
+        while(!cp.empty())
+        {
+            ans+=cp.top();
+            cp.pop();
+        }
+        reverse(ans.begin(),ans.end());
+        return ans;
+    }
+};
+</code></pre>
+<h3 id="逆波兰表达式"><a href="https://leetcode.cn/problems/evaluate-reverse-polish-notation">逆波兰表达式</a></h3>
+<p>给你一个字符串数组 tokens ，表示一个根据 逆波兰表示法 表示的算术表达式。</p>
+<p>请你计算该表达式。返回一个表示表达式值的整数。</p>
+<p>注意：</p>
+<p>有效的算符为 '+'、'-'、'*' 和 '/' 。<br>
+每个操作数（运算对象）都可以是一个整数或者另一个表达式。<br>
+两个整数之间的除法总是 向零截断 。<br>
+表达式中不含除零运算。<br>
+输入是一个根据逆波兰表示法表示的算术表达式。<br>
+答案及所有中间计算结果可以用 32 位 整数表示。<br>
+思路：<br>
+用栈存数字，当读入操作符的时候，pop出两个数进行计算，并push回去</p>
+<pre><code class="language-C++">class Solution {
+public:
+    int evalRPN(vector&lt;string&gt;&amp; tokens) {
+        stack&lt;int&gt; cp;
+        for(string node:tokens)
+        {
+            if(node.length()&gt;1||(node.length()==1&amp;&amp;node[0]&lt;='9'&amp;&amp;node[0]&gt;='0'))
+            {
+                int t=stoi(node);
+                cp.push(t);
+            }
+            else
+            {
+                int n2=cp.top();
+                cp.pop();
+                int n1=cp.top();
+                cp.pop();
+                int ans;
+                switch(node[0]){
+                    case '+':ans=n1+n2;break;
+                    case '-':ans=n1-n2;break;
+                    case '*':ans=n1*n2;break;
+                    case '/':ans=n1/n2;break;
+                }
+                cp.push(ans);
+            }
+        }
+        return cp.top();
+    }
+};
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://moyihust.github.io/tag/r2vm0nDqk/" class="tag">
+                    algorithm
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://moyihust.github.io/post/shi-jue-zu-gong-zuo/">
+                  <h3 class="post-title">
+                    视觉组工作
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

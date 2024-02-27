@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>代码训练营day1 | moyihust的小站</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://moyihust.github.io/favicon.ico?v=1709003230734">
+<link rel="stylesheet" href="https://moyihust.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="数组1
+二分查找
+题目链接
+给定一个 n 个元素有序的（升序）整型数组 nums 和一个目标值 target  ，写一个函数搜索 nums 中的 target，如果目标值存在返回下标，否则返回 -1。
+示例 1:
+输入: nums = [-..." />
+    <meta name="keywords" content="algorithm" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://moyihust.github.io">
+        <img src="https://moyihust.github.io/images/avatar.png?v=1709003230734" class="site-logo">
+        <h1 class="site-title">moyihust的小站</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="https://moyihust.github.io/post/moyihust" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://moyihust.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">代码训练营day1</h2>
+            <div class="post-date">2023-10-11</div>
+            
+            <div class="post-content" v-pre>
+              <h2 id="数组1">数组1</h2>
+<h3 id="二分查找">二分查找</h3>
+<p><a href="https://leetcode.cn/problems/binary-search/">题目链接</a><br>
+给定一个 n 个元素有序的（升序）整型数组 nums 和一个目标值 target  ，写一个函数搜索 nums 中的 target，如果目标值存在返回下标，否则返回 -1。</p>
+<p>示例 1:</p>
+<p>输入: nums = [-1,0,3,5,9,12], target = 9<br>
+输出: 4<br>
+解释: 9 出现在 nums 中并且下标为 4<br>
+示例 2:</p>
+<p>输入: nums = [-1,0,3,5,9,12], target = 2<br>
+输出: -1<br>
+解释: 2 不存在 nums 中因此返回 -1</p>
+<p>提示：</p>
+<p>你可以假设 nums 中的所有元素是不重复的。<br>
+n 将在 [1, 10000]之间。<br>
+nums 的每个元素都将在 [-9999, 9999]之间。</p>
+<p>思路：<br>
+每次取中间值，比较left,right.</p>
+<p>代码：</p>
+<pre><code class="language-C++">class Solution {
+public:
+    int search(vector&lt;int&gt;&amp; nums, int target) {
+        int left = 0, right = nums.size() - 1;
+        while(left &lt;= right){
+            int mid = (right - left) / 2 + left;
+            int num = nums[mid];
+            if (num == target) {
+                return mid;
+            } else if (num &gt; target) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return -1;
+    }
+};
+</code></pre>
+<h3 id="删除元素">删除元素</h3>
+<p><a href="https://leetcode.cn/problems/remove-element/">题目链接</a><br>
+给你一个数组 nums 和一个值 val，你需要 原地 移除所有数值等于 val 的元素，并返回移除后数组的新长度。</p>
+<p>不要使用额外的数组空间，你必须仅使用 O(1) 额外空间并 原地 修改输入数组。</p>
+<p>元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。</p>
+<p>说明:</p>
+<p>为什么返回数值是整数，但输出的答案是数组呢?</p>
+<p>请注意，输入数组是以「引用」方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。</p>
+<p>你可以想象内部操作如下:</p>
+<p>思路：</p>
+<ol>
+<li>两层循环，遍历所有元素，将目标元素之后的都向前移动一次，记得index减一，因为移动后指向的已经是下一个元素。时间复杂度O（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>n</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">n^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>)<br>
+代码：</li>
+</ol>
+<pre><code class="language-C++">class Solution {
+public:
+    int removeElement(vector&lt;int&gt;&amp; nums, int val) {
+        int size = nums.size();
+        for(int i=0;i&lt;size;i++)
+        {
+            if(nums[i]==val)
+            {
+                for(int j=i+1;j&lt;size;j++)
+                {
+                    nums[j-1]=nums[j];
+                }
+                i--;
+                size--;
+            }
+        }
+        return size;
+    }
+};
+</code></pre>
+<ol start="2">
+<li><strong>双指针</strong>，使用快慢指针
+<ul>
+<li>定义快慢指针
+<ul>
+<li>快指针：寻找新数组的元素 ，新数组就是不含有目标元素的数组</li>
+<li>慢指针：指向更新 新数组下标的位置</li>
+</ul>
+</li>
+<li>时间复杂度O（n)<br>
+实现：</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-C++">class Solution {
+public:
+    int removeElement(vector&lt;int&gt;&amp; nums, int val) {
+            int qindex=0,sindex=0;
+            int size=nums.size();
+            for(int i=0;i&lt;nums.size();i++)
+            {
+                if(nums[i]==val)
+                {
+                    qindex++;
+                    size--;
+                    continue;
+
+                }
+                nums[sindex]=nums[qindex];
+                sindex++;
+                qindex++;
+            }
+            return size;
+    }
+};
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://moyihust.github.io/tag/r2vm0nDqk/" class="tag">
+                    algorithm
+                  </a>
+                
+              </div>
+            
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

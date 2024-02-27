@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>代码随想录day2 | moyihust的小站</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://moyihust.github.io/favicon.ico?v=1709003230734">
+<link rel="stylesheet" href="https://moyihust.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="数组2
+###有序数组的平方
+题目链接
+给你一个按 非递减顺序 排序的整数数组 nums，返回 每个数字的平方 组成的新数组，要求也按 非递减顺序 排序。
+示例 1：
+输入：nums = [-4,-1,0,3,10]
+输出：[0,1,9,1..." />
+    <meta name="keywords" content="algorithm" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://moyihust.github.io">
+        <img src="https://moyihust.github.io/images/avatar.png?v=1709003230734" class="site-logo">
+        <h1 class="site-title">moyihust的小站</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="https://moyihust.github.io/post/moyihust" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://moyihust.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">代码随想录day2</h2>
+            <div class="post-date">2023-10-12</div>
+            
+            <div class="post-content" v-pre>
+              <h2 id="数组2">数组2</h2>
+<p>###有序数组的平方<br>
+<a href="https://leetcode.cn/problems/squares-of-a-sorted-array/">题目链接</a><br>
+给你一个按 非递减顺序 排序的整数数组 nums，返回 每个数字的平方 组成的新数组，要求也按 非递减顺序 排序。</p>
+<p>示例 1：</p>
+<p>输入：nums = [-4,-1,0,3,10]<br>
+输出：[0,1,9,16,100]<br>
+解释：平方后，数组变为 [16,1,0,9,100]<br>
+排序后，数组变为 [0,1,9,16,100]<br>
+示例 2：</p>
+<p>输入：nums = [-7,-3,2,3,11]<br>
+输出：[4,9,9,49,121]</p>
+<p>提示：</p>
+<p>1 &lt;= nums.length &lt;= 104<br>
+-104 &lt;= nums[i] &lt;= 104<br>
+nums 已按 非递减顺序 排序</p>
+<p>进阶：</p>
+<p>请你设计时间复杂度为 O(n) 的算法解决本问题</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n\log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>暴力</p>
+<pre><code class="language-C++">class Solution {
+public:
+    vector&lt;int&gt; sortedSquares(vector&lt;int&gt;&amp; nums) {
+        for (int i = 0; i &lt; nums.size(); i++) {  // change the condition from `i &lt;= nums.size()` to `i &lt; nums.size()`
+            long long temp = (long long)nums[i] * nums[i];  // use long long to store the squared value
+            nums[i] = temp;  // safely assign back to int since the problem guarantees the squared result fits in an int
+        }
+        sort(nums.begin(), nums.end());
+        return nums;
+    }
+};
+</code></pre>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>方法：双指针法，因为原本的已经按非递减的顺序排列，所以<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∃</mi><mi>i</mi><mi mathvariant="normal">使</mi><mi mathvariant="normal">得</mi><mi>a</mi><mo>&lt;</mo><mi>i</mi><mo separator="true">,</mo><mi>n</mi><mi>u</mi><mi>m</mi><mi>s</mi><mo>[</mo><mi>a</mi><mo>]</mo><mo>&lt;</mo><mn>0</mn><mo separator="true">,</mo><mi>b</mi><mo>≤</mo><mi>i</mi><mo separator="true">,</mo><mi>n</mi><mi>u</mi><mi>m</mi><mi>s</mi><mo>[</mo><mi>b</mi><mo>]</mo><mo>≤</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\exist i 使得a&lt;i,nums[a]&lt;0,b\le i,nums[b]\le 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73354em;vertical-align:-0.0391em;"></span><span class="mord">∃</span><span class="mord mathdefault">i</span><span class="mord cjk_fallback">使</span><span class="mord cjk_fallback">得</span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mord mathdefault">u</span><span class="mord mathdefault">m</span><span class="mord mathdefault">s</span><span class="mopen">[</span><span class="mord mathdefault">a</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mord mathdefault">u</span><span class="mord mathdefault">m</span><span class="mord mathdefault">s</span><span class="mopen">[</span><span class="mord mathdefault">b</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>.而且因为$a^2\le b^2 &lt;-&gt;abs(a)\le abs(b) $所以最大的肯定是两边。有点类似归并排序的合并。</p>
+<pre><code class="language-C++">class Solution {
+public:
+    vector&lt;int&gt; sortedSquares(vector&lt;int&gt;&amp; nums) {
+        int l=0;
+        int r=nums.size()-1;
+        vector&lt;int&gt; ans(r+1);
+        for(int i=r;i&gt;=0;i--)
+        {
+            if(l&gt;r)break;
+            if(pow(nums[l],2)&gt;=pow(nums[r],2))
+            {
+                ans[i]=pow(nums[l],2);
+                l++;
+            }
+            else
+            {
+                ans[i]=pow(nums[r],2);
+                r--;
+            }
+        }
+        return ans;
+    }
+};
+</code></pre>
+<h3 id="长度最小子数组">长度最小子数组</h3>
+<p><a href="https://leetcode.cn/problems/minimum-size-subarray-sum/">题目链接</a><br>
+给定一个含有 n 个正整数的数组和一个正整数 target 。</p>
+<p>找出该数组中满足其总和大于等于 target 的长度最小的 连续子数组 [numsl, numsl+1, ..., numsr-1, numsr] ，并返回其长度。如果不存在符合条件的子数组，返回 0 。</p>
+<p>1.思路1：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mi>u</mi><mi>m</mi><mo>(</mo><mi>n</mi><mo separator="true">,</mo><mi>m</mi><mo>)</mo><mo>=</mo><mi>s</mi><mi>u</mi><mi>m</mi><mo>(</mo><mn>0</mn><mo separator="true">,</mo><mi>m</mi><mo>)</mo><mo>−</mo><mi>s</mi><mi>u</mi><mi>m</mi><mo>(</mo><mn>0</mn><mo separator="true">,</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">sum(n,m)=sum(0,m)-sum(0,n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">s</span><span class="mord mathdefault">u</span><span class="mord mathdefault">m</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">s</span><span class="mord mathdefault">u</span><span class="mord mathdefault">m</span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">s</span><span class="mord mathdefault">u</span><span class="mord mathdefault">m</span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>先初始化求和数组sum，在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>下遍历左边和右边</p>
+<pre><code class="language-C++">class Solution {
+public:
+    int minSubArrayLen(int target, vector&lt;int&gt;&amp; nums) {
+        vector&lt;int&gt; sum(nums.size()+1);
+        int s=0;
+        sum[0]=0;
+        for(int i=0;i&lt;=nums.size()-1;i++)
+        {
+            s+=nums[i];
+            sum[i+1]=s;
+        }
+        int min=nums.size()+1;
+        for(int l=0;l&lt;=nums.size();l++)
+        {
+            for(int r=l+1;r&lt;=nums.size();r++)
+            {
+                if(sum[r]-sum[l]&gt;=target)
+                {
+                    if(r-l&lt;min)
+                    min=r-l;
+                }
+            }   
+        }
+        if(min&gt;nums.size())min=0;
+        return min;
+    }
+};
+</code></pre>
+<p>结果：18/21 tle qwq<br>
+2. 滑动窗口<br>
+通过两个指针，左指针表示滑动窗口的起点，当区间满足时往前，并减去一个值<br>
+右指针表示滑动窗口的终止，遍历整个数组。</p>
+<pre><code class="language-C++">class Solution {
+public:
+    int minSubArrayLen(int target, vector&lt;int&gt;&amp; nums) {
+        int l=0;
+        int length,sum=0;
+        int ans=nums.size()+1;
+        for(int r=0;r&lt;nums.size();r++)
+        {
+            sum+=nums[r];
+            while(sum&gt;=target)
+            {
+                length=r-l+1;
+                if(length&lt;ans)ans=length;
+                sum-=nums[l++];
+            }
+        }
+        if(ans==nums.size()+1)
+        ans=0;
+        return ans;
+    }
+};
+</code></pre>
+<h3 id="螺旋矩阵">螺旋矩阵</h3>
+<p><a href="https://leetcode.cn/problems/spiral-matrix-ii/">题目链接</a><br>
+给你一个正整数 n ，生成一个包含 1 到 n2 所有元素，且元素按顺时针顺序螺旋排列的 n x n 正方形矩阵 matrix 。</p>
+<p>一圈一圈循环。注意模拟的区间。</p>
+<pre><code class="language-C++">class Solution {
+public:
+    vector&lt;vector&lt;int&gt;&gt; generateMatrix(int n) {
+        vector&lt;vector&lt;int&gt;&gt; ans(n,vector&lt;int&gt; (n,0));
+        int startx=0;
+        int starty=0;
+        int loop=n/2;
+        int mid=n/2;
+        int offset=1;
+        int count=1;
+        int i,j;
+        while(loop--)
+        {
+            
+             for (j = starty; j &lt; n - offset; j++) {
+                ans[startx][j] = count++;
+            }
+            // 模拟填充右列从上到下(左闭右开)
+            for (i = startx; i &lt; n - offset; i++) {
+                ans[i][j] = count++;
+            }
+            // 模拟填充下行从右到左(左闭右开)
+            for (; j &gt; starty; j--) {
+                ans[i][j] = count++;
+            }
+            // 模拟填充左列从下到上(左闭右开)
+            for (; i &gt; startx; i--) {
+                ans[i][j] = count++;
+            }
+
+            // 第二圈开始的时候，起始位置要各自加1， 例如：第一圈起始位置是(0, 0)，第二圈起始位置是(1, 1)
+            startx++;
+            starty++;
+
+            // offset 控制每一圈里每一条边遍历的长度
+            offset += 1;
+        }
+        if(n%2)
+        {
+            ans[mid][mid]=count;
+        }
+        return ans;
+    }
+};
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://moyihust.github.io/tag/r2vm0nDqk/" class="tag">
+                    algorithm
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://moyihust.github.io/post/dai-ma-xun-lian-ying-di-yi-tian/">
+                  <h3 class="post-title">
+                    代码训练营day1
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

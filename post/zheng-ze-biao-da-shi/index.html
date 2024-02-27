@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>正则表达式 | moyihust的小站</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://moyihust.github.io/favicon.ico?v=1709003230734">
+<link rel="stylesheet" href="https://moyihust.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="正则表达式快速入门
+这种快速入门可以让您快速熟悉正则表达式。显然，这个简短的介绍无法解释有关正则表达式的所有知识。有关详细信息，请参阅正则表达式教程。快速入门中的每个主题都与教程中的一个主题相对应，因此您可以轻松地在两者之间来回切换。
+许多..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://moyihust.github.io">
+        <img src="https://moyihust.github.io/images/avatar.png?v=1709003230734" class="site-logo">
+        <h1 class="site-title">moyihust的小站</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="https://moyihust.github.io/post/moyihust" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://moyihust.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">正则表达式</h2>
+            <div class="post-date">2023-10-20</div>
+            
+            <div class="post-content" v-pre>
+              <h1 id="正则表达式快速入门">正则表达式快速入门</h1>
+<p>这种快速入门可以让您快速熟悉正则表达式。显然，这个简短的介绍无法解释有关正则表达式的所有知识。有关详细信息，请参阅<a href="https://www.regular-expressions.info/tutorial.html">正则表达式教程</a>。快速入门中的每个主题都与教程中的一个主题相对应，因此您可以轻松地在两者之间来回切换。</p>
+<p>许多应用程序和编程语言都有自己的正则表达式实现，通常与其他实现有细微的差异，有时甚至有显着的差异。当两个应用程序使用不同的正则表达式实现时，我们说它们使用不同的“正则表达式风格”。本快速入门解释了最流行的正则表达式风格支持的语法。</p>
+<h2 id="文本模式和匹配">文本模式和匹配</h2>
+<p>正则表达式（或简称正则表达式）是描述一定量文本的模式。在此网站上，正则表达式以灰色显示为 regex 。这实际上是一个完全有效的正则表达式。这是最基本的模式，只需匹配文字文本 regex 。本网站上的比赛以蓝色突出显示。我们使用术语“字符串”来表示正则表达式所应用的文本。字符串在 green 中突出显示。</p>
+<p>正则表达式中具有特殊含义的字符会以各种不同的颜色突出显示。正则表达式 (?x)([Rr]egexp?)\? 以紫色显示元标记，以绿色显示分组，以橙色显示字符类，以蓝色显示量词和其他特殊标记，以灰色显示转义字符。</p>
+<h2 id="文字字符">文字字符</h2>
+<p>最基本的正则表达式由单个文字字符组成，例如 a 。它匹配该字符在字符串中的第一次出现。如果字符串是 Jack is a boy ，则它与 J 之后的 a 匹配。<br>
+此正则表达式也可以匹配第二个 a 。仅当您告诉正则表达式引擎在第一个匹配后开始搜索字符串时，它才会这样做。在文本编辑器中，您可以使用其“查找下一个”或“向前搜索”功能来执行此操作。在编程语言中，通常有一个单独的函数，您可以调用该函数来在上一个匹配之后继续搜索字符串。<br>
+正则表达式中十二个字符具有特殊含义：反斜杠 \ 、脱字号 ^ 、美元符号 $ 、句点或点 . 、竖线或竖线符号 | 、问号 ? 、星号或星号 * 、加号 + 、左括号 ( 、右括号 ) 、左方括号[ 和左大括号 { 。这些特殊字符通常称为“元字符”。其中大多数在单独使用时都是错误的。<br>
+如果您想在正则表达式中使用任何这些字符作为文字，则需要使用反斜杠对其进行转义。如果您想匹配 1+1=2 ，正确的正则表达式是 1+1=2 。否则，加号具有特殊含义。</p>
+<h2 id="不可打印字符">不可打印字符</h2>
+<p>可以使用特殊字符序列将不可打印的字符放入正则表达式中。使用 \t 匹配制表符（ASCII 0x09），\r 匹配回车符 （0x0D），\n 匹配换行符 （0x0A）。更奇特的不可打印是\a（bell，0x07），\e（escape，0x1B），\f（表单馈送，0x0C）和\v（垂直制表符，0x0B）。请记住，Windows 文本文件使用 \r\n 终止行，而 UNIX 文本文件使用\ \n。</p>
+<p>如果您的应用程序支持 Unicode，请使用 \uFFFF 或 \x{FFFF} 插入 <a href="https://www.regular-expressions.info/unicode.html">Unicode</a> 字符。\u20AC 或 \x{20AC} 与欧元货币符号匹配。</p>
+<p>如果应用程序不支持 Unicode，请使用 \xFF 通过字符集中的十六进制索引匹配特定字符。\xA9 与拉丁语 1 字符集中的版权符号匹配。</p>
+<p>所有不可打印的字符都可以直接在正则表达式中使用，也可以作为字符类的一部分使用。</p>
+<h2 id="字符类或字符集">字符类或字符集</h2>
+<p>“字符类”仅匹配多个字符中的一个。要匹配 a 或 e，请使用 [ae]。你可以在gr[ae]y中使用它来匹配灰色或灰色。字符类仅与单个字符匹配。gr[ae]y与Graay，Graey或任何类似的东西不匹配。 字符类中字符的顺序无关紧要。</p>
+<p>可以在字符类中使用连字符来指定字符范围。[0-9] 匹配 0 到 9 之间的一位数字。您可以使用多个范围。[0-9 a-fA-F] 匹配单个十六进制数字，不区分大小写。您可以组合范围和单个字符。[0-9 a-fxA-F X] 匹配十六进制数字或字母 X。</p>
+<p>在左方括号后键入插入符号将否定字符类。结果是字符类匹配不在字符_类中的任何字符_。q[^x] 匹配有问题的 qu。它与伊拉克_不匹配_，因为 q 后面没有要匹配的否定字符类的字符。</p>
+<h2 id="速记字符类">速记字符类</h2>
+<p>\d 匹配作为数字的单个字符，\w 匹配“单词字符”（字母数字字符加下划线），\s 匹配空格字符（包括制表符和换行符）。速记匹配的实际字符取决于您使用的软件。在现代应用程序中，它们包括非英语字母和数字。</p>
+<h2 id="圆点几乎匹配任何字符">圆点（几乎）匹配任何字符</h2>
+<p>点匹配单个字符，换行符除外。大多数应用程序都有“点匹配所有”或“单行”模式，使点匹配任何单个字符，包括换行符。<br>
+gr.y 匹配 gray 、 grey 、 gr%y 等。请谨慎使用点。通常，字符类或否定字符类更快、更精确。</p>
+<h2 id="锚">锚</h2>
+<p>锚点不匹配任何字符。他们匹配一个位置。 ^ 匹配字符串的开头， $ 匹配字符串的结尾。大多数正则表达式引擎都有“多行”模式，使 ^ 在任何换行符之后匹配，并在任何换行符之前匹配 $ 。例如。 ^b 仅匹配 bob 中的第一个 b 。<br>
+\b 匹配单词边界。单词边界是 \w 可以匹配的字符和\ \w 不能匹配的字符之间的位置。如果字符串中的第一个和/或最后一个字符是单词字符， \b 也会在字符串的开头和/或结尾匹配。 \B 匹配 \b 无法匹配的每个位置。</p>
+<h2 id="交替">交替</h2>
+<p>交替是正则表达式中的“or”等价物。 cat|dog 匹配 About cats and dogs 中的 cat 。如果再次应用正则表达式，它会匹配 dog 。您可以根据需要添加任意多个替代方案： cat|dog|mouse|fish 。</p>
+<p>在所有正则表达式运算符中，交替的优先级最低。 cat|dog food 匹配 cat 或 dog food 。要创建匹配 cat food 或 dog food 的正则表达式，您需要对替代项进行分组： (cat|dog) food 。</p>
+<h2 id="重复">重复</h2>
+<p>问号使正则表达式中的前面的标记成为可选的。 colou?r 匹配 colour 或 color 。<br>
+星号或星号告诉引擎尝试匹配前面的标记零次或多次。加号告诉引擎尝试匹配前面的标记一次或多次。 &lt;[A-Za-z][A-Za-z0-9]*&gt; 匹配不带任何属性的 HTML 标记。 &lt;[A-Za-z0-9]+&gt; 更容易编写，但会匹配无效标签，例如 &lt;1&gt; 。<br>
+使用花括号指定特定的重复次数。使用 \b[1-9][0-9]{3}\b 匹配 1000 到 9999 之间的数字。 \b[1-9][0-9]{2,4}\b 匹配 100 到 99999 之间的数字。</p>
+<h2 id="贪婪和懒惰的重复">贪婪和懒惰的重复</h2>
+<p>重复运算符或量词是贪婪的。他们尽可能地扩展匹配，并且只有在必须满足正则表达式的其余部分时才进行回馈。正则表达式 &lt;.+&gt; 与This is a &lt;EM&gt;first&lt;/EM&gt; test 中的&lt;EM&gt;first&lt;/EM&gt; 匹配。<br>
+在量词后面加一个问号以使其变得懒惰。 &lt;.+?&gt; 与上述字符串中的 &lt;EM&gt; 匹配。<br>
+更好的解决方案是遵循我的建议，谨慎使用点。使用 &lt;[^&lt;&gt;]+&gt; 快速匹配 HTML 标记，而不考虑属性。否定字符类比点更具体，这有助于正则表达式引擎快速找到匹配项。</p>
+<h2 id="grouping-and-capturing-分组和捕获">Grouping and Capturing 分组和捕获</h2>
+<p>将多个标记放在括号中以将它们组合在一起。然后您可以将量词应用于该组。例如。 Set(Value)? 匹配 Set 或 SetValue 。<br>
+括号创建一个捕获组。上面的例子有一组。匹配后，如果 Set 匹配，则第一组不包含任何内容。如果 SetValue 匹配，它包含 Value 。如何访问该组的内容取决于您使用的软件或编程语言。组零始终包含整个正则表达式匹配。<br>
+使用特殊语法 Set(?:Value)? 对标记进行分组，而无需创建捕获组。如果您不打算使用该组的内容，这会更有效。不要将非捕获组语法中的问号与量词混淆。</p>
+<h2 id="backreferences-反向引用">Backreferences 反向引用</h2>
+<p>在正则表达式中，您可以使用反向引用 \1 来匹配与捕获组匹配的相同文本。 ([abc])=\1 匹配 a=a 、 b=b 和 c=c 。它与其他任何东西都不匹配。如果您的正则表达式有多个捕获组，则会从左到右对它们的左括号进行编号。</p>
+<h2 id="named-groups-and-backreferences-命名组和反向引用">Named Groups and Backreferences  命名组和反向引用</h2>
+<p>如果您的正则表达式有很多组，那么跟踪它们的数量可能会很麻烦。通过命名您的组，使您的正则表达式更易于阅读。 (?&lt;mygroup&gt;[abc])=\k&lt;mygroup&gt; 与 ([abc])=\1 相同，只是您可以通过名称引用该组。</p>
+<h2 id="unicode-properties-统一码属性">Unicode Properties 统一码属性</h2>
+<p>\p{L} 匹配给定 Unicode 类别中的单个字符。 L 代表字母。 \P{L} 匹配不属于给定 Unicode 类别的单个字符。您可以在教程中找到 Unicode 类别的完整列表。</p>
+<h2 id="lookaround-环视四周">Lookaround 环视四周</h2>
+<p>Lookaround 是一个特殊的群体。组内的标记正常匹配，但正则表达式引擎使该组放弃匹配并仅保留结果。 Lookaround 匹配一个位置，就像锚点一样。它不会扩展正则表达式匹配。<br>
+q(?=u) 与 question 中的 q 匹配，但与 Iraq 中的 q 不匹配。这是积极的前瞻。 u 不是整个正则表达式匹配的一部分。前瞻匹配字符串中 u 之前的每个位置。<br>
+q(?!u) 与 Iraq 中的 q 匹配，但与 question 中不匹配。这是消极的前瞻。尝试先行内的标记，丢弃它们的匹配，并且将结果反转。<br>
+要向后查看，请使用lookbehind。正向回顾 (?&lt;=a)b 与 abc 中的 b 匹配。负向查找 (?&lt;!a)b 无法匹配 abc 。<br>
+您可以在前瞻中使用成熟的正则表达式。大多数应用程序只允许在lookbehind 中使用固定长度的表达式。</p>
+<h2 id="free-spacing-syntax-自由间距语法">Free-Spacing Syntax 自由间距语法</h2>
+<p>许多应用程序都有一个可能被标记为“自由间距”或“忽略空格”或“注释”的选项，该选项使正则表达式引擎忽略未转义的空格和换行符，并使#字符开始运行直到结束的注释。线。这允许您使用空格来格式化正则表达式，使人们更容易阅读，从而更容易维护。</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://moyihust.github.io/post/cao-zuo-xi-tong-1gai-shu/">
+                  <h3 class="post-title">
+                    操作系统(1）概述
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

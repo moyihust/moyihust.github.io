@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>代码随想录day6 | moyihust的小站</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://moyihust.github.io/favicon.ico?v=1709003230734">
+<link rel="stylesheet" href="https://moyihust.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="hash table1
+概述
+遇到了要快速判断一个元素是否出现集合里的时候，就要考虑哈希法
+有效的字母异位词
+因为都是小写字母，使用26的数组来记录出现次数。
+class Solution {
+public:
+    bool isAnag..." />
+    <meta name="keywords" content="algorithm" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://moyihust.github.io">
+        <img src="https://moyihust.github.io/images/avatar.png?v=1709003230734" class="site-logo">
+        <h1 class="site-title">moyihust的小站</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="https://moyihust.github.io/post/moyihust" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://moyihust.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">代码随想录day6</h2>
+            <div class="post-date">2023-10-16</div>
+            
+            <div class="post-content" v-pre>
+              <h2 id="hash-table1">hash table1</h2>
+<h3 id="概述">概述</h3>
+<p>遇到了要快速判断一个元素是否出现集合里的时候，就要考虑哈希法</p>
+<h3 id="有效的字母异位词"><a href="https://leetcode.cn/problems/valid-anagram/description/">有效的字母异位词</a></h3>
+<p>因为都是小写字母，使用26的数组来记录出现次数。</p>
+<pre><code class="language-C++">class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        int tag[26];
+        memset(tag,0,sizeof(tag));
+        for(int i=0;i&lt;s.length();i++)
+        {
+            tag[s[i]-'a']++;
+        }
+        for(int j=0;j&lt;t.length();j++)
+        {
+            tag[t[j]-'a']--;
+        }
+        for(int i=0;i&lt;26;i++)
+        {
+            if(tag[i])
+            return false;
+        }
+        return true;
+    }
+};
+</code></pre>
+<h3 id="两个数组的交集"><a href="https://leetcode.cn/problems/intersection-of-two-arrays/">两个数组的交集</a></h3>
+<p>使用unordered_set 在标头 &lt;unordered_set&gt; 中定义<br>
+std::unordered_set 是一个关联容器，其中包含一组 Key 类型的唯一对象。搜索、插入和删除具有平均恒定时间复杂度在内部，元素不按任何特定顺序排序，而是组织到存储桶中。将元素放入哪个存储桶完全取决于其值的哈希值。这允许快速访问单个元素，因为一旦计算了哈希，它就会引用元素放入的确切存储桶。容器元素不能被修改（即使是通过非常量迭代器），因为修改可能会改变元素的哈希并损坏容器。<br>
+模板：</p>
+<pre><code class="language-C++">template&lt;
+    class Key,
+    class Hash = std::hash&lt;Key&gt;,
+    class KeyEqual = std::equal_to&lt;Key&gt;,
+    class Allocator = std::allocator&lt;Key&gt;
+&gt;
+class unordered_set;
+</code></pre>
+<p>功能：</p>
+<table>
+<thead>
+<tr>
+<th>Member functions</th>
+<th>usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(constructor)</td>
+<td>构造 unordered_set</td>
+</tr>
+<tr>
+<td>(destructor)</td>
+<td>破坏 unordered_set</td>
+</tr>
+<tr>
+<td>operator=</td>
+<td>为容器赋值</td>
+</tr>
+<tr>
+<td>get_allocator</td>
+<td>返回关联的分配器</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Iterators</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>begin</td>
+<td>将迭代器返回到开头</td>
+</tr>
+<tr>
+<td>end</td>
+<td>将迭代器返回到末尾</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Capacity</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>empty （C++11）</td>
+<td>checks whether the container is empty检查容器是否为空 (public member function)（公共会员功能）</td>
+</tr>
+<tr>
+<td>size （C++11）</td>
+<td>returns the number of elements返回元素数 (public member function)（公共会员功能）</td>
+</tr>
+<tr>
+<td>max_size（C++11）</td>
+<td>returns the maximum possible number of elements返回最大可能的元素数</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Capacity</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>empty （C++11）</td>
+<td>checks whether the container is empty检查容器是否为空 (public member function)（公共会员功能）</td>
+</tr>
+<tr>
+<td>size （C++11）</td>
+<td>returns the number of elements返回元素数 (public member function)（公共会员功能）</td>
+</tr>
+<tr>
+<td>max_size（C++11）</td>
+<td>returns the maximum possible number of elements返回最大可能的元素数</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Modifiers</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clear(C++11)</td>
+<td>clears the contents (public member function)</td>
+</tr>
+<tr>
+<td>insert(C++11)</td>
+<td>inserts elements or nodes (since C++17) (public member function)</td>
+</tr>
+<tr>
+<td>insert_range(C++23)</td>
+<td>inserts a range of elements (public member function)</td>
+</tr>
+<tr>
+<td>emplace(C++11)</td>
+<td>constructs element in-place (public member function)</td>
+</tr>
+<tr>
+<td>emplace_hint(C++11)</td>
+<td>constructs elements in-place using a hint (public member function)</td>
+</tr>
+<tr>
+<td>erase(C++11)</td>
+<td>erases elements (public member function)</td>
+</tr>
+<tr>
+<td>swap(C++11)</td>
+<td>swaps the contents (public member function)</td>
+</tr>
+<tr>
+<td>extract(C++17)</td>
+<td>extracts nodes from the container (public member function)</td>
+</tr>
+<tr>
+<td>merge(C++17)</td>
+<td>splices nodes from another container (public member function)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Bucket interface</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>begin(size_type) cbegin(size_type)(C++11)</td>
+<td>returns an iterator to the beginning of the specified bucket (public member function)</td>
+</tr>
+<tr>
+<td>end(size_type) cend(size_type)(C++11)</td>
+<td>returns an iterator to the end of the specified bucket (public member function)</td>
+</tr>
+<tr>
+<td>bucket_count(C++11)</td>
+<td>returns the number of buckets (public member function)</td>
+</tr>
+<tr>
+<td>max_bucket_count(C++11)</td>
+<td>returns the maximum number of buckets (public member function)</td>
+</tr>
+<tr>
+<td>bucket_size(C++11)</td>
+<td>returns the number of elements in specific bucket (public member function)</td>
+</tr>
+<tr>
+<td>bucket(C++11)</td>
+<td>returns the bucket for specific key (public member function)</td>
+</tr>
+<tr>
+<td>Hash policy</td>
+<td></td>
+</tr>
+<tr>
+<td>load_factor(C++11)</td>
+<td>returns average number of elements per bucket (public member function)</td>
+</tr>
+<tr>
+<td>max_load_factor(C++11)</td>
+<td>manages maximum average number of elements per bucket (public member function)</td>
+</tr>
+<tr>
+<td>rehash(C++11)</td>
+<td>reserves at least the specified number of buckets and regenerates the hash table (public member function)</td>
+</tr>
+<tr>
+<td>reserve(C++11)</td>
+<td>reserves space for at least the specified number of elements and regenerates the hash table (public member function)</td>
+</tr>
+</tbody>
+</table>
+<p>允许使用迭代器从其他容器中创建</p>
+<pre><code class="language-C++">unordered_set(nums1.begin(),nums1.end());
+</code></pre>
+<p>回到题目<br>
+给定两个数组 nums1 和 nums2 ，返回 它们的交集 。输出结果中的每个元素一定是 唯一 的。我们可以 不考虑输出结果的顺序 。<br>
+使用hash判断是否有元素重合且不重复。</p>
+<pre><code class="language-C++">class Solution {
+public:
+    vector&lt;int&gt; intersection(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) {
+        unordered_set&lt;int&gt; ans;
+        unordered_set&lt;int&gt; comp(nums1.begin(),nums1.end());
+        for(int num:nums2)
+        {
+            if(comp.find(num)!=comp.end())
+            {
+                ans.insert(num);
+            }
+        }
+        return vector&lt;int&gt;(ans.begin(),ans.end());
+    }
+};
+</code></pre>
+<h3 id="快乐数"><a href="https://leetcode.cn/problems/two-sum/description/">快乐数</a></h3>
+<p>「快乐数」 定义为：</p>
+<p>对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和。<br>
+然后重复这个过程直到这个数变为 1，也可能是<strong>无限循环</strong> 但始终变不到 1。<br>
+如果这个过程 结果为 1，那么这个数就是快乐数。<br>
+如果 n 是 快乐数 就返回 true ；不是，则返回 false 。</p>
+<p>注意到：无限循环，那意味着会出现重复的元素。即当出现之前出现过的结果就需要停止。<br>
+求平方和的方法：</p>
+<ol>
+<li>循环%10.O(n)；</li>
+<li><code>string st=to_string(num);for(char t:st)ans+=st-'0';</code></li>
+</ol>
+<pre><code class="language-C++">class Solution {
+public:
+    int turn(int n)
+    { 
+        int ans=0;
+        string nt=to_string(n);
+        for(char o:nt)
+        {
+            ans+=pow(o-'0',2);
+        }
+        return ans;
+ }
+    bool isHappy(int n) {
+        unordered_set&lt;int&gt; comp;
+        while(comp.find(n)==comp.end()&amp;&amp;n!=1)
+        {
+            comp.insert(n);
+            n=turn(n);
+        }
+        if(n==1)return true;
+        else return false;
+    }
+};
+</code></pre>
+<p>###<a href="https://leetcode.cn/problems/two-sum/description/">两数之和</a><br>
+给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。</p>
+<p>你可以按任意顺序返回答案。</p>
+<p><s>其实可以暴力，也能过</s></p>
+<p>因为需要下标，和值相关所以选择map，因为需要快速查找是否存在集合中，使用散列map即unordered_map:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">成员方法</th>
+<th style="text-align:center">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">begin()</td>
+<td style="text-align:center">返回指向容器中第一个键值对的正向迭代器。</td>
+</tr>
+<tr>
+<td style="text-align:center">end()</td>
+<td style="text-align:center">返回指向容器中最后一个键值对之后位置的正向迭代器。</td>
+</tr>
+<tr>
+<td style="text-align:center">cbegin()</td>
+<td style="text-align:center">和 begin() 功能相同，只不过在其基础上增加了 const 属性，即该方法返回的迭代器不能用于修改容器内存储的键值对。</td>
+</tr>
+<tr>
+<td style="text-align:center">cend()</td>
+<td style="text-align:center">和 end() 功能相同，只不过在其基础上，增加了 const 属性，即该方法返回的迭代器不能用于修改容器内存储的键值对。</td>
+</tr>
+<tr>
+<td style="text-align:center">empty()</td>
+<td style="text-align:center">若容器为空，则返回 true；否则 false。</td>
+</tr>
+<tr>
+<td style="text-align:center">size()</td>
+<td style="text-align:center">返回当前容器中存有键值对的个数。</td>
+</tr>
+<tr>
+<td style="text-align:center">max_size()</td>
+<td style="text-align:center">返回容器所能容纳键值对的最大个数，不同的操作系统，其返回值亦不相同。</td>
+</tr>
+<tr>
+<td style="text-align:center">operator[key]</td>
+<td style="text-align:center">该模板类中重载了 [] 运算符，其功能是可以向访问数组中元素那样，只要给定某个键值对的键 key，就可以获取该键对应的值。注意，如果当前容器中没有以 key 为键的键值对，则其会使用该键向当前容器中插入一个新键值对。</td>
+</tr>
+<tr>
+<td style="text-align:center">at(key)</td>
+<td style="text-align:center">返回容器中存储的键 key 对应的值，如果 key 不存在，则会抛出 out_of_range 异常。</td>
+</tr>
+<tr>
+<td style="text-align:center">find(key)</td>
+<td style="text-align:center">查找以 key 为键的键值对，如果找到，则返回一个指向该键值对的正向迭代器；反之，则返回一个指向容器中最后一个键值对之后位置的迭代器（如果 end() 方法返回的迭代器）。</td>
+</tr>
+<tr>
+<td style="text-align:center">count(key)</td>
+<td style="text-align:center">在容器中查找以 key 键的键值对的个数。</td>
+</tr>
+<tr>
+<td style="text-align:center">equal_range(key)</td>
+<td style="text-align:center">返回一个 pair 对象，其包含 2 个迭代器，用于表明当前容器中键为 key 的键值对所在的范围。</td>
+</tr>
+<tr>
+<td style="text-align:center">emplace()</td>
+<td style="text-align:center">向容器中添加新键值对，效率比 insert() 方法高。</td>
+</tr>
+<tr>
+<td style="text-align:center">emplace_hint()</td>
+<td style="text-align:center">向容器中添加新键值对，效率比 insert() 方法高。</td>
+</tr>
+<tr>
+<td style="text-align:center">insert()</td>
+<td style="text-align:center">向容器中添加新键值对。</td>
+</tr>
+<tr>
+<td style="text-align:center">erase()</td>
+<td style="text-align:center">删除指定键值对。</td>
+</tr>
+<tr>
+<td style="text-align:center">clear()</td>
+<td style="text-align:center">清空容器，即删除容器中存储的所有键值对。</td>
+</tr>
+<tr>
+<td style="text-align:center">swap()</td>
+<td style="text-align:center">交换 2 个 unordered_map 容器存储的键值对，前提是必须保证这 2 个容器的类型完全相等。</td>
+</tr>
+<tr>
+<td style="text-align:center">bucket_count()</td>
+<td style="text-align:center">返回当前容器底层存储键值对时，使用桶（一个线性链表代表一个桶）的数量。</td>
+</tr>
+<tr>
+<td style="text-align:center">max_bucket_count()</td>
+<td style="text-align:center">返回当前系统中，unordered_map 容器底层最多可以使用多少桶。</td>
+</tr>
+<tr>
+<td style="text-align:center">bucket_size(n)</td>
+<td style="text-align:center">返回第 n 个桶中存储键值对的数量。</td>
+</tr>
+<tr>
+<td style="text-align:center">bucket(key)</td>
+<td style="text-align:center">返回以 key 为键的键值对所在桶的编号。</td>
+</tr>
+<tr>
+<td style="text-align:center">load_factor()</td>
+<td style="text-align:center">返回 unordered_map 容器中当前的负载因子。负载因子，指的是的当前容器中存储键值对的数量（size()）和使用桶数（bucket_count()）的比值，即 load_factor() = size() / bucket_count()。</td>
+</tr>
+<tr>
+<td style="text-align:center">max_load_factor()</td>
+<td style="text-align:center">返回或者设置当前 unordered_map 容器的负载因子。</td>
+</tr>
+<tr>
+<td style="text-align:center">rehash(n)</td>
+<td style="text-align:center">将当前容器底层使用桶的数量设置为 n。</td>
+</tr>
+<tr>
+<td style="text-align:center">reserve()</td>
+<td style="text-align:center">将存储桶的数量（也就是 bucket_count() 方法的返回值）设置为至少容纳count个元（不超过最大负载因子）所需的数量，并重新整理容器。</td>
+</tr>
+<tr>
+<td style="text-align:center">hash_function()</td>
+<td style="text-align:center">返回当前容器使用的哈希函数对象。</td>
+</tr>
+</tbody>
+</table>
+<p>代码：</p>
+<pre><code class="language-C++">class Solution {
+public:
+    vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) {
+        std::unordered_map &lt;int,int&gt; map;
+        for(int i = 0; i &lt; nums.size(); i++) {
+            // 遍历当前元素，并在map中寻找是否有匹配的key
+            auto iter = map.find(target - nums[i]); 
+            if(iter != map.end()) {
+                return {iter-&gt;second, i};
+            }
+            // 如果没找到匹配对，就把访问过的元素和下标加入到map中
+            map.insert(pair&lt;int, int&gt;(nums[i], i)); 
+        }
+        return {};
+    }
+};
+</code></pre>
+<p>###<a href="https://leetcode.cn/problems/two-sum/">两数之和</a><br>
+给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。</p>
+<p>你可以按任意顺序返回答案。<br>
+<s>暴力就行</s><br>
+使用hash来查找<code>target-nums</code>，没找到就加入hash表。</p>
+<pre><code class="language-C++">class Solution {
+public:
+    vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) {
+        std::unordered_map &lt;int,int&gt; map;
+        for(int i = 0; i &lt; nums.size(); i++) {
+            // 遍历当前元素，并在map中寻找是否有匹配的key
+            auto iter = map.find(target - nums[i]); 
+            if(iter != map.end()) {
+                return {iter-&gt;second, i};
+            }
+            // 如果没找到匹配对，就把访问过的元素和下标加入到map中
+            map.insert(pair&lt;int, int&gt;(nums[i], i)); 
+        }
+        return {};
+    }
+};
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://moyihust.github.io/tag/r2vm0nDqk/" class="tag">
+                    algorithm
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://moyihust.github.io/post/openharmony-jing-sai/">
+                  <h3 class="post-title">
+                    openharmony 竞赛
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

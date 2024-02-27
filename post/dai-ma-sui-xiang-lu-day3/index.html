@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>代码随想录day3 | moyihust的小站</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://moyihust.github.io/favicon.ico?v=1709003230734">
+<link rel="stylesheet" href="https://moyihust.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="##链表1
+删除链表
+添加一个虚拟头节点就可以保证以下操作的一致。不用判断是否删除头节点的情况。
+class Solution {
+public:
+    ListNode* removeElements(ListNode* head, i..." />
+    <meta name="keywords" content="algorithm" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://moyihust.github.io">
+        <img src="https://moyihust.github.io/images/avatar.png?v=1709003230734" class="site-logo">
+        <h1 class="site-title">moyihust的小站</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="https://moyihust.github.io/post/moyihust" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://moyihust.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">代码随想录day3</h2>
+            <div class="post-date">2023-10-13</div>
+            
+            <div class="post-content" v-pre>
+              <p>##链表1</p>
+<h3 id="删除链表"><a href="https://leetcode.cn/problems/remove-linked-list-elements/description/">删除链表</a></h3>
+<p>添加一个虚拟头节点就可以保证以下操作的一致。不用判断是否删除头节点的情况。</p>
+<pre><code class="language-C++">class Solution {
+public:
+    ListNode* removeElements(ListNode* head, int val) {
+        ListNode* vsn=new ListNode();
+        vsn-&gt;next=head;
+        ListNode* cur=vsn;
+        while(cur-&gt;next!=NULL)
+        {
+            if(cur-&gt;next-&gt;val==val)
+            {
+                ListNode* tmp=cur-&gt;next;
+                cur-&gt;next=cur-&gt;next-&gt;next;
+                delete tmp;
+            }
+            else 
+            {
+                cur=cur-&gt;next;
+            }
+        }
+        return vsn-&gt;next;
+    }
+};
+</code></pre>
+<h3 id="设计链表"><a href="https://leetcode.cn/problems/design-linked-list/description/">设计链表</a></h3>
+<p>你可以选择使用单链表或者双链表，设计并实现自己的链表。</p>
+<p>单链表中的节点应该具备两个属性：val 和 next 。val 是当前节点的值，next 是指向下一个节点的指针/引用。</p>
+<p>如果是双向链表，则还需要属性 prev 以指示链表中的上一个节点。假设链表中的所有节点下标从 0 开始。</p>
+<p>实现 MyLinkedList 类：</p>
+<p>MyLinkedList() 初始化 MyLinkedList 对象。<br>
+int get(int index) 获取链表中下标为 index 的节点的值。如果下标无效，则返回 -1 。<br>
+void addAtHead(int val) 将一个值为 val 的节点插入到链表中第一个元素之前。在插入完成后，新节点会成为链表的第一个节点。<br>
+void addAtTail(int val) 将一个值为 val 的节点追加到链表中作为链表的最后一个元素。<br>
+void addAtIndex(int index, int val) 将一个值为 val 的节点插入到链表中下标为 index 的节点之前。如果 index 等于链表的长度，那么该节点会被追加到链表的末尾。如果 index 比长度更大，该节点将 不会插入 到链表中。<br>
+void deleteAtIndex(int index) 如果下标有效，则删除链表中下标为 index 的节点。</p>
+<pre><code class="language-C++">class MyLinkedList {
+public:
+    struct LinkedNode {
+        int val;
+        LinkedNode* next;
+        LinkedNode(int val):val(val), next(nullptr){}
+    };
+    
+    MyLinkedList() {
+       vishead = new LinkedNode(0); // 这里定义的头结点 是一个虚拟头结点，而不是真正的链表头结点
+        size = 0;
+    }
+
+    // 获取到第index个节点数值，如果index是非法数值直接返回-1， 注意index是从0开始的，第0个节点就是头结点
+    int get(int index) {
+        if (index &gt; (size - 1) || index &lt; 0) {
+            return -1;
+        }
+        LinkedNode* cur =vishead-&gt;next;
+        while(index--){ // 如果--index 就会陷入死循环
+            cur = cur-&gt;next;
+        }
+        return cur-&gt;val;
+    }
+
+
+    void addAtHead(int val) {
+        LinkedNode* newNode = new LinkedNode(val);
+        newNode-&gt;next =vishead-&gt;next;
+       vishead-&gt;next = newNode;
+        size++;
+    }
+
+
+    void addAtTail(int val) {
+        LinkedNode* newNode = new LinkedNode(val);
+        LinkedNode* cur =vishead;
+        while(cur-&gt;next != nullptr){
+            cur = cur-&gt;next;
+        }
+        cur-&gt;next = newNode;
+        size++;
+    }
+
+    void addAtIndex(int index, int val) {
+
+        if(index &gt; size) return;
+        if(index &lt; 0) index = 0;        
+        LinkedNode* newNode = new LinkedNode(val);
+        LinkedNode* cur =vishead;
+        while(index--) {
+            cur = cur-&gt;next;
+        }
+        newNode-&gt;next = cur-&gt;next;
+        cur-&gt;next = newNode;
+        size++;
+    }
+
+    // 删除第index个节点，如果index 大于等于链表的长度，直接return，注意index是从0开始的
+    void deleteAtIndex(int index) {
+        if (index &gt;= size || index &lt; 0) {
+            return;
+        }
+        LinkedNode* cur =vishead;
+        while(index--) {
+            cur = cur -&gt;next;
+        }
+        LinkedNode* tmp = cur-&gt;next;
+        cur-&gt;next = cur-&gt;next-&gt;next;
+        delete tmp;
+
+        tmp=nullptr;
+        size--;
+    }
+
+    // 打印链表
+    void printLinkedList() {
+        LinkedNode* cur =vishead;
+        while (cur-&gt;next != nullptr) {
+            cout &lt;&lt; cur-&gt;next-&gt;val &lt;&lt; &quot; &quot;;
+            cur = cur-&gt;next;
+        }
+        cout &lt;&lt; endl;
+    }
+private:
+    int size;
+    LinkedNode* vishead;
+};
+</code></pre>
+<h3 id="反转链表"><a href="https://leetcode.cn/problems/reverse-linked-list/description/">反转链表</a></h3>
+<p>给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。</p>
+<p>本来打算使用单个cur指针，发现需要记忆前一个位置的值，加入pre指针。</p>
+<pre><code class="language-C++">class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        ListNode* cur=head;
+        ListNode* pre=nullptr;
+        ListNode* temp;
+        while(cur!=nullptr)
+        {
+            temp=cur-&gt;next;
+            cur-&gt;next=pre;
+            pre=cur;
+            cur=temp;
+        }
+        return pre;
+    }
+};
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://moyihust.github.io/tag/r2vm0nDqk/" class="tag">
+                    algorithm
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://moyihust.github.io/post/dai-ma-sui-xiang-lu-day2/">
+                  <h3 class="post-title">
+                    代码随想录day2
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

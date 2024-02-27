@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>代码随想录day8 | moyihust的小站</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://moyihust.github.io/favicon.ico?v=1709003230734">
+<link rel="stylesheet" href="https://moyihust.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="##字符串1
+###反转字符串
+编写一个函数，其作用是将输入的字符串反转过来。输入字符串以字符数组 s 的形式给出。
+不要给另外的数组分配额外的空间，你必须原地修改输入数组、使用 O(1) 的额外空间解决这一问题。
+记录中间位置，交换中间两..." />
+    <meta name="keywords" content="algorithm" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://moyihust.github.io">
+        <img src="https://moyihust.github.io/images/avatar.png?v=1709003230734" class="site-logo">
+        <h1 class="site-title">moyihust的小站</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="https://moyihust.github.io/post/moyihust" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://moyihust.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">代码随想录day8</h2>
+            <div class="post-date">2023-10-18</div>
+            
+            <div class="post-content" v-pre>
+              <p>##字符串1<br>
+###<a href="https://leetcode.cn/problems/reverse-string/">反转字符串</a><br>
+编写一个函数，其作用是将输入的字符串反转过来。输入字符串以字符数组 s 的形式给出。<br>
+不要给另外的数组分配额外的空间，你必须原地修改输入数组、使用 O(1) 的额外空间解决这一问题。</p>
+<p>记录中间位置，交换中间两边的字符</p>
+<pre><code class="language-C++">class Solution {
+public:
+    void reverseString(vector&lt;char&gt;&amp; s) {
+        int mid=s.size()/2;
+        for(int i=0;i&lt;mid;i++)
+        {
+            char tmp=s[i];
+            s[i]=s[s.size()-1-i];
+            s[s.size()-1-i]=tmp;
+        }
+    }
+};
+</code></pre>
+<h3 id="反转字符串"><a href="https://leetcode.cn/problems/reverse-string-ii">反转字符串</a></h3>
+<p>给定一个字符串 s 和一个整数 k，从字符串开头算起，每计数至 2k 个字符，就反转这 2k 字符中的前 k 个字符。</p>
+<p>如果剩余字符少于 k 个，则将剩余字符全部反转。<br>
+如果剩余字符小于 2k 但大于或等于 k 个，则反转前 k 个字符，其余字符保持原样。</p>
+<pre><code class="language-C++">class Solution {
+public:
+    void turn(string &amp;s,int l,int r)
+    {
+        if(l&gt;=r) return;
+        int mid=(r-l)/2;
+        for(int i=0;i&lt;=mid;i++)
+        {
+            char tmp=s[l+i];
+            s[l+i]=s[r-i];
+            s[r-i]=tmp;
+        }
+        
+    }
+    string reverseStr(string s, int k) {
+        int loop=s.length()/(2*k);
+        int reserve=s.length()%(2*k);
+        int start=0,end=2*k-1;
+        for(int i=0;i&lt;loop;i++)
+        {
+            turn(s,start,(start+end)/2);
+            start+=2*k;
+            end+=2*k;
+        }
+        if(reserve&gt;=k)
+        {
+            turn(s,s.length()-reserve,s.length()-reserve+k-1);
+        }
+        else
+        {
+            turn(s,s.length()-reserve,s.length()-1);
+        }
+
+
+        return s;
+    }
+};
+</code></pre>
+<h3 id="路径加密"><a href="https://leetcode.cn/problems/ti-huan-kong-ge-lcof">路径加密</a></h3>
+<p>假定一段路径记作字符串 path，其中以 &quot;.&quot; 作为分隔符。现需将路径加密，加密方法为将 path 中的分隔符替换为空格 &quot; &quot;，请返回加密后的字符串。</p>
+<p>思路：<br>
+重新构造一个字符串,遇到&quot;.&quot;就添加&quot; &quot;，否则就继续复制</p>
+<pre><code class="language-C++">class Solution {
+public:
+    string pathEncryption(string path) {
+        string ans;
+        for(char x:path)
+        {
+            x=='.'?ans+=' ':ans+=x;
+        }
+        return ans;
+    }
+};
+</code></pre>
+<p>###<a href="https://leetcode.cn/problems/reverse-words-in-a-string/">反转字符串中的单词</a><br>
+给你一个字符串 s ，请你反转字符串中 单词 的顺序。</p>
+<p>单词 是由非空格字符组成的字符串。s 中使用至少一个空格将字符串中的 单词 分隔开。</p>
+<p>返回 单词 顺序颠倒且 单词 之间用单个空格连接的结果字符串。</p>
+<p>注意：输入字符串 s中可能会存在前导空格、尾随空格或者单词间的多个空格。返回的结果字符串中，单词间应当仅用单个空格分隔，且不包含任何额外的空格。</p>
+<p>###<a href="https://leetcode.cn/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof/">动态口令</a><br>
+某公司门禁密码使用动态口令技术。初始密码为字符串 password，密码更新均遵循以下步骤：</p>
+<p>设定一个正整数目标值 target<br>
+将 password 前 target 个字符按原顺序移动至字符串末尾</p>
+<p>思路：</p>
+<ol>
+<li>创建新的字符串，先复制后面<code>target-n</code>个后加上前<code>target</code>个</li>
+</ol>
+<pre><code class="language-C++">class Solution {
+public:
+    string dynamicPassword(string password, int target) {
+        string ans(password.begin()+target,password.end());
+        for(int i=0;i&lt;target;i++)
+        {
+            ans+=password[i];
+        }
+        return ans;
+    }
+};
+</code></pre>
+<ol start="2">
+<li>不消耗额外空间 ，先将前n个反转，再反转剩下的字符，最后反转整个字符。因为两个子串都反转了两次所以顺序不变，但两个子串交换了位置</li>
+</ol>
+<pre><code class="language-C++">class Solution {
+public:
+    string dynamicPassword(string password, int target) {
+        reverse(password.begin(), password.begin() + target);
+        reverse(password.begin() + target, password.end());
+        reverse(password.begin(), password.end());
+        return password;
+    }
+};
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://moyihust.github.io/tag/r2vm0nDqk/" class="tag">
+                    algorithm
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://moyihust.github.io/post/dai-ma-sui-xiang-lu-day6/">
+                  <h3 class="post-title">
+                    代码随想录day7
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

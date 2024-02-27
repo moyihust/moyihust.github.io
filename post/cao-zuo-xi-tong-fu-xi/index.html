@@ -1,0 +1,4272 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>操作系统复习 | moyihust的小站</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://moyihust.github.io/favicon.ico?v=1709003230734">
+<link rel="stylesheet" href="https://moyihust.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="操作系统的定义
+
+操作系统是一个大型系统程序
+
+操作系统是一个大型的程序系统，它负责计算机系统软件/硬件资源的分配；控制和协调并发活动；提供用户接口，使用户获得良好的工作环境。
+
+
+管理并调度资源；
+为用户提供接口。
+
+操作系统的特性
+
+并..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://moyihust.github.io">
+        <img src="https://moyihust.github.io/images/avatar.png?v=1709003230734" class="site-logo">
+        <h1 class="site-title">moyihust的小站</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="https://moyihust.github.io/post/moyihust" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://moyihust.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">操作系统复习</h2>
+            <div class="post-date">2024-01-01</div>
+            
+            <div class="post-content" v-pre>
+              <h2 id="操作系统的定义">操作系统的定义</h2>
+<ul>
+<li>操作系统是一个大型系统程序
+<ul>
+<li>操作系统是一个大型的程序系统，它负责计算机系统<em>软件/硬件资源的分配</em>；控制和协调并发活动；<em>提供用户接口</em>，使用户获得良好的工作环境。</li>
+</ul>
+</li>
+<li>管理并调度资源；</li>
+<li>为用户提供接口。</li>
+</ul>
+<h3 id="操作系统的特性">操作系统的特性</h3>
+<ul>
+<li>并发性
+<ul>
+<li>同时处理多个任务的能力</li>
+</ul>
+</li>
+<li>共享性
+<ul>
+<li>为多个并发任务提供资源共享</li>
+</ul>
+</li>
+<li>不确定性
+<ul>
+<li>具有处理随机事件的能力
+<ul>
+<li>中断处理的能力</li>
+<li>自动化能力</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="操作系统的功能">操作系统的功能</h2>
+<h3 id="进程管理">进程管理</h3>
+<ul>
+<li>处理机分配</li>
+<li>处理机管理</li>
+<li>CPU管理</li>
+<li>具体功能
+<ul>
+<li>进程控制：创建，暂停，唤醒，撤销</li>
+<li>进程调度：调度策略，优先级</li>
+<li>进程通信：进程间通信</li>
+</ul>
+</li>
+</ul>
+<h3 id="存储管理内存管理">存储管理/内存管理</h3>
+<ul>
+<li>为应用程序运行分配和管理所需的内存</li>
+<li>支持多道程序设计</li>
+<li>具体功能
+<ul>
+<li>内存分配</li>
+<li>内存共享</li>
+<li>内存保护</li>
+<li>内存扩充</li>
+<li>虚拟内存</li>
+</ul>
+</li>
+</ul>
+<h3 id="设备管理">设备管理</h3>
+<ul>
+<li>设备的分配和回收</li>
+<li>设备的驱动机制/传输控制</li>
+<li>为应用提供统一接口访问设备
+<ul>
+<li>设备无关性</li>
+</ul>
+</li>
+<li>高效存取/设备缓冲机制</li>
+</ul>
+<h3 id="文件管理文件系统">文件管理文件系统</h3>
+<ul>
+<li>为用户提供统一的文件存取接口，高效组织存储空间，提高存取效率，实现信息共享和存取控制。</li>
+<li>文件用户接口</li>
+<li>存储空间管理</li>
+<li>文件的操作</li>
+<li>目录的操作</li>
+<li>存取权限管理</li>
+</ul>
+<h2 id="操作系统的性能评价指标">操作系统的性能/评价指标</h2>
+<ul>
+<li>吞吐率
+<ul>
+<li>在单位时间内处理信息的能力。</li>
+</ul>
+</li>
+<li>资源利用率
+<ul>
+<li>设备(CPU)使用的频度</li>
+</ul>
+</li>
+<li>响应能力
+<ul>
+<li>从接收数据到输出结果的时间间隔。</li>
+</ul>
+</li>
+<li>可移植性
+<ul>
+<li>改变硬件环境仍能正常工作的能力</li>
+</ul>
+</li>
+<li>可靠性
+<ul>
+<li>发现、诊断和恢复系统故障的能力。</li>
+</ul>
+</li>
+</ul>
+<h2 id="操作系统的发展和演变">操作系统的发展和演变</h2>
+<h3 id="手工操作无操作系统40年代-50年代初">手工操作(无操作系统)（40年代-50年代初）</h3>
+<ul>
+<li>结构特点
+<ul>
+<li>硬件：电子管、接线面板</li>
+<li>程序：二进制（ 卡片/纸带，打孔）</li>
+</ul>
+</li>
+<li>使用特点
+<ul>
+<li>上机：编程（打孔），预约，操作机器（开关/接线）</li>
+<li>程序启动与结束：手工处理</li>
+</ul>
+</li>
+<li>缺点
+<ul>
+<li>效率低：CPU利用率低</li>
+<li>用户独占</li>
+<li>缺少交互</li>
+</ul>
+</li>
+</ul>
+<h3 id="单道批处理系统-50年代">单道批处理系统（ 50年代）</h3>
+<ul>
+<li>工作过程
+<ul>
+<li>管理员将多个作业输入到磁盘形成作业队列；</li>
+<li>监控程序（操作系统）依次自动处理磁盘中每个作业
+<ul>
+<li>装入—运行—撤出—装入—运行—撤出…….</li>
+</ul>
+</li>
+<li>运行完毕，通知用户取结果</li>
+</ul>
+</li>
+<li>工作特点
+<ul>
+<li>一批：作业队列</li>
+<li>自动：识别作业</li>
+<li>单道：串行</li>
+</ul>
+</li>
+<li>实现
+<ul>
+<li>联机批处理
+<ul>
+<li>特点：主机负责运算，同时控制输入/输出</li>
+<li>缺点：系统效率低</li>
+</ul>
+</li>
+<li>脱机批处理
+<ul>
+<li>特点：主机负责运算；卫星机负责输入/输出。</li>
+<li>优点：系统效率高</li>
+<li>缺点：调度不灵活；保护问题</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>CPU
+<ul>
+<li>现象： 外设工作时CPU空闲， CPU工作时外设空闲。</li>
+<li>结论：CPU和外设效率低。</li>
+</ul>
+</li>
+</ul>
+<h3 id="多道批处理系统60年代初">多道批处理系统（60年代初）</h3>
+<ul>
+<li>多道程序设计技术
+<ul>
+<li>内存中存放多道程序,当某道程序因为某种原因（例如请求I/O时）不能继续运行时，监控程序/OS便调度另一道程序投入运行，这样使CPU尽量处于忙碌状态，提高系统效率。</li>
+</ul>
+</li>
+<li>多道批处理系统
+<ul>
+<li>采用多道程序设计技术实现的处理系统称为多道批处理系统。</li>
+</ul>
+</li>
+<li>目的：
+<ul>
+<li>提高资源的利用率（或吞吐量）</li>
+<li>CPU与外设并行</li>
+<li>外设之间也并行</li>
+</ul>
+</li>
+<li>实现资源共享
+<ul>
+<li>时分：分成多个时段：不同进程错开时段使用。</li>
+<li>空分：分成多个单元：不同进程使用不同单元。</li>
+</ul>
+</li>
+<li>多个程序同时在计算机/虚拟机上运行</li>
+<li>特点：
+<ul>
+<li>多道
+<ul>
+<li>内存同时存放多道程序</li>
+</ul>
+</li>
+<li>并行
+<ul>
+<li>宏观上</li>
+</ul>
+</li>
+<li>串行
+<ul>
+<li>微观上</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>缺点
+<ul>
+<li>作业处理时间长</li>
+<li>运行过程不确定</li>
+<li>交互能力差</li>
+</ul>
+</li>
+</ul>
+<h3 id="分时操作系统60年代中-至今">分时操作系统（60年代中-至今）</h3>
+<h4 id="技术前置">技术前置</h4>
+<ul>
+<li>中断技术
+<ul>
+<li>CPU收到外部信号（中断信号）后，转去处理外部事件，处理完毕后回到中断处（断点）继续原来工作。</li>
+</ul>
+</li>
+<li>通道技术
+<ul>
+<li>专门处理外设与内存之间数据传输的处理机</li>
+</ul>
+</li>
+</ul>
+<h4 id="背景">背景</h4>
+<ul>
+<li>事务性任务和程序的涌现
+<ul>
+<li>交互性高</li>
+<li>响应快速</li>
+<li>多任务/多用户</li>
+</ul>
+</li>
+<li>硬件
+<ul>
+<li>中断技术</li>
+<li>大规模集成电路</li>
+<li>多终端计算机
+<ul>
+<li>用户通过终端连接主机，通过终端与主机交互。</li>
+<li>主机采用分时技术轮流为每个终端服务。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>分时技术概念
+<ul>
+<li>主机以很短的“时间片”为单位，把CPU轮流地分配给每个作业（终端/用户）使用，直到全部作业被运行完</li>
+<li>时间片：较短时间间隔</li>
+<li>循环/轮流：响应及时
+<ul>
+<li>独占主机</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="特点">特点</h4>
+<ul>
+<li>多路调制性
+<ul>
+<li>多用户联机使用同一台计算机</li>
+</ul>
+</li>
+<li>独占性
+<ul>
+<li>用户感觉独占计算机</li>
+</ul>
+</li>
+<li>交互性
+<ul>
+<li>及时响应用户的请求</li>
+</ul>
+</li>
+</ul>
+<h4 id="分时操作系统演化">分时操作系统演化</h4>
+<ul>
+<li>实时操作系统
+<ul>
+<li>实时要求
+<ul>
+<li>实时事务：军用电子、工业控制，智能仪器等</li>
+<li>某些任务要优先紧急地处理
+<ul>
+<li>强调作业完成的时限(dead-line)</li>
+<li>完成时间的可预测性</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>分类
+<ul>
+<li>硬实时系统
+<ul>
+<li>火炮控制系统</li>
+<li>航空航天</li>
+<li>工业控制</li>
+</ul>
+</li>
+<li>软实时系统
+<ul>
+<li>尽可能快完成</li>
+<li>网络视频</li>
+<li>广播</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>微机操作系统（PC机操作系统）</li>
+<li>多处理机操作系统
+<ul>
+<li>包含两个或多个功能相当的处理器（CPU）</li>
+<li>共享：内存，I/O通道、外设</li>
+<li>单一操作系统控制</li>
+<li>特点
+<ul>
+<li>具有一定的并行处理能力</li>
+<li>Linux支持SMP</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>网络操作系统
+<ul>
+<li>计算机网络：通过协议将多台计算机互连实现资源共享和信息传递的计算机系统。</li>
+<li>网络操作系统=普通操作系统+网络通信+网络服务</li>
+<li>特点：
+<ul>
+<li>主机独立自治</li>
+<li>通信协议</li>
+<li>IP/端口的标识</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>分布式操作系统
+<ul>
+<li>通过网络将多个通用资源部件互联，并能对资源进行全局统一管理和调度的计算机系统。</li>
+<li>特点：
+<ul>
+<li>可运行分布式程序</li>
+<li>主机自治又相互协调</li>
+<li>可扩展性| 高可靠性</li>
+</ul>
+</li>
+<li>与计算机网络的区别
+<ul>
+<li>支持单点登录（虚拟为“单台”计算机）</li>
+<li>支持资源透明存取（计算机网络：通过IP指明主机）</li>
+<li>支持合作运算（计算机网络：不支持）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>嵌入式操作系统
+<ul>
+<li>嵌入式系统使用的操作系统</li>
+<li>实时操作系统∈ 嵌入式操作系统</li>
+</ul>
+</li>
+</ul>
+<h2 id="操作系统的逻辑结构">操作系统的逻辑结构</h2>
+<ul>
+<li>OS的设计和实现思路</li>
+</ul>
+<h3 id="整体式结构单体式结构宏内核结构">整体式结构(单体式结构，宏内核结构)</h3>
+<ul>
+<li>以模块为基本单位构建
+<ul>
+<li>每个模块具有特定的功能</li>
+</ul>
+</li>
+<li>定义
+<ul>
+<li>模块化结构/单体内核结构/宏内核结构</li>
+<li>操作系统由大量过程构成。每个过程都有明确参数列表、返回值类型。大多数过程是可以相互间调用。</li>
+</ul>
+</li>
+<li>优点：
+<ul>
+<li>模块的设计、编码和调试独立。</li>
+<li>模块之间可以自由调用。</li>
+</ul>
+</li>
+<li>缺点：
+<ul>
+<li>错误容易扩散</li>
+<li>开发和维护困难</li>
+<li>可伸缩性差</li>
+</ul>
+</li>
+</ul>
+<h3 id="层次式结构">层次式结构</h3>
+<ul>
+<li>定义
+<ul>
+<li>功能模块按调用次序排若干层，各层单向依赖或单向调用</li>
+</ul>
+</li>
+<li>分层原则
+<ul>
+<li>最底层：硬件相关</li>
+<li>最顶层：用户策略/用户交互</li>
+<li>中间层：按调用次序/消息传递顺序</li>
+<li>较低层：共性的、活跃的服务</li>
+</ul>
+</li>
+<li>优点：
+<ul>
+<li>结构清晰，避免循环调用。</li>
+<li>整体问题局部化，系统的正确性容易保证。</li>
+<li>有利于操作系统的移植、维护、扩充。</li>
+</ul>
+</li>
+</ul>
+<h3 id="微内核结构">微内核结构</h3>
+<ul>
+<li>操作系统= 微内核+ 核外服务器</li>
+<li>客户：应用程序</li>
+<li>服务器：操作系统=微内核+核外服务器</li>
+<li>微内核
+<ul>
+<li>足够小，提供OS最基本的核心功能和服务
+<ul>
+<li>实现与硬件紧密相关的处理</li>
+<li>实现一些较基本的功能；</li>
+<li>负责客户和服务器间的通信。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>核外服务器
+<ul>
+<li>完成OS绝大部分功能，等待客户提出请求。</li>
+<li>由若干服务器或进程共同构成
+<ul>
+<li>例如：进程/线程服务器，虚存服务器，设备管理服务器等，以进程形式运行在用户态。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>微内核和单体内核（宏内核）比较<img src="file:///D:%5Cnextcloud%5Cmoyi%5C%E6%88%AA%E5%9B%BE%5CPasted%20image%2020231230055332.png" alt="" loading="lazy"></li>
+<li></li>
+</ul>
+<h3 id="cpu的态">CPU的态</h3>
+<ul>
+<li>CPU的工作模式</li>
+<li>对资源和指令使用权限的描述</li>
+<li>用户态
+<ul>
+<li>有限的指令</li>
+</ul>
+</li>
+<li>核态
+<ul>
+<li>全部指令</li>
+</ul>
+</li>
+</ul>
+<h4 id="特权指令">特权指令</h4>
+<ul>
+<li>类别
+<ul>
+<li>涉及外部设备的输入/输出指令</li>
+<li>修改特殊寄存器的指令</li>
+<li>改变机器状态的指令</li>
+</ul>
+</li>
+<li>例子
+<ul>
+<li>LGDT/LIDT/CLTS：装载特殊寄存器</li>
+<li>STI/CTI：允许和禁止中断</li>
+<li>HALT：停止CPU的工作</li>
+<li>IN/OUT：执行I/O操作</li>
+</ul>
+</li>
+<li>最高权限</li>
+<li>用户态向核态
+<ul>
+<li>用户请求os提供服务</li>
+<li>用户态企图执行特权指令</li>
+<li>发生错误（内部中断）</li>
+<li>发生中断</li>
+</ul>
+</li>
+<li>核态-&gt;用户态
+<ul>
+<li>一般是中断返回：IRET</li>
+</ul>
+</li>
+</ul>
+<h3 id="存储体系">存储体系</h3>
+<ul>
+<li>实际体系
+<ul>
+<li>寄存器</li>
+<li>高速缓存</li>
+<li>主存</li>
+<li>磁盘</li>
+</ul>
+</li>
+</ul>
+<h3 id="中断机制">中断机制</h3>
+<ul>
+<li>定义
+<ul>
+<li>指CPU对突发的外部信号的反应过程或机制</li>
+<li>CPU收到外部信号后，停止当前操作，处理外部事件，处理完回到原来工作的中断处。</li>
+</ul>
+</li>
+<li>中断源
+<ul>
+<li>引发中断的事件</li>
+</ul>
+</li>
+<li>中断类型
+<ul>
+<li>强迫中断和自愿中断
+<ul>
+<li>强迫：程序没预期，（外部中断</li>
+<li>自愿：程序有预期。（int 21h 访管指令)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>外中断，内中断
+<ul>
+<li>外：外部事件引起，I/O
+<ul>
+<li>不可屏蔽中断：中断原因很紧要，CPU必须相应</li>
+<li>可屏蔽中断：CPU可以选择响应</li>
+</ul>
+</li>
+<li>内：内部事件引起</li>
+</ul>
+</li>
+<li>断点
+<ul>
+<li>程序中断的地方
+<ul>
+<li>将要执行的下一条指令位置(CS:IP)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>现场
+<ul>
+<li>程序正确运行所依赖的信息集合</li>
+<li>PSW（程序状态字），相关寄存器，断点</li>
+</ul>
+</li>
+<li>现场处理
+<ul>
+<li>保护：状态-&gt;栈</li>
+<li>恢复：栈-&gt;状态</li>
+</ul>
+</li>
+<li>中断响应过程
+<ol>
+<li>中断信号</li>
+<li>断电入栈</li>
+<li>现场入栈</li>
+<li>进入中断服务</li>
+<li>现场出栈</li>
+<li>中断返回</li>
+</ol>
+</li>
+<li>中断的目的
+<ul>
+<li>实现并发活动</li>
+<li>实现实时处理</li>
+<li>故障自动处理</li>
+</ul>
+</li>
+<li>中断程序
+<ul>
+<li>填写中断向量表</li>
+<li>填写中断描述符表</li>
+</ul>
+</li>
+<li>中断嵌套处理
+<ul>
+<li>高优先级打断低优先级中断服务</li>
+</ul>
+</li>
+<li>中断响应的实质
+<ul>
+<li>交换指令执行的地址</li>
+<li>交换CPU的态</li>
+</ul>
+</li>
+<li>工作
+<ul>
+<li>现场保护和恢复</li>
+<li>参数传递</li>
+</ul>
+</li>
+<li>引入中断的目的
+<ul>
+<li>实现并发</li>
+<li>实现实时处理</li>
+<li>故障自动处理</li>
+</ul>
+</li>
+</ul>
+<h3 id="bios">BIOS</h3>
+<ul>
+<li>系统BIOS
+<ul>
+<li>固件</li>
+<li>地址范围：F0000- FFFFF</li>
+</ul>
+</li>
+<li>功能
+<ul>
+<li>加电自检(POST)
+<ul>
+<li>初始化基本硬件</li>
+<li>自检错误通过喇叭鸣叫</li>
+<li>按下PowerON开始执行POST</li>
+<li>计算首条指令在<em>FFFF0</em>单元</li>
+<li><code>JMP POST</code></li>
+</ul>
+</li>
+<li>设置CMOS
+<ul>
+<li>交互式设置系统参数</li>
+</ul>
+</li>
+<li>基本I/O功能
+<ul>
+<li>BIOS中断</li>
+</ul>
+</li>
+<li>post之后
+<ul>
+<li>依次查找其他设备并初始化</li>
+<li>查找显卡，执行显卡BIOS（C0000-C7FFF）</li>
+<li>查找IDE控制器（C8000-CBFFF）</li>
+<li>显示启动信息
+<ul>
+<li>各组件版权信息</li>
+</ul>
+</li>
+<li>查找/设置其他外设
+<ul>
+<li>配置寄存器</li>
+<li>启动设备BIOS</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>系统自举/加载OS
+<ul>
+<li>现场引导方式</li>
+<li>下载引导方式</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="mode">mode</h3>
+<ul>
+<li>实模式
+<ul>
+<li>按照8086访问1MB空间</li>
+<li>寻址方式：物理地址（20）=段地址：偏移地址</li>
+<li>CPU单任务运行</li>
+<li>实模式的1M空间
+<ul>
+<li>前面640K 【00000 -- 9FFFF】：基本内存</li>
+<li>中间128K 【A0000 -- BFFFF】：显卡显存</li>
+<li>末尾256K 【C0000 -- FFFFF】：BIOS</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>保护模式
+<ul>
+<li>寻址方式：段（16bit）和偏移量（32bit），寻址4gb</li>
+<li>CPU支持多任务</li>
+</ul>
+</li>
+</ul>
+<h3 id="启动过程">启动过程</h3>
+<ul>
+<li>从加电到用户工作环境准备好的过程</li>
+</ul>
+<ol>
+<li>初始引导
+<ul>
+<li>把OS内核装入内存并使之接管计算机系统</li>
+<li>引导程序：MBR
+<ul>
+<li>GRUB</li>
+<li>bootmgr|NTLDR|LILO</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>核心初始化
+<ul>
+<li>OS内核准备数据.</li>
+<li>典型工作
+<ul>
+<li>各种寄存器的初始化</li>
+<li>存储系统和页表初始化</li>
+<li>核心进程构建</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>系统初始化
+<ul>
+<li>为用户使用系统作准备</li>
+<li>主要工作
+<ul>
+<li>初始化文件系统</li>
+<li>初始化网络系统</li>
+<li>初始化控制台</li>
+<li>初始化图形界面</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="mbr">MBR</h3>
+<ul>
+<li>主启动扇区</li>
+<li>存放引导代码
+<ul>
+<li>启动相关的数据和代码</li>
+</ul>
+</li>
+<li>512B=510字节+AA55h</li>
+<li>PBR：分区/次引导记录</li>
+<li>提供BootLoader或启动管理
+<ul>
+<li>直接指向引导代码加载OS</li>
+<li>提供启动选项菜单</li>
+<li>跳转到PBR以加载特定OS BootLoader</li>
+</ul>
+</li>
+<li>安装过程
+<ul>
+<li>把OS映像拷贝到存储空间</li>
+<li>写启动相关代码和数据
+<ul>
+<li>MBR扇区</li>
+<li>PBR扇区</li>
+<li>512字节</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>多操作系统安装
+<ul>
+<li>MBR重写vs. MBR追加</li>
+<li>安装顺序</li>
+</ul>
+</li>
+</ul>
+<h3 id="windos启动过程">windos启动过程</h3>
+<ul>
+<li>POST
+<ul>
+<li>加电后IOS启动主机自检程序</li>
+</ul>
+</li>
+<li>初始引导
+<ul>
+<li>BIOS从MBR读入引导程序，装入内存的特定位置</li>
+<li>引导程序启动DOS7.0，调入操作系统核心</li>
+<li>WINDOWS开始接管系统</li>
+</ul>
+</li>
+<li>核心初始化
+<ul>
+<li>资源状态、核心数据等初始化</li>
+</ul>
+</li>
+<li>系统初始化
+<ul>
+<li>GUI界面生成，系统处于待命/消息接受状态</li>
+</ul>
+</li>
+</ul>
+<h3 id="linux启动过程">linux启动过程</h3>
+<p>POST →<br>
+MBR →<br>
+KERNEL映像→<br>
+KERNEL映像边自解压并边执行→<br>
+内核初始化→<br>
+内核启动→<br>
+init进程→</p>
+<h2 id="用户环境">用户环境</h2>
+<ul>
+<li>用户工作的软件
+<ul>
+<li>桌面环境</li>
+<li>命令行环境</li>
+</ul>
+</li>
+</ul>
+<h3 id="用户环境构造">用户环境构造</h3>
+<ul>
+<li>按照用户要求和硬件特性安装和配置操作系统。
+<ul>
+<li>提供操作命令和界面</li>
+<li>提供系统用户手册</li>
+</ul>
+</li>
+</ul>
+<h2 id="用户界面">用户界面</h2>
+<h3 id="定义">定义</h3>
+<ul>
+<li>操作系统提供给用户控制计算机的机制(用户接口)</li>
+</ul>
+<h3 id="类型">类型</h3>
+<ul>
+<li>操作界面</li>
+<li>系统调用(System Call，系统功能调用,程序界面)</li>
+</ul>
+<h2 id="操作界面">操作界面</h2>
+<h3 id="类型-2">类型</h3>
+<ul>
+<li>图形用户接口</li>
+<li>操作命令（普通命令）</li>
+<li>批处理与脚本程序</li>
+</ul>
+<h3 id="批处理与脚本程序">批处理与脚本程序</h3>
+<ul>
+<li>在控制台环境下自动处理一批命令
+<ul>
+<li>Windows：批处理程序（bat/PowerShell）
+<ul>
+<li>特点
+<ul>
+<li>普通命令的集合，按批执行，由command解释执行</li>
+<li>支持变量替换、条件、转移、循环、注释等语法</li>
+<li>文件后缀*.BAT，解释执行</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Linux： Shell脚本程序
+<ul>
+<li>特点：
+<ul>
+<li>脚本程序是有一定逻辑顺序和语法结构的命令序列，能完成较复杂的功能和人机交互。</li>
+<li>所有命令按逻辑逐行执行</li>
+<li>脚本程序是文本文件（具有可执行属性X）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>shell是操作系统与用户的交互机制（操作界面）
+<ul>
+<li>通过Shell(/控制台)执行用户命令</li>
+<li>组织和管理用户命令的执行和结果展示</li>
+</ul>
+</li>
+</ul>
+<h4 id="dos命令">dos命令</h4>
+<ul>
+<li>文件管理
+<ul>
+<li>COPY、COMP、TYPE、DEL、REN</li>
+</ul>
+</li>
+<li>磁盘管理
+<ul>
+<li>FORMAT、CHKDSK、DISKCOPY、DISKCOMP</li>
+</ul>
+</li>
+<li>目录管理
+<ul>
+<li>DIR、CD、MD、RD、TREE</li>
+</ul>
+</li>
+<li>设备工作模式
+<ul>
+<li>CLS、MODE</li>
+</ul>
+</li>
+<li>日期、时间、系统设置
+<ul>
+<li>DATE、TIME、VER、VOL</li>
+</ul>
+</li>
+<li>运行用户程序
+<ul>
+<li>MASM、LINK、DEBUG</li>
+</ul>
+</li>
+</ul>
+<h4 id="linux典型命令">Linux典型命令</h4>
+<table>
+<thead>
+<tr>
+<th>ls</th>
+<th>列举子目录和文件</th>
+<th>find</th>
+<th>查找文件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ps</td>
+<td>列举进程</td>
+<td>whereis</td>
+<td>查找文件目录</td>
+</tr>
+<tr>
+<td>top</td>
+<td>列举进程</td>
+<td>man</td>
+<td>查看命令帮助信息</td>
+</tr>
+<tr>
+<td>echo</td>
+<td>输出字符串</td>
+<td>cp</td>
+<td>拷贝</td>
+</tr>
+<tr>
+<td>cat</td>
+<td>读取内容</td>
+<td>inode</td>
+<td>查看文件节点</td>
+</tr>
+<tr>
+<td>cd</td>
+<td>改变目录</td>
+<td>tar</td>
+<td>压缩和解压</td>
+</tr>
+<tr>
+<td>chmod</td>
+<td>改变文件属性</td>
+<td>rm</td>
+<td>删除文件和文件夹</td>
+</tr>
+<tr>
+<td>mount</td>
+<td>挂载文件系统</td>
+<td>umount</td>
+<td>卸载文件系统</td>
+</tr>
+<tr>
+<td>insmod</td>
+<td>安装模块</td>
+<td>rmmod</td>
+<td>卸载模块</td>
+</tr>
+</tbody>
+</table>
+<h2 id="系统调用">系统调用</h2>
+<ul>
+<li>操作系统内核为应用程序提供的服务/函数。</li>
+<li>特点
+<ul>
+<li>内核实现</li>
+<li>存取核心资源或硬件</li>
+<li>调用过程产生中断
+<ul>
+<li>用户态↔ 核态</li>
+<li>自愿中断</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>系统调用表
+<ul>
+<li>全部系统调用的入口列表
+<ul>
+<li>有序排列</li>
+</ul>
+</li>
+<li>系统调用号：系统调用的唯一编号</li>
+</ul>
+</li>
+<li>系统调用的一般调用形式
+<ul>
+<li>访管指令： SVC X
+<ul>
+<li>SVC = SuperVisor Call</li>
+<li>X = 系统调用的编号</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>具体OS中系统调用的调用形式
+<ul>
+<li>DOS： INT 21H + AH</li>
+<li>Linux：INT 80H + EAX
+<ul>
+<li>INT XXH = SVC指令</li>
+<li>AH/EAX = 系统调用的编号：N</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="进程概念">进程概念</h2>
+<h3 id="定义-2">定义</h3>
+<ul>
+<li>进程是程序在某个数据集合上的一次运行活动</li>
+<li>数据集合：软硬件环境，多个进程共存/共享的环境</li>
+</ul>
+<h3 id="进程特征">进程特征</h3>
+<ul>
+<li>动态性
+<ul>
+<li>进程是程序的一次执行过程，动态产生/消亡</li>
+</ul>
+</li>
+<li>并发性
+<ul>
+<li>进程可以同其他进程一起向前推进</li>
+</ul>
+</li>
+<li>异步性
+<ul>
+<li>进程按各自速度向前推进</li>
+</ul>
+</li>
+<li>独立性
+<ul>
+<li>进程是系统分配资源和调度CPU的单位</li>
+</ul>
+</li>
+</ul>
+<h3 id="进程与程序的区别">进程与程序的区别</h3>
+<ul>
+<li>动态与静态
+<ul>
+<li>进程是动态的：程序的一次执行过程</li>
+<li>程序是静态的：一组指令的有序集合</li>
+</ul>
+</li>
+<li>暂存与长存
+<ul>
+<li>进程是暂存的：在内存驻留</li>
+<li>程序是长存的：在介质上长期保存。</li>
+</ul>
+</li>
+<li>程序和进程的对应
+<ul>
+<li>一个程序可能有多个进程</li>
+</ul>
+</li>
+</ul>
+<h3 id="进程的状态">进程的状态</h3>
+<ul>
+<li>运行状态
+<ul>
+<li>进程已经占有CPU，在CPU上运行</li>
+</ul>
+</li>
+<li>就绪状态
+<ul>
+<li>具备运行条件但由于无CPU，暂时不能运行</li>
+</ul>
+</li>
+<li>阻塞状态
+<ul>
+<li>因为等待某项服务完成或信号来到而不能运行的状态</li>
+<li>例如等待：系统调用，I/O操作，合作进程的服务或信号</li>
+</ul>
+</li>
+<li>进程状态的变迁
+<ul>
+<li>进程的状态可以依据一定的条件相互转化</li>
+<li>服务：系统调用/ I/O
+<ul>
+<li>就绪-&gt;运行：进程调度</li>
+<li>运行-&gt;就绪：时间片到；被抢占</li>
+<li>运行-&gt;阻塞：服务请求；等待信号</li>
+<li>阻塞-&gt;就绪：服务完成；信号来到</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>具有新建(new)和终止(terminate)状态的进程状态
+<ul>
+<li>状态机<img src="file:///D:%5Cnextcloud%5Cmoyi%5C%E6%88%AA%E5%9B%BE%5CPasted%20image%2020231231150335.png" alt="" loading="lazy"></li>
+</ul>
+</li>
+<li>支持挂起(suspend)和解挂(resume)操作的进程状态
+<ul>
+<li>阻塞
+<ul>
+<li>活动阻塞（正常阻塞）</li>
+<li>静止阻塞（阻塞时挂起）</li>
+</ul>
+</li>
+<li>就绪
+<ul>
+<li>活动就绪（正常就绪）</li>
+<li>静止就绪（就绪时挂起）</li>
+</ul>
+</li>
+<li>与挂起相关的迁移
+<ul>
+<li>运行--&gt;静止就绪：挂起</li>
+<li>活动就绪-&gt;静止就绪：挂起</li>
+<li>活动阻塞-&gt;静止阻塞：挂起</li>
+<li>静止就绪-&gt;活动就绪：解挂</li>
+<li>静止阻塞-&gt;活动阻塞：解挂</li>
+<li>静止阻塞-&gt;静止就绪：期待的事件/信号发生</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="进程控制块pcb">进程控制块PCB</h3>
+<ul>
+<li>描述进程的状态、资源、和相关进程的关系。</li>
+<li>PCB是进程的标志</li>
+<li>创建进程时创建PCB；进程撤销后PCB同时撤销。</li>
+<li>进程＝ 程序＋ PCB</li>
+<li>基本成员
+<ul>
+<li>name（ID）：进程名称（标识符）</li>
+<li>state：状态/status</li>
+<li>priority：优先级</li>
+<li>start_addr：程序入口地址</li>
+<li>next：指向下一个PCB的指针</li>
+<li>cpu_status：现场保留区(堆栈)</li>
+<li>comm_info：进程通信机制/信号机制</li>
+<li>process_family：家族关系</li>
+<li>own_resource：资源清单</li>
+</ul>
+</li>
+<li>linux实现<pre><code class="language-C++">struct  task_struct{
+/* these are hardcoded  - don't touch*/
+long stat;  //进程的运行状态  （-1 unrunnable  ,1 runnable , 0 stopped）
+
+long counter;  //进程的执行时间片，表示当前进程能够占用CPU资源的时间
+
+long signal;  //信号量位图32bit每一个bit来表示一个信号
+
+struct sigaction sigaction[32];  //信号量
+long blocked;  //信号掩码  
+
+/* various fields*/
+int exit_code; //退出码
+
+unsigned long start_code,end_code,end_data,brk,start_stack; //当前进程的内存使用信息
+
+long pid,father,pgrp,session,leader; //pid 
+
+unsigned short uid,euid,suid; //进程的用户ID，进程的有效ID，进程的超级ID
+
+unsigned short gid,egid,sgid;  //进程组ID，进程的有效组ID，进程的超级组ID
+
+long alarm; //进程的警告标志
+
+long utime,stime,cutime,cstime,start_time;  //有关进程的用户时间，系统时间当前用户时间等
+
+unsigned short used_math;  //是否使用协处理器
+
+/*file  system info*/
+int tty;  //当前进程是否占用控制台
+
+unsigned short umask; //用户的掩码
+
+struct m_inode * pwd;  //路径
+
+struct m_inode * root;  //根目录
+
+struct m_inode * excutable; // 执行位图
+
+unsigned long close_on_exec; // 执行结束后关闭位图
+
+struct file * fds[NUMFD];  //当前进程的文件列表FD在这个数组中找到一个file结构体
+
+struct desc_struct ldt[3];
+
+struct tss_struct tss;
+
+}
+</code></pre>
+</li>
+</ul>
+<h3 id="进程的上下文和进程切换">进程的上下文和进程切换</h3>
+<ul>
+<li>进程的上下文
+<ul>
+<li>Context，进程运行环境</li>
+</ul>
+</li>
+<li>分时系统的进程切换过程
+<ul>
+<li>进程的上下文在CPU中交换</li>
+<li>换入进程上下文进入CPU(从栈+PCB上来)</li>
+<li>换出进程上下文离开CPU(到栈+PCB上去)</li>
+</ul>
+</li>
+</ul>
+<h2 id="进程控制">进程控制</h2>
+<ul>
+<li>在进程生存全期间，对其全部行为的控制</li>
+<li>四个典型的进程控制</li>
+</ul>
+<h3 id="进程创建">进程创建</h3>
+<ul>
+<li>功能
+<ul>
+<li>创建一个具有指定标识（ID）的进程</li>
+</ul>
+</li>
+<li>参数
+<ul>
+<li>进程标识、优先级、进程起始地址、CPU初始状态、资源清单等</li>
+</ul>
+</li>
+<li>创建进程的过程
+<ul>
+<li>创建一个空白PCB</li>
+<li>赋予进程标识符ID</li>
+<li>为进程分配空间</li>
+<li>初始化PCB
+<ul>
+<li>默认值</li>
+</ul>
+</li>
+<li>插入相应的进程队列
+<ul>
+<li>新进程插入就绪队列</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="进程撤销">进程撤销</h3>
+<ul>
+<li>功能
+<ul>
+<li>撤销一个指定的进程</li>
+<li>收回进程所占有的资源，撤销该进程的PCB</li>
+</ul>
+</li>
+<li>进程撤销的时机/事件
+<ul>
+<li>正常结束</li>
+<li>异常结束</li>
+<li>外界干预</li>
+</ul>
+</li>
+<li>参数
+<ul>
+<li>撤销进程的ID</li>
+</ul>
+</li>
+<li>进程撤销的实现
+<ul>
+<li>在PCB队列中检索出该PCB</li>
+<li>获取该进程的状态。</li>
+<li>若该进程处在运行态，立即终止该进程&gt;
+<ul>
+<li>先撤销子进程【递归/可选】</li>
+<li>或将字进程挂接到init进程下</li>
+</ul>
+</li>
+<li>释放进程占用的资源</li>
+<li>将进程从PCB队列中移除</li>
+</ul>
+</li>
+</ul>
+<h3 id="阻塞进程">阻塞进程</h3>
+<ul>
+<li>功能
+<ul>
+<li>停止进程执行，变为阻塞。</li>
+</ul>
+</li>
+<li>阻塞的时机/事件
+<ul>
+<li>请求系统服务
+<ul>
+<li>（由于某种原因，OS不能立即满足进程的要求）</li>
+</ul>
+</li>
+<li>启动某种操作
+<ul>
+<li>（进程启动某操作，阻塞等待该操作完成）</li>
+</ul>
+</li>
+<li>新数据尚未到达
+<ul>
+<li>（A进程要获得B进程的中间结果，A进程等待）</li>
+</ul>
+</li>
+<li>无新工作可作(idle进程：pause( )
+<ul>
+<li>（进程完成任务后，自我阻塞，等待新任务到达）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>参数
+<ul>
+<li>阻塞原因</li>
+<li>不同原因构建有不同的阻塞队列。</li>
+</ul>
+</li>
+<li>进程阻塞的实现
+<ul>
+<li>停止运行</li>
+<li>将PCB “运行态”改“阻塞态”</li>
+<li>插入对应的阻塞队列</li>
+<li>转调度程序</li>
+</ul>
+</li>
+</ul>
+<h3 id="唤醒进程">唤醒进程</h3>
+<ul>
+<li>功能：
+<ul>
+<li>唤醒处于阻塞队列当中的某个进程。</li>
+</ul>
+</li>
+<li>引起唤醒的时机/事件
+<ul>
+<li>系统服务由不满足到满足</li>
+<li>I/O完成</li>
+<li>新数据到达</li>
+<li>提出新请求</li>
+</ul>
+</li>
+<li>参数
+<ul>
+<li>进程的标识</li>
+</ul>
+</li>
+</ul>
+<h3 id="进程控制原语">进程控制原语</h3>
+<ul>
+<li>原语
+<ul>
+<li>由若干指令构成的具有特定功能的函数</li>
+<li>具有原子性，其操作不可分割</li>
+</ul>
+</li>
+<li>进程控制原语
+<ul>
+<li>创建原语| 撤消原语| 阻塞原语| 唤醒原语</li>
+</ul>
+</li>
+</ul>
+<h4 id="windos进程">windos进程</h4>
+<ul>
+<li>CreateProcess</li>
+<li>创建新进程
+<ul>
+<li>创建进程内核对象，创建虚拟地址空间</li>
+<li>装载EXE和/或DLL的代码和数据到地址空间中</li>
+<li>创建主线程和线程内核对象</li>
+<li>启动主线程，进入主函数（main）</li>
+</ul>
+</li>
+<li>结束进程
+<ul>
+<li>ExitProcess
+<ul>
+<li><code>VOID ExitProcess(UINT uExitCode)</code></li>
+</ul>
+</li>
+<li>TerminateProcess</li>
+</ul>
+<pre><code class="language-C++">VOID TerminateProcess (
+	HANDLE hProcess,
+	UINT uExitCode )
+</code></pre>
+</li>
+</ul>
+<h4 id="linux进程控制">linux进程控制</h4>
+<ul>
+<li>创建进程--fork</li>
+<li>例子：<code>pid_t pid=fork()</code></li>
+<li>父进程和子进程
+<ul>
+<li>子进程：新建的进程</li>
+<li>父进程：fork( )的调用者</li>
+<li>子进程是父进程的复制</li>
+<li>父进程和子进程并发运行。</li>
+</ul>
+</li>
+<li>关于fork 的返回值：pid
+<ul>
+<li>pid = 0（在子进程中）</li>
+<li>pid &gt; 0（在父进程中）（子进程ID）</li>
+<li>pid = -1 （出错）</li>
+</ul>
+</li>
+<li>fork( )执行流程
+<ul>
+<li>分配task_struct结构</li>
+<li>拷贝父进程
+<ul>
+<li>复制页表
+<ul>
+<li>复制正文段、用户数据段及系统数据段</li>
+</ul>
+</li>
+<li>复制task_struct
+<ul>
+<li>修改task_struct小部分内容</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>把新进程加入进程列表。</li>
+<li>置新进程为就绪状态</li>
+<li>fork ( ) → sys_fork ( ) → do_fork( )</li>
+</ul>
+</li>
+<li>进程的阻塞wait( )
+<ul>
+<li>检测有无子进程结束?
+<ul>
+<li>没有:
+<ul>
+<li>继续阻塞：等待子进程结束。</li>
+</ul>
+</li>
+<li>有:
+<ul>
+<li>收集该子进程信息并彻底销毁它，返回。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Status接收子进程退出时的退出代码。
+<ul>
+<li>status：按位处理</li>
+<li>若忽略子进程的退出信息<code>pid =wait(NULL)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>进程的终结exit( )
+<ul>
+<li>调用void exit(int status)终结进程</li>
+<li>进程终结时要释放资源并向父进程报告
+<ul>
+<li>利用status向父进程报告结束时的退出代码</li>
+<li>变为僵尸状态，保留部分PCB信息供wait收集
+<ul>
+<li>正常结束还是异常结束</li>
+<li>占用总系统cpu时间</li>
+<li>缺页中断次数</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>进程的休眠Sleep( )
+<ul>
+<li>进程暂停执行nSecond秒</li>
+<li>系统暂停调度该进程</li>
+<li>相当于windows挂起操作resume( )，挂起指定秒</li>
+</ul>
+</li>
+</ul>
+<h2 id="线程">线程</h2>
+<h3 id="进程的并发性">进程的并发性</h3>
+<ul>
+<li>进程与进程可以并发运行(共享CPU)</li>
+<li>进程是系统中<em>共享CPU</em>的<em>最小</em>的并发单位
+<ul>
+<li>进程内部的指令和函数都是串行执行的</li>
+<li>若多个任务要并发，则必须设计相应数量的程序。</li>
+</ul>
+</li>
+</ul>
+<h3 id="定义-3">定义</h3>
+<ul>
+<li>线程是进程内创建的可运行模块/指令序列，能执行指定的任务。</li>
+<li>进程内可以定义多个线程</li>
+<li>线程和线程可以并发运行。</li>
+</ul>
+<h3 id="意义">意义</h3>
+<ul>
+<li>线程提高了系统的并发性能
+<ul>
+<li>线程的并发粒度比进程更细</li>
+<li>更充分地发挥CPU的性能</li>
+</ul>
+</li>
+<li>线程的应用成本更低，更灵活
+<ul>
+<li>进程为线程提供资源和地址空间
+<ul>
+<li>线程的创建，撤销和管理成本更低</li>
+<li>线程间通信更容易，更灵活</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>大多数操作系统都采用了线程技术</li>
+</ul>
+<h3 id="线程创建windos">线程创建(windos)</h3>
+<ul>
+<li>功能：创建一个线程同时为其指定任务(TaskFunction)。</li>
+<li>原型</li>
+</ul>
+<pre><code class="language-C++">HANDLE CreateThread (
+LPSECURITY_ATTRIBUTES lpThreadAttributes,
+DWORD dwStackSize,
+LPTHREAD_ROUTINE ThreadFunction, //线程函数
+LPVOID lpParameter //线程函数的参数
+)
+</code></pre>
+<h3 id="linux线程和分类">Linux线程和分类</h3>
+<h4 id="内核线程">内核线程</h4>
+<ul>
+<li>内核线程/Kernel Thread</li>
+<li>创建函数：kthread_create( )</li>
+<li>创建、运行和撤销都在内核完成，由内核驱动。</li>
+<li>内核线程没有独立的地址空间mm=NULL
+<ul>
+<li>只在内核空间运行，不切换到用户空间；</li>
+</ul>
+</li>
+</ul>
+<h4 id="用户线程">用户线程</h4>
+<ul>
+<li>通过pthread线程库创建和管理</li>
+<li>线程库提供同步和调度的方法。</li>
+<li>用户线程不是真正的调度实体，内核对它们一无所知。
+<ul>
+<li>当一个进程被抢占时，它的所有用户线程都被抢占</li>
+<li>当一个用户线程被阻塞时，它会阻塞其所属的进程</li>
+</ul>
+</li>
+<li>用pthread创建线程<pre><code class="language-C++">int pthread_create( pthread_t * thread,
+	pthread_attr_t * attr,
+	void *(*ThreadFunc)(void *),
+	void * arg);
+</code></pre>
+<ul>
+<li>创建函数：clone( )</li>
+</ul>
+</li>
+</ul>
+<h2 id="同步互斥">同步/互斥</h2>
+<h3 id="进程互斥的定义">进程互斥的定义</h3>
+<ul>
+<li>多个进程共享具有独占性的资源时，必须确保各进程互斥地存<br>
+取资源，即确保没有任何两个进程同时存取资源。</li>
+<li>进程内设定特定区域，所有进程互斥地访问这些区域。</li>
+</ul>
+<h3 id="同步关系">同步关系</h3>
+<ul>
+<li>若干合作进程为了共同完成一个任务，需要相互协调运行步伐：一个进程A开始某个操作之前要求另一个进程B必须已经完成另一个操作，否则进程A只能等待</li>
+<li>合作进程中某些操作之间需要满足某种先后关系或某个操作能否进行需要某个前提条件满足，否则只能等待。</li>
+<li>互斥关系属于特殊的同步关系。</li>
+</ul>
+<h3 id="同步机制">同步机制</h3>
+<ul>
+<li>功能
+<ol>
+<li>当进程的某个操作不能执行时（即运行条件不满足时）能让该进程立即暂停执行；</li>
+<li>当暂停的操作条件一旦满足时，能被立即唤醒继续运行。</li>
+<li>同步进制在实现上需要满足原子性。</li>
+</ol>
+</li>
+</ul>
+<h3 id="临界资源">临界资源</h3>
+<ul>
+<li>一次只允许一个进程独占访问（使用）的资源</li>
+</ul>
+<h3 id="临界区">临界区</h3>
+<ul>
+<li>进程中访问临界资源的程序段。</li>
+</ul>
+<h3 id="临界区和临界资源的共享特点">临界区和临界资源的共享特点</h3>
+<ul>
+<li>临界资源的访问具有排他性；</li>
+<li>并发进程不能同时进入“临界区”</li>
+</ul>
+<h3 id="访问临界区的方法">访问临界区的方法</h3>
+<h4 id="硬件方法">硬件方法</h4>
+<ul>
+<li>中断屏蔽方法
+<ul>
+<li>进入临界区前
+<ul>
+<li>执行“关中断”指令</li>
+</ul>
+</li>
+<li>离开临界区后
+<ul>
+<li>执行“开中断”指令</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>测试并设置指令</li>
+<li>交换指令</li>
+</ul>
+<h4 id="软件方法">软件方法</h4>
+<ul>
+<li>锁</li>
+<li>信号量</li>
+</ul>
+<h3 id="设计临界区访问机制的四个原则">设计临界区访问机制的四个原则</h3>
+<ul>
+<li>忙则等待
+<ul>
+<li>当临界区忙时，其他进程必须在临界区外等待。</li>
+</ul>
+</li>
+<li>空闲让进
+<ul>
+<li>当无进程处于临界区时，任何有权进程可进入临界区。</li>
+</ul>
+</li>
+<li>有限等待
+<ul>
+<li>进程进入临界区的请求应在有限时间内得到满足</li>
+</ul>
+</li>
+<li>让权等待
+<ul>
+<li>等待进程放弃CPU。（让其它进程有机会得到CPU）。</li>
+</ul>
+</li>
+</ul>
+<h2 id="锁">锁</h2>
+<h3 id="基本原理">基本原理</h3>
+<ul>
+<li>设置一个“标志”S：
+<ul>
+<li>临界资源可用还是不可用？1:0</li>
+</ul>
+</li>
+<li>在进入临界区之前检查标志是否“可用”？
+<ul>
+<li>若为“不可用”状态
+<ul>
+<li>进程在临界区之外等待</li>
+</ul>
+</li>
+<li>若为“可用”状态
+<ul>
+<li>进入临界区,并将标志修改为“不可用”</li>
+<li>在临界区内访问临界资源……</li>
+</ul>
+</li>
+<li>退出临界区时
+<ul>
+<li>将标志修改为“可用”状态</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="信号量和p-v操作">信号量和P-V操作</h2>
+<h3 id="数据结构">数据结构</h3>
+<ul>
+<li>信号灯定义为一个二元矢量（S, q）</li>
+<li>S：整数，初值非负（S又称信号量）</li>
+<li>q：队列(进程PCB集合)，初值为空集</li>
+</ul>
+<h3 id="操作">操作</h3>
+<ul>
+<li>P操作（函数或过程）： P(S,q)
+<ul>
+<li>Passeren通过</li>
+<li>第1步：S值减1</li>
+<li>第2步：判断S&lt;0
+<ul>
+<li>若S大于或等于零，该进程继续</li>
+<li>若S小于零，该进程阻塞并加入到q中，转调度函数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>V操作（函数或过程）： V(S,q)
+<ul>
+<li>Vrijgeven释放</li>
+<li>V操作可能会唤醒另一个正阻塞的进程。</li>
+<li>第1步：S值加1</li>
+<li>第2步：判断S &lt;= 0
+<ul>
+<li>若S大于零，该进程继续；</li>
+<li>若S小于或等于零，该进程继续同时从q中唤醒一个进程。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="信号灯p-v操作的应用">信号灯P-V操作的应用</h3>
+<ul>
+<li>实现进程互斥
+<ul>
+<li>实现对临界区的互斥访问
+<ul>
+<li>1个临界资源：允许最多1个进程处于临界区</li>
+<li>M个临界资源：允许最多M个进程同时处于临界区</li>
+</ul>
+</li>
+<li>应用过程
+<ul>
+<li>进入临界区之前先执行P操作；</li>
+<li>离开临界区之后再执行V操作；</li>
+<li>S的初值设置要合理</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>利用信号灯P-V操作实现同步
+<ul>
+<li>同步机制实质
+<ul>
+<li>运行条件不满足时，能让进程暂停</li>
+<li>运行条件满足时，能让进程立即继续</li>
+</ul>
+</li>
+<li>P-V操作应用于进程同步的基本思路
+<ul>
+<li>在有条件执行的关键操作之前执行P操作</li>
+<li>在作执行条件的关键操作之后执行V操作</li>
+<li>定义有意义的信号量S，并设置合适的初值
+<ul>
+<li>信号量S能明确地表示“运行条件”，</li>
+<li>不合理的初值不仅达不到同步的目的，还会发生死锁</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="经典同步问题">经典同步问题</h2>
+<h2 id="windos和linux同步实现">windos和linux同步实现</h2>
+<h3 id="windos">windos</h3>
+<h4 id="临界区criticalsection">临界区CRITICALSECTION</h4>
+<ul>
+<li>在进程内使用，保证仅一个线程可以申请到该对象</li>
+<li>临界区是临界资源的访问</li>
+<li>相关api</li>
+<li><code>InitializeCriticalSection()</code>初始化临界区</li>
+<li><code>DeleteCriticalSection()</code>删除临界区</li>
+<li><code>EnterCriticalSection()</code> 进入临界区</li>
+<li><code>LeaveCriticalSection()</code>退出临界区</li>
+<li>等待函数
+<ul>
+<li>等待目标对象变成有信号的状态就返回</li>
+<li>WaitForMultipleObjects()</li>
+<li>WaitForSingleObject( )</li>
+</ul>
+</li>
+</ul>
+<h4 id="互斥量mutex">互斥量mutex</h4>
+<ul>
+<li>保证只有一个线程或进程可以申请到该对象</li>
+<li>可以跨进程使用</li>
+<li>可以有名称</li>
+<li>互斥量比临界区要消耗更多资源，速度慢</li>
+<li>api<pre><code class="language-C++">HANDLE CreateMutex( //创建互斥量
+	LPSECURITY_ATTRIBUTES IpMutexAttributes,
+	BOOL bInitialOwner,// 初始化互斥量的状态 : 真或假
+	LPCTSTR IpName ）// 名字，可为NULL但不能跨进程用 
+	);
+HANDLE OpenMutex(//打开一个存在的互斥量
+	DWORD dwDesiredAccess
+	BOOL bInheritHandle
+	LPCTSTR IpName// 名字 
+);
+BOOL ReleaseMutex( HANDLE hMutex):
+BOOL CloseHandle(//关闭互斥量
+HANDLE hObject // 句柄
+</code></pre>
+</li>
+</ul>
+<h4 id="信号量semaphore">信号量semaphore</h4>
+<ul>
+<li>允许指定数目的多个进程/线程访问临界区</li>
+<li>一种资源计数器，用于限制并发线程的数量</li>
+<li>初始值可以设置为N，则允许N个进程/线程并发访问资源</li>
+<li>api<pre><code class="language-C++">HANDLE CreateSemaphore( //创建信号量
+	LPSECURITY ATTRIBUTES IpSemaphoreAttributes,// 安全属性
+	LONG IInitialCount，// 初始值
+	LONG IMaximumCount，// 最大值
+	LPCTSTR lpName //名字 );
+	HANDLE OpenSemaphore(//打打开信号量
+	DWORD dwDesiredAccess，// 存取方式
+	BOOL bInheritHandle， // 是否能被继承
+	LPCTSTR IpName// 名字 
+):
+BOOL ReleaseSemaphore(//释放信号量
+	HANDLE hSemaphore，// 句柄
+	LONG IReleaseCount， // 释放数，让信号量的值增加的数量
+	LPLONG IpPreviousCount // 得到释放前信号量的值，可为NULL
+	);
+BOOL CloseHandle(//关闭信号量
+	HANDLE hObject
+	);
+</code></pre>
+</li>
+</ul>
+<h4 id="事件event">事件event</h4>
+<ul>
+<li>用于通知一个或多个线程某事件出现或标识某操作已经完成</li>
+<li>分类
+<ul>
+<li>自动重置的事件:使用WaitForSingleObiect等待到事件对象变为有信号状态后该事件对象自动变为无信号状态</li>
+<li>人工重置的事件:使用WaitForSingleObiect等待到事件对象变为有信号状态后该事件对象的状态不变，除非人工重置事件。</li>
+</ul>
+</li>
+<li>api<pre><code class="language-C++">HANDLE CreateEvent ( //创建事件对象
+	LPSECURITY ATTRIBUTES pEventAttributes,// 安全属
+	BOOL bManualReset，// 是否为人工重置
+	BOOL bImitialState,// 初始状态是否为有信号状态
+	LPCTSTR IpName //名字 
+	):
+HANDLE OpenEvent (//打开事件对象
+	DWORD dwDesiredAccess，// 存取方式
+	BOOL bInheritHandle， // 是否能够被继承
+	LPCTSTR IpName// 名字 
+	):
+BOOL ResetEvent (//设置事件为无信号状态
+	HANDLE hEvent // 句柄 ):
+BOOL SetEvent (//设置事件有信号状态
+	HANDLE hEvent // 句柄
+	BOOL CloseHandle(//关闭事件对象
+HANDLE hObiet //句柄
+</code></pre>
+</li>
+</ul>
+<h2 id="死锁">死锁</h2>
+<h3 id="定义-4">定义</h3>
+<ul>
+<li>两个或多个进程无限期地等待永远不会发生的条件<br>
+的一种系统状态。</li>
+<li>在两个或多个进程中，每个进程都已持有某种资源，但又继续申请其它进程已持有的某种资源。
+<ul>
+<li>每个进程都拥有其运行所需的部分资源，但又不足够运行，从而每个进程都不能向前推进，陷于阻塞状态。这种状态称死锁。</li>
+</ul>
+</li>
+</ul>
+<h3 id="原因">原因</h3>
+<ul>
+<li>系统资源有限
+<ul>
+<li>资源数目不足以满足所有进程的需要，引起进程对资源的竞争而产生死锁。</li>
+</ul>
+</li>
+<li>并发进程的推进顺序不当
+<ul>
+<li>进程在运行过程中，请求和释放资源的顺序不当，导致进程产生死锁。</li>
+</ul>
+</li>
+</ul>
+<h3 id="关于死锁的一些结论">关于死锁的一些结论</h3>
+<ul>
+<li>陷入死锁的进程至少是2个</li>
+<li>参与死锁的进程至少有2个已经占有资源</li>
+<li>参与死锁的所有进程都在等待资源</li>
+<li>参与死锁的进程是当前系统中所有进程的子集</li>
+<li>死锁会浪费大量系统资源，甚至导致系统崩溃</li>
+</ul>
+<h3 id="死锁的必要条件">死锁的必要条件</h3>
+<ul>
+<li>互斥条件
+<ul>
+<li>资源具有独占性，进程互斥使用资源</li>
+</ul>
+</li>
+<li>不剥夺条件
+<ul>
+<li>资源被访问完之前(即在释放前)不能被其他进程剥夺</li>
+</ul>
+</li>
+<li>部分分配条件
+<ul>
+<li>进程所需资源逐步分配，需要时临时申请（等待分配）</li>
+<li>占有一些资源，同时申请新资源</li>
+</ul>
+</li>
+<li>环路条件
+<ul>
+<li>多个进程构成环路：环中每个进程已占用的资源被前一进程申请，而自己所需新资源又被环中后一进程所占用。</li>
+</ul>
+</li>
+</ul>
+<h3 id="预防死锁">预防死锁</h3>
+<ul>
+<li>通过设置某些限制条件，破坏死锁四个必要条件中的一个或多个，来防止死锁。
+<ul>
+<li>破坏互斥条件</li>
+<li>破坏不剥夺条件</li>
+<li>破坏部分分配条件(预先静态分配)</li>
+<li>破坏环路条件(有序资源分配)</li>
+</ul>
+</li>
+</ul>
+<h3 id="检测和恢复死锁">检测和恢复死锁</h3>
+<ul>
+<li>允许死锁发生，但可通过检测机制及时检测出死锁状态，并精确确定与死锁有关的进程和资源，然后采取适当措施，将系统中已发生的死锁清除，将进程从死锁状态解脱出来</li>
+<li>检测方法</li>
+<li>恢复方法
+<ul>
+<li>撤消或挂起一些进程，以回收一些资源</li>
+</ul>
+</li>
+<li>缺点
+<ul>
+<li>实现难度大</li>
+</ul>
+</li>
+</ul>
+<h2 id="定义-5">定义</h2>
+<h3 id="调度定义">调度定义</h3>
+<ul>
+<li>schedule队列</li>
+<li>在队列中按某种策略选择最合适的对象(执行相应操作)。</li>
+<li>分类
+<ul>
+<li>长程调度（宏观调度/作业调度）作业：磁盘→内存</li>
+<li>中程调度（交换调度）进程：就绪(内存)→交换空间</li>
+<li>短程调度（进程调度）进程：就绪(内存)→CPU</li>
+<li>I/O调度（设备调度）进程：阻塞(设备)→就绪</li>
+</ul>
+</li>
+</ul>
+<h3 id="进程调度">进程调度</h3>
+<ul>
+<li>在合适的时候以一定策略选择一个就绪进程运行.</li>
+<li>目标
+<ul>
+<li>周转时间/平均周转时间</li>
+<li>带权周转时间/平均带权周转时间</li>
+</ul>
+</li>
+<li>周转时间
+<ul>
+<li>进程(或作业)提交给计算机到完成所花费的时间</li>
+<li>周转时间t = <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">完</mi><mi mathvariant="normal">成</mi><mi mathvariant="normal">时</mi><mi mathvariant="normal">间</mi><msub><mi>t</mi><mi>c</mi></msub><mi mathvariant="normal">–</mi><mi mathvariant="normal">提</mi><mi mathvariant="normal">交</mi><mi mathvariant="normal">时</mi><mi mathvariant="normal">间</mi><msub><mi>t</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">完成时间t_c – 提交时间t_s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord cjk_fallback">完</span><span class="mord cjk_fallback">成</span><span class="mord cjk_fallback">时</span><span class="mord cjk_fallback">间</span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord" style="margin-right:0.02778em;">–</span><span class="mord cjk_fallback">提</span><span class="mord cjk_fallback">交</span><span class="mord cjk_fallback">时</span><span class="mord cjk_fallback">间</span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">t_s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>——进程的提交时间（Start）</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">t_c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>——进程的完成时间（Complete ）</li>
+</ul>
+</li>
+<li>意义
+<ul>
+<li>说明进程在系统中停留时间的长短。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>平均周转时间
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo>=</mo><mi mathvariant="normal">（</mi><msub><mi>t</mi><mn>1</mn></msub><mo>+</mo><msub><mi>t</mi><mn>2</mn></msub><mo>+</mo><mo>…</mo><mo>+</mo><msub><mi>t</mi><mi>n</mi></msub><mi mathvariant="normal">）</mi><mi mathvariant="normal">/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">t = （t_1 + t_2 + … + t_n）/ n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord cjk_fallback">（</span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">）</span><span class="mord">/</span><span class="mord mathdefault">n</span></span></span></span></li>
+<li>所有进程的周转时间的平均</li>
+<li>平均周转时间越短意味着：平均停留时间越短，系统吞吐量越大，资源利用率越高。</li>
+</ul>
+</li>
+<li>带权周转时间w
+<ul>
+<li>w = 周转时间t ÷ 进程运行时间(进程大小) r=<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mi mathvariant="normal">/</mi><msub><mi>t</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">t / t_r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">t</span><span class="mord">/</span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>
+<ul>
+<li>t：进程的周转时间</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">t_r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> ：进程的运行时间（run）</li>
+<li>意义：进程在系统中的相对停留时间。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>平均带权周转时间
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>w</mi><mo>=</mo><mi mathvariant="normal">（</mi><msub><mi>w</mi><mn>1</mn></msub><mo>+</mo><msub><mi>w</mi><mn>2</mn></msub><mo>+</mo><mo>…</mo><mo>+</mo><msub><mi>w</mi><mi>n</mi></msub><mi mathvariant="normal">）</mi><mo>÷</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">w = （w_1 + w_2 + … + w_n）÷ n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord cjk_fallback">（</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">）</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">÷</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span></li>
+<li>所有进程的带权周转时间的平均</li>
+</ul>
+</li>
+</ul>
+<h2 id="进程调度算法">进程调度算法</h2>
+<h3 id="先来先服务调度">先来先服务调度</h3>
+<ul>
+<li>算法
+<ul>
+<li>按照作业进入系统的时间先后次序来挑选作业。先进入系统的作业优先被运行。</li>
+</ul>
+</li>
+<li>特点
+<ul>
+<li>只考虑作业等候时间，不考虑作业大小(运行时间)</li>
+<li>晚来的作业会等待较长时间</li>
+<li>不利于晚来但是很短的作业</li>
+</ul>
+</li>
+</ul>
+<h3 id="短作业优先调度算法">短作业优先调度算法</h3>
+<ul>
+<li>算法
+<ul>
+<li>参考运行时间，选取时间最短的作业投入运行。</li>
+</ul>
+</li>
+<li>特点/缺点
+<ul>
+<li>忽视了作业等待时间</li>
+<li>早来的长作业会长时间等待(资源“饥饿”)</li>
+</ul>
+</li>
+</ul>
+<h3 id="响应比高者优先调度算法">响应比高者优先调度算法</h3>
+<ul>
+<li>响应比定义
+<ul>
+<li>作业的响应时间（等待时间+运行时间）和与运行时间的比值</li>
+<li>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi mathvariant="normal">响</mi><mi mathvariant="normal">应</mi><mi mathvariant="normal">比</mi></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mi mathvariant="normal">响</mi><mi mathvariant="normal">应</mi><mi mathvariant="normal">时</mi><mi mathvariant="normal">间</mi><mi mathvariant="normal">/</mi><mi mathvariant="normal">运</mi><mi mathvariant="normal">行</mi><mi mathvariant="normal">时</mi><mi mathvariant="normal">间</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mn>1</mn><mo>+</mo><mi mathvariant="normal">等</mi><mi mathvariant="normal">待</mi><mi mathvariant="normal">时</mi><mi mathvariant="normal">间</mi><mi mathvariant="normal">/</mi><mi mathvariant="normal">运</mi><mi mathvariant="normal">行</mi><mi mathvariant="normal">时</mi><mi mathvariant="normal">间</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mi mathvariant="normal">加</mi><mi mathvariant="normal">权</mi><mi mathvariant="normal">周</mi><mi mathvariant="normal">转</mi><mi mathvariant="normal">时</mi><mi mathvariant="normal">间</mi><mo>(</mo><mi mathvariant="normal">当</mi><mi mathvariant="normal">前</mi><mi mathvariant="normal">的</mi><mo>)</mo></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned} 响应比 &amp;= 响应时间 / 运行时间 \\ &amp;= 1 + 等待时间/运行时间 \\ &amp;=加权周转时间(当前的) \end{aligned} 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:4.500000000000002em;vertical-align:-2.000000000000001em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5000000000000004em;"><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord cjk_fallback">响</span><span class="mord cjk_fallback">应</span><span class="mord cjk_fallback">比</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"></span></span><span style="top:-1.6599999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.000000000000001em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.5000000000000004em;"><span style="top:-4.66em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord cjk_fallback">响</span><span class="mord cjk_fallback">应</span><span class="mord cjk_fallback">时</span><span class="mord cjk_fallback">间</span><span class="mord">/</span><span class="mord cjk_fallback">运</span><span class="mord cjk_fallback">行</span><span class="mord cjk_fallback">时</span><span class="mord cjk_fallback">间</span></span></span><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord cjk_fallback">等</span><span class="mord cjk_fallback">待</span><span class="mord cjk_fallback">时</span><span class="mord cjk_fallback">间</span><span class="mord">/</span><span class="mord cjk_fallback">运</span><span class="mord cjk_fallback">行</span><span class="mord cjk_fallback">时</span><span class="mord cjk_fallback">间</span></span></span><span style="top:-1.6599999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord cjk_fallback">加</span><span class="mord cjk_fallback">权</span><span class="mord cjk_fallback">周</span><span class="mord cjk_fallback">转</span><span class="mord cjk_fallback">时</span><span class="mord cjk_fallback">间</span><span class="mopen">(</span><span class="mord cjk_fallback">当</span><span class="mord cjk_fallback">前</span><span class="mord cjk_fallback">的</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.000000000000001em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
+</li>
+</ul>
+</li>
+<li>算法
+<ul>
+<li>调度作业时计算作业列表中每个作业的响应比，选择响应比最高的作业优先投入运行。</li>
+</ul>
+</li>
+<li>特点
+<ul>
+<li>响应比= 1 + 等待时间/ 运行时间</li>
+<li>有利于短作业</li>
+<li>有利于等候已久的作业</li>
+<li>兼顾长作业</li>
+</ul>
+</li>
+<li>应用
+<ul>
+<li>每次调度时重新计算和比较剩余作业的响应比</li>
+</ul>
+</li>
+</ul>
+<h3 id="优先数调度算法">优先数调度算法</h3>
+<ul>
+<li>算法
+<ul>
+<li>根据进程优先数，把CPU分配给最高的进程。</li>
+<li>进程优先数= 静态优先数+动态优先数</li>
+</ul>
+</li>
+<li>静态优先数
+<ul>
+<li>进程创建时确定，在整个进程运行期间不再改变</li>
+</ul>
+</li>
+<li>动态优先数
+<ul>
+<li>动态优先数在进程运行期间可以改变。</li>
+</ul>
+</li>
+<li>静态优先数的确定
+<ul>
+<li>基于进程所需的资源多少</li>
+<li>基于程序运行时间的长短</li>
+<li>基于进程的类型</li>
+</ul>
+</li>
+<li>动态优先数的确定
+<ul>
+<li>当进程使用CPU超过一定时长时；</li>
+<li>当进程等待时间超过一定时长时</li>
+<li>当进行I/O操作后</li>
+</ul>
+</li>
+</ul>
+<h3 id="循环轮转调度法">循环轮转调度法</h3>
+<ul>
+<li>算法
+<ul>
+<li>把所有就绪进程按先进先出的原则排成队列。新来进程加到队列末尾</li>
+<li>进程以时间片q为单位轮流使用CPU。刚刚运行了一个时间片的进程排到队列末尾，等候下一轮调度。</li>
+<li>队列逻辑上是环形的</li>
+</ul>
+</li>
+<li>优点
+<ul>
+<li>公平性：每个就绪进程有平等机会获得CPU</li>
+<li>交互性：每个进程等待(N-1)* q的时间就可以重新获得CPU</li>
+</ul>
+</li>
+<li>时间片q的大小
+<ul>
+<li>如果q太大
+<ul>
+<li>交互性差
+<ul>
+<li>甚至退化为FCFS调度算法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>如果q太小
+<ul>
+<li>进程切换频繁，系统开销增加</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>改进
+<ul>
+<li>时间片的大小可变（可变时间片轮转调度法)</li>
+<li>组织多个就绪队列（多重时间片循环轮转）</li>
+</ul>
+</li>
+</ul>
+<h2 id="调度方式">调度方式</h2>
+<h3 id="定义-6">定义</h3>
+<ul>
+<li>当一进程正在CPU上运行时，若有更高优先级的进<br>
+程进入就绪，系统如何对待新进程（分配CPU）？</li>
+</ul>
+<h3 id="非抢占方式">非抢占方式</h3>
+<ul>
+<li>让正在运行的进程继续运行，直到该进程完成或发生某事件而进入“完成”或“阻塞”状态时，才把CPU分配给新来的更高优先级的进程。<img src="file:///D:%5Cnextcloud%5Cmoyi%5C%E6%88%AA%E5%9B%BE%5CPasted%20image%2020231231175124.png" alt="" loading="lazy"></li>
+</ul>
+<h3 id="抢占方式">抢占方式</h3>
+<ul>
+<li>让正在运行的进程立即暂停，立即把CPU分配给新来的优先级更高的进程。<img src="file:///D:%5Cnextcloud%5Cmoyi%5C%E6%88%AA%E5%9B%BE%5CPasted%20image%2020231231175206.png" alt="" loading="lazy"></li>
+</ul>
+<h2 id="linux进程调度">linux进程调度</h2>
+<h3 id="基本特点">基本特点</h3>
+<ul>
+<li>基于优先级调度；</li>
+<li>支持普通进程，也支持实时进程</li>
+<li>实时进程优先于普通进程</li>
+<li>普通进程公平使用CPU时间</li>
+</ul>
+<h3 id="linux进程优先级task_struct成员变量">LINUX进程优先级（task_struct成员变量）</h3>
+<ul>
+<li>priority/静态优先数</li>
+<li>priority = priority - #</li>
+<li>[-20～19]
+<ul>
+<li>普通用户：自己进程，[ 0, 19 ]</li>
+<li>root用户：任何进程，[-20, 19 ]</li>
+</ul>
+</li>
+<li>counter/动态优先数
+<ul>
+<li>初值= priority</li>
+<li>用于实际比较的优先数</li>
+<li>进程在当前一轮调度中还能连续运行的时间片数量</li>
+<li>counter越大，优先级越高，可获得越多CPU时间</li>
+<li>新一轮调度开始时
+<ul>
+<li>counter = priority</li>
+</ul>
+</li>
+<li>时钟中断服务程序
+<ul>
+<li>counter - -</li>
+</ul>
+</li>
+<li>特定情形
+<ul>
+<li>counter = counter + △</li>
+</ul>
+</li>
+<li>所有进程的counter都减到0后
+<ul>
+<li>重新开始新一轮调度</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="内存管理的功能">内存管理的功能</h2>
+<h3 id="存储器功能需求">存储器功能需求</h3>
+<ul>
+<li>容量足够大</li>
+<li>速度足够快</li>
+<li>信息永久保存</li>
+<li>多道程序并行</li>
+</ul>
+<h3 id="三级存储体系">三级存储体系</h3>
+<ul>
+<li>内存</li>
+<li>辅存</li>
+<li>cache</li>
+<li>基本思想
+<ul>
+<li>用辅存支援内存，提高容量</li>
+<li>用cahe支援内存，提高效率</li>
+</ul>
+</li>
+</ul>
+<h3 id="换出与换出辅存与内存">换出与换出（辅存与内存）</h3>
+<ul>
+<li>放入原来位置
+<ul>
+<li>程序简单</li>
+<li>地址冲突</li>
+</ul>
+</li>
+<li>任一位置
+<ul>
+<li>利用内存灵活</li>
+<li>地址需要重定位</li>
+</ul>
+</li>
+<li>地址重映射
+<ul>
+<li>重新确定指令中目标数据的正确地址（更新地址）</li>
+<li>新的值与<strong>目标程序块</strong>的<strong>实际放置位置</strong>有关</li>
+</ul>
+</li>
+</ul>
+<h3 id="多道程序并行的问题">多道程序并行的问题</h3>
+<ul>
+<li>保护
+<ul>
+<li>禁止程序间越权访问</li>
+</ul>
+</li>
+<li>共享
+<ul>
+<li>代码和数据共享，节省内存</li>
+</ul>
+</li>
+</ul>
+<h3 id="存储管理的功能">存储管理的功能</h3>
+<h4 id="1地址映射">1.地址映射</h4>
+<ul>
+<li>定义
+<ul>
+<li>地址重定位，地址重映射</li>
+<li>把程序中的地址（虚拟地址,虚地址,逻辑地址,相对地址）变换成真实的内存地址（实地址,物理地址,绝对地址）的过程
+<ul>
+<li>虚拟地址/源程序地址：地址，变量，标号，函数名</li>
+</ul>
+</li>
+<li>逻辑地址
+<ul>
+<li>多道程序环境</li>
+<li>目标模块/装入模块：使用内部的线性地址：[0~N)</li>
+</ul>
+</li>
+<li>物理地址
+<ul>
+<li>内存单元的绝对地址
+<ul>
+<li>数据实际存放位置</li>
+</ul>
+</li>
+<li>单道程序环境中、
+<ul>
+<li>程序装入的起始地址可以预知。</li>
+<li>程序中直接指明数据/指令的物理地址。</li>
+</ul>
+</li>
+<li>多道程序环境中
+<ul>
+<li>程序不能预知装入的地址</li>
+<li>程序中无法明确地使用物理地址。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>固定地址映射
+<ul>
+<li>定义
+<ul>
+<li>编程或编译时确定逻辑地址和物理地址映射关系。</li>
+</ul>
+</li>
+<li>特点
+<ul>
+<li>程序加载时必须加载到指定的内存区域。</li>
+<li>容易产生地址冲突，运行失败。</li>
+<li>不能适应多道程序环境</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>静态地址映射
+<ul>
+<li>定义
+<ul>
+<li>程序装入时由操作系统完成逻辑地址到物理地址的映射</li>
+<li>保证程序在运行之前所有地址都绑定到主存</li>
+</ul>
+</li>
+<li>映射方式
+<ul>
+<li>物理地址MA = 装入基址BA + 虚拟地址VA</li>
+</ul>
+</li>
+<li>特点
+<ul>
+<li>程序运行之前确定映射关系</li>
+<li>程序占用连续的内存空间</li>
+<li>程序装入后不能移动
+<ul>
+<li>如果移动必须放回原来位置</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>动态地址映射
+<ul>
+<li>在程序执行过程中把逻辑地址转换为物理地址</li>
+<li>映射方式
+<ul>
+<li>物理地址MA = 装入基址BA + 虚拟地址VA</li>
+<li>装入基址：基址寄存器BAR</li>
+<li>切换进程的同时切换基址寄存器BAR</li>
+<li>IR = 指令寄存器
+<ul>
+<li>保存的是VA(虚拟地址)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>程序可分配到不连续的多块内存中存放
+<ul>
+<li>按段编译
+<ul>
+<li>段内地址：线性地址</li>
+</ul>
+</li>
+<li>按段装入，不同段放入不同内存块
+<ul>
+<li>每段维护一个段寄存器
+<ul>
+<li>段的重定位寄存器</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>段式存储管理</li>
+<li>段的切换</li>
+</ul>
+</li>
+<li>特点
+<ul>
+<li>程序占用的内存空间可动态变化</li>
+<li>程序不要求占用连续的内存空间</li>
+<li>便于多个进程共享代码</li>
+</ul>
+</li>
+<li>缺点：
+<ul>
+<li>硬件支持（MMU：内存管理单元）</li>
+<li>软件复杂</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="2存储扩充虚拟存储">2.存储扩充/虚拟存储</h4>
+<ul>
+<li>目的
+<ul>
+<li>程序过大或过多时，内存不够，不能运行</li>
+<li>多个程序并发时地址冲突，不能运行</li>
+</ul>
+</li>
+<li>解决1
+<ul>
+<li>借助辅存在逻辑上扩充内存，解决内存不足</li>
+<li>迁入：装入将要运行的部分到内存</li>
+<li>迁出：把不运行部分暂存到辅存上</li>
+</ul>
+</li>
+<li>前提：
+<ul>
+<li>有适当容量的内存</li>
+<li>有足够大的辅存</li>
+<li>有地址变换机构</li>
+</ul>
+</li>
+<li>应用：
+<ul>
+<li>页式虚拟存储</li>
+<li>段式虚拟存储</li>
+</ul>
+</li>
+</ul>
+<h4 id="3内存分配">3.内存分配</h4>
+<ul>
+<li>为程序运行分配足够的内存空间</li>
+<li>解决的问题
+<ul>
+<li>放置策略
+<ul>
+<li>程序调入到内存哪个/哪些区域</li>
+</ul>
+</li>
+<li>调入策略
+<ul>
+<li>何时把要运行的程序调入内存？</li>
+<li>预调策略| 请调策略</li>
+</ul>
+</li>
+<li>淘汰策略
+<ul>
+<li>迁出（/淘汰）哪些程序以腾出内存空间。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-存储保护">4. 存储保护</h4>
+<ul>
+<li>保证内存中的多道程序只能在给定区域活动，并且互不干扰。
+<ul>
+<li>防止访问越界</li>
+<li>防止访问越权</li>
+</ul>
+</li>
+<li>方法：
+<ul>
+<li>界址寄存器
+<ul>
+<li>上限地址寄存器/下限地址寄存器</li>
+<li>基址寄存器和限长寄存器</li>
+<li>适于连续物理分区中的情形</li>
+</ul>
+</li>
+<li>存储键保护
+<ul>
+<li>适于不连续物理分块的情形，也可用于共享中的权限。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="物理内存管理">物理内存管理</h2>
+<h3 id="单一区存储管理">单一区存储管理</h3>
+<ul>
+<li>定义
+<ul>
+<li>用户区不分区，完全被一个程序占用。</li>
+</ul>
+</li>
+<li>优点
+<ul>
+<li>简单不需复杂硬件支持</li>
+</ul>
+</li>
+<li>缺点
+<ul>
+<li>程序占用整个内存</li>
+<li>内存浪费，利用率低</li>
+</ul>
+</li>
+<li>场景
+<ul>
+<li>适于单用户单任务OS</li>
+</ul>
+</li>
+</ul>
+<h3 id="分区存储管理">分区存储管理</h3>
+<ul>
+<li>定义
+<ul>
+<li>把用户区分为若干大小不等的分区，供不同程序使用。</li>
+</ul>
+</li>
+<li>分类
+<ul>
+<li>固定分区
+<ul>
+<li>系统初始化时分区</li>
+<li>特点
+<ul>
+<li>运行时分区的大小和位置不变</li>
+<li>分区大小不同，适应不同程序需求</li>
+</ul>
+</li>
+<li>分区表
+<ul>
+<li>记录分区的位置、大小和占用标志</li>
+</ul>
+</li>
+<li>缺点
+<ul>
+<li>浪费内存</li>
+<li>大程序可能无法运行</li>
+<li>程序过多无法运行</li>
+</ul>
+</li>
+<li>应用
+<ul>
+<li>程序的装入数量和顺序要与分区的数量、大小顺序尽量保持一致。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>动态分区
+<ul>
+<li>程序装入时临时分区</li>
+<li>分区回收
+<ul>
+<li>收回占用分区，以便重新分配</li>
+<li>回收时要考虑释放区和相邻区的合并</li>
+</ul>
+</li>
+<li>分区再分配</li>
+<li>特点
+<ul>
+<li>分区的个数和大小均可变</li>
+<li>存在内存碎片（外部碎片）</li>
+</ul>
+</li>
+<li>放置策略(分区的选择)
+<ul>
+<li>空闲区表
+<ul>
+<li>描述内存空闲区的位置和大小的数据结构</li>
+</ul>
+</li>
+<li>首次适应法
+<ul>
+<li>空闲区表<em>按首址递增</em>排序</li>
+<li>尽可能先利用低地址空间</li>
+</ul>
+</li>
+<li>最佳适应法
+<ul>
+<li>空闲区表<em>按大小递增</em>排序</li>
+<li>尽量先选中<strong>满足要求的最小</strong>空闲区</li>
+</ul>
+</li>
+<li>最坏适应法
+<ul>
+<li>空闲区表<em>按大小递减</em>排序</li>
+<li>尽量先使用<strong>最大的</strong>空闲区</li>
+<li>仅作一次查找就可找到所要分区。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>分区的分配
+<ul>
+<li>从用户选中的分区中分配/分割所需大小给用户</li>
+<li>剩余部分（若有）依然作为空闲区登记</li>
+<li>分割空闲区时一般把 <em>(底部)</em> 分割给用户(这样空闲区表就只需要修改大小)。</li>
+</ul>
+</li>
+<li>缺点：
+<ul>
+<li>容易产生内存碎片：内存反复分配和分割</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>内存碎片
+<ul>
+<li>过小的空闲区</li>
+<li>难以实际利用</li>
+<li>外部碎片
+<ul>
+<li>所有分区之外的碎片(单独的分区)</li>
+</ul>
+</li>
+<li>内部碎片
+<ul>
+<li>分区内部出现的碎片。
+<ul>
+<li>固定分区的某分区剩下部分。</li>
+<li>分⻚系统引起的⻚内碎片</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>解决碎片的方法
+<ul>
+<li>规定门限值
+<ul>
+<li>分割空闲区时，若剩余部分小于门限值，则此空闲区不进行分割，而是全部分配给用户。</li>
+</ul>
+</li>
+<li>内存拼接技术
+<ul>
+<li>将所有空闲区集中一起构成一个大的空闲区。</li>
+<li>拼接的时机
+<ul>
+<li>释放区回收的时候</li>
+<li>系统找不到足够大的空闲区时</li>
+<li>定期</li>
+</ul>
+</li>
+<li>缺点
+<ul>
+<li>消耗系统资源</li>
+<li>离线拼接</li>
+<li>重新定义作业</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="overlay覆盖">Overlay(覆盖)</h3>
+<ul>
+<li>在较小的内存空间中运行较大的程序</li>
+<li>内存分区
+<ul>
+<li>常驻区：被某段单独且固定地占用的区域，可划分多个</li>
+<li>覆盖区： 能被多段共用（覆盖）的区域， 可划分多个</li>
+</ul>
+</li>
+<li>工作原理
+<ul>
+<li>程序分成若干代码段或数据段</li>
+<li>将程序常用的段装入常驻区；（核心段）</li>
+<li>将程序不常用段装入覆盖区；
+<ul>
+<li>正运行的段处于覆盖区；</li>
+<li>暂时不运行的段放在硬盘中(覆盖文件)；</li>
+<li>即将运行的段装入覆盖区（覆盖旧内容）；</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>缺点
+<ul>
+<li>编程复杂：程序员划分程序模块并确定覆盖关系。</li>
+<li>程序执行时间长：从外存装入内存耗时</li>
+</ul>
+</li>
+</ul>
+<h3 id="swapping对换技术">Swapping（对换技术）</h3>
+<ul>
+<li>原理：
+<ul>
+<li>内存不够时把进程写到磁盘（换出/Swap Out ）。</li>
+<li>当进程要运行时重新写回内存（换入/Swap In ）。</li>
+</ul>
+</li>
+<li>优点：
+<ul>
+<li>增加进程并发数；</li>
+<li>不考虑程序结构。</li>
+</ul>
+</li>
+<li>缺点
+<ul>
+<li>换入和换出增加CPU开销；</li>
+<li>对换单位太大（整个进程）：</li>
+</ul>
+</li>
+<li>问题：
+<ul>
+<li>程序换入时的地址重定位</li>
+<li>减少对换传送的信息量</li>
+<li>外存对换空间的管理方法</li>
+</ul>
+</li>
+</ul>
+<h2 id="虚拟内存管理">虚拟内存管理</h2>
+<h3 id="页式内存管理">页式内存管理</h3>
+<h4 id="概念">概念</h4>
+<ul>
+<li>目的
+<ul>
+<li>小内存中运行大程序和多个程序</li>
+</ul>
+</li>
+<li>程序和内存的划分
+<ul>
+<li>程序和内存都划成等大小（例4KB）的小片：页面和页框</li>
+</ul>
+</li>
+<li>程序的装入方式
+<ul>
+<li>程序以页面为单位装入页框</li>
+<li>内存以页框为单位使用</li>
+</ul>
+</li>
+</ul>
+<h4 id="原理">原理</h4>
+<ul>
+<li>程序运行的局部性
+<ul>
+<li>在任何有限时段内程序的运行活动一般局限在有限范围内。</li>
+</ul>
+</li>
+<li>仅把程序的局部装入内存中
+<ul>
+<li>仅把当前时段涉及的部分页面装入内存(可让程序短暂运行)</li>
+<li>运行过程逐步装入新页面
+<ul>
+<li>已运行过的旧页面可删除</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>确保有限时段内程序只占用了少量的内存。</li>
+<li>进程装入和使用内存的原则
+<ul>
+<li>局部装入，不断更新
+<ul>
+<li>只把程序部分页装入内存便可运行。</li>
+<li>页在内存中占用的页框不必相邻。</li>
+<li>需要新页时，按需从硬盘调入内存。</li>
+<li>不再运行的页及时删除，腾出空间</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="地址">地址</h4>
+<ul>
+<li>虚拟地址VA是线性的，从0开始</li>
+<li>VA分成页号P和页内偏移W
+<ul>
+<li>P=VA/页大小</li>
+<li>W=VA%页大小</li>
+<li>计算方法<img src="file:///D:%5Cnextcloud%5Cmoyi%5C%E6%88%AA%E5%9B%BE%5CPasted%20image%2020231228201331.png" alt="" loading="lazy"></li>
+</ul>
+</li>
+<li>页面映射表（页表）
+<ul>
+<li>记录页面与页框(块)之间的对应关系。也叫页表。</li>
+<li>页号：登记程序地址的页号。</li>
+<li>页框号：登记页所在的物理页号。</li>
+<li>页面其他特性：登记含存取权限在内的其他特性。</li>
+<li>建立
+<ul>
+<li>操作系统为每个进程建立一个页表
+<ul>
+<li>页表的基址存放在进程控制块中</li>
+<li>页表的内容由内核负责填充和更新</li>
+</ul>
+</li>
+<li>当前进程的页表驻留在内存
+<ul>
+<li>页表基址：页表基址寄存器</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>地址映射
+<ul>
+<li>虚拟地址(页式地址)-&gt;物理地址</li>
+<li>步骤：
+<ol>
+<li>计算P，W</li>
+<li>根据页表，得到页框号<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>P</mi><mo mathvariant="normal">′</mo></msup></mrow><annotation encoding="application/x-tex">P&#x27;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.751892em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span></li>
+<li>计算MA=<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>P</mi><mo mathvariant="normal">′</mo></msup><mo>×</mo><mi mathvariant="normal">页</mi><mi mathvariant="normal">大</mi><mi mathvariant="normal">小</mi><mo>+</mo><mi mathvariant="normal">页</mi><mi mathvariant="normal">内</mi><mi mathvariant="normal">偏</mi><mi mathvariant="normal">移</mi><mi>W</mi><mo>=</mo><msup><mi>P</mi><mo mathvariant="normal">′</mo></msup><mo>&lt;</mo><mo>&lt;</mo><mi>n</mi><mi mathvariant="normal">∣</mi><mi mathvariant="normal">∣</mi><mi mathvariant="normal">页</mi><mi mathvariant="normal">内</mi><mi mathvariant="normal">偏</mi><mi mathvariant="normal">移</mi></mrow><annotation encoding="application/x-tex">P&#x27;\times页大小+页内偏移W=P&#x27;&lt;&lt;n||页内偏移</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.835222em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord cjk_fallback">页</span><span class="mord cjk_fallback">大</span><span class="mord cjk_fallback">小</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">页</span><span class="mord cjk_fallback">内</span><span class="mord cjk_fallback">偏</span><span class="mord cjk_fallback">移</span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.790992em;vertical-align:-0.0391em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">n</span><span class="mord">∣</span><span class="mord">∣</span><span class="mord cjk_fallback">页</span><span class="mord cjk_fallback">内</span><span class="mord cjk_fallback">偏</span><span class="mord cjk_fallback">移</span></span></span></span></li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="缺页中断">缺页中断</h4>
+<ul>
+<li>定义
+<ul>
+<li>当程序要访问的目标页面不在内存时，程序将被迫临时中断：缺页中断</li>
+</ul>
+</li>
+<li>处理
+<ul>
+<li>立即将所缺页面装入内存</li>
+<li>页面从硬盘拷贝到内存
+<ul>
+<li>I/O操作，耗时较长</li>
+</ul>
+</li>
+<li>缺页中断降低了程序实时性</li>
+</ul>
+</li>
+<li>扩充有中断位I和辅存地址的页表
+<ul>
+<li>中断位I ——标识该页是否在内存?
+<ul>
+<li>若I =１，不在内存</li>
+<li>若I =０，在内存q</li>
+</ul>
+</li>
+<li>辅存地址——该页在辅存上的位置</li>
+</ul>
+</li>
+<li>扩充有访问位（引用位）和修改位（Dirty）的页表
+<ul>
+<li>访问位——标识该页最近是否被访问？
+<ul>
+<li>０——最近没有被访问</li>
+<li>１——最近已被访问</li>
+</ul>
+</li>
+<li>修改位——标识该页的数据是否已被修改？
+<ul>
+<li>０——该页未被修改</li>
+<li>１——该页已被修改</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>缺页中断处理程序
+<ul>
+<li>中断处理程序把所缺的页从页表指出的辅存地址调入内存的某个页框中，并更新页表中该页对应的页框号以及修改中断位I为0。</li>
+</ul>
+</li>
+<li>缺页率
+<ul>
+<li>缺页率f = 缺页次数/ 访问页面总次数</li>
+<li>命中率= 1 – f</li>
+</ul>
+</li>
+<li>访存指令流程<img src="file:///D:%5Cnextcloud%5Cmoyi%5C%E6%88%AA%E5%9B%BE%5CPasted%20image%2020231228204824.png" alt="" loading="lazy"></li>
+</ul>
+<h4 id="淘汰策略">淘汰策略</h4>
+<ul>
+<li>选择淘汰哪一页的规则称淘汰策略。</li>
+<li>页面抖动
+<ul>
+<li>页面在内存和辅存间频繁交换的现象</li>
+<li>“抖动”会导致系统效率下降。</li>
+</ul>
+</li>
+<li>好的淘汰策略
+<ul>
+<li>页面抖动较少</li>
+<li>具有较低的缺页率（高命中率）</li>
+</ul>
+</li>
+<li>最佳算法（OPT算法）
+<ul>
+<li>淘汰不再需要或最远将来才会用到的页面。</li>
+<li>特点
+<ul>
+<li>理论上最佳，实践中该算法无法实现。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>先进先出淘汰算法（FIFO算法）
+<ul>
+<li>淘汰在内存中停留时间最长的页面</li>
+<li>优点：
+<ul>
+<li>实现简单：页面按进入内存的时间排序，淘汰队头页面。</li>
+<li>进程按顺序访问地址空间时抖动较少，缺页率较低。</li>
+</ul>
+</li>
+<li>异常现象
+<ul>
+<li>对于一些特定的访问序列，分配页框越多，缺页率越高</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>最久未使用淘汰算法（LRU算法）
+<ul>
+<li>淘汰最长时间未被使用的页面。</li>
+<li>实现(硬件)
+<ul>
+<li>页面设置一个移位寄存器R，页面被访问则重置为1</li>
+<li>周期性地(周期很短)将所有页面的R左移1位(右边为0)</li>
+<li>当需要淘汰页面时选择R值最大的页</li>
+<li>R的位数越多且移位周期越小就越精确，但硬件成本也越高。</li>
+<li>若R的位数太少，可能同时出现多个为0页面情况，难以比较。</li>
+</ul>
+</li>
+<li>软件实现
+<ul>
+<li>软件周期性（T）地将所有访问位置0</li>
+<li>当淘汰页面时根据该页访问位来判断是否淘汰
+<ul>
+<li>访问位为1：不淘汰：在时间T内，该页被访问过。</li>
+<li>访问位为0：可以淘汰：在时间T内，该页未被访问过！</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>缺点
+<ul>
+<li>周期T难定</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>最不经常使用（LFU）算法
+<ul>
+<li>选择到当前时间为止被访问次数最少的页面</li>
+<li>每页设置<em>访问计数器</em>，每当页面被访问时，该页面的访问计数器加1；</li>
+<li>发生缺页中断时，淘汰计数值最小的页面，<em>并将所有计数清零</em></li>
+</ul>
+</li>
+</ul>
+<h4 id="影响缺页次数的因素">影响缺页次数的因素</h4>
+<ul>
+<li>淘汰算法</li>
+<li>分配给进程的页框数
+<ul>
+<li>页框越少，越容易缺页</li>
+</ul>
+</li>
+<li>页本身大小
+<ul>
+<li>页面越小，容易缺页</li>
+</ul>
+</li>
+<li>页面的大小选择
+<ul>
+<li>常见大小：2的整数次幂：1KB，2KB, 4KB</li>
+<li>页面太大
+<ul>
+<li>页面增多，页表长度增加，浪费内存；</li>
+</ul>
+</li>
+<li>页面太小
+<ul>
+<li>换页频繁，系统效率低</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="快表机制cache">快表机制(cache)</h4>
+<ul>
+<li>分级存储体系
+<ul>
+<li>CACHE + 内存+ 辅存</li>
+</ul>
+</li>
+<li>快表的特点
+<ul>
+<li>快表是普通页表（慢表）的部分内容的复制</li>
+<li>地址映射时优先访问快表
+<ul>
+<li>若在快表中找到所需数据，则称为“命中”</li>
+<li>没有命中时，需要访问慢表，同时更新快表</li>
+</ul>
+</li>
+<li>合理的页面调度策略能使快表具有较高命中率</li>
+</ul>
+</li>
+<li>地址映射过程<img src="file:///D:%5Cnextcloud%5Cmoyi%5C%E6%88%AA%E5%9B%BE%5CPasted%20image%2020231228212710.png" alt="" loading="lazy"></li>
+</ul>
+<h4 id="页面的共享">页面的共享</h4>
+<ul>
+<li>在页表中填上被共享代码（共享页框）的页框号。
+<ul>
+<li>共享代码/共享页框在内存只有一份存储。</li>
+</ul>
+</li>
+</ul>
+<h4 id="二级页表">二级页表</h4>
+<ul>
+<li>把页表(4MB)分拆成1K个小页表(4KB)且<em>分散</em>存放</li>
+<li>为了对小页表进行管理和查找，另设置一个叫页目录的表，记录每个小页表的存放位置（即页框号）
+<ul>
+<li>页目录：1K条记录[小页表号: 页框号]，4KB</li>
+<li>页目录：一级页表或外部页表</li>
+<li>小页表：二级页表/页表</li>
+</ul>
+</li>
+</ul>
+<h4 id="缺点">缺点</h4>
+<ul>
+<li>页面划分无逻辑含义</li>
+<li>页的共享不灵活</li>
+<li>页内碎片</li>
+</ul>
+<h3 id="段式内存管理">段式内存管理</h3>
+<h4 id="定义-7">定义</h4>
+<ul>
+<li>进程分段
+<ul>
+<li>把进程按逻辑意义划分为多个段，每段有段名，长度不定。进程由多段组成</li>
+</ul>
+</li>
+<li>段式内存管理系统的内存分配
+<ul>
+<li>以段为单位装入，每段分配连续的内存；</li>
+<li>段和段不要求相邻。</li>
+</ul>
+</li>
+<li>段表
+<ul>
+<li>记录每段在内存中映射的位置</li>
+<li>段号S ：段的编号（唯一的）</li>
+<li>段长L ：该段的长度</li>
+<li>基地址B ：段在内存中的地址</li>
+</ul>
+</li>
+</ul>
+<h4 id="映射机制">映射机制</h4>
+<ul>
+<li>虚拟地址
+<ul>
+<li>段式虚拟地址VA包含段号S和段内偏移W</li>
+<li>VA:(S,W)</li>
+</ul>
+</li>
+<li>映射过程
+<ol>
+<li>逻辑地址VA分离出(S, W);</li>
+<li>以S为索引查询段表
+<ul>
+<li>检索段号S，查询该段基地址B和长度L</li>
+</ul>
+</li>
+<li>物理地址MA＝ B+W</li>
+</ol>
+</li>
+<li>段表的扩充
+<ul>
+<li>基本字段：段号，长度，基址</li>
+<li>扩展字段：中断位，访问位，修改位，R/W/X</li>
+</ul>
+</li>
+<li>段的共享
+<ul>
+<li>共享段在内存中只有一份存储</li>
+<li>需要共享的模块都可以设置为单独的段</li>
+<li>共享段写入相关进程的段表</li>
+</ul>
+</li>
+<li>缺点：
+<ul>
+<li>段需要连续的存储空间</li>
+<li>段的最大尺寸受到内存大小的限制</li>
+<li>在辅存中管理可变尺寸的段比较困难</li>
+</ul>
+</li>
+</ul>
+<h3 id="段式系统vs-页式系统">段式系统vs 页式系统</h3>
+<ul>
+<li>地址空间的区别
+<ul>
+<li>页式系统：一维地址空间</li>
+<li>段式系统：二维地址空间</li>
+</ul>
+</li>
+<li>段与页的区别
+<ul>
+<li>段长可变vs 页面大小固定</li>
+<li>段的划分有意义vs 页面无意义</li>
+<li>段方便共享vs 页面不方便共享（相对）</li>
+<li>段用户可见vs 页面用户不可见</li>
+<li>段偏移有溢出vs 页面偏移无溢出</li>
+</ul>
+</li>
+</ul>
+<h3 id="段页式存储">段页式存储</h3>
+<ul>
+<li>在段式存储管理中结合页式存储管理技术</li>
+<li>在段中划分页面</li>
+</ul>
+<h4 id="地址映射">地址映射</h4>
+<ul>
+<li>段号S、页号P和页内位移W</li>
+<li><img src="file:///D:%5Cnextcloud%5Cmoyi%5C%E6%88%AA%E5%9B%BE%5CPasted%20image%2020231229102138.png" alt="" loading="lazy"></li>
+<li>段页式地址的映射机构
+<ul>
+<li>同时采用段表和页表实现地址映射
+<ul>
+<li>系统为每个进程建立一个段表</li>
+<li>每个段建立一个页表</li>
+</ul>
+</li>
+<li>段表给出每段的页表基地址及页表长度
+<ul>
+<li>页表给出段内每页对应的页框</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="linux存储管理">LINUX存储管理</h2>
+<h4 id="实模式real-mode">实模式（Real Mode）</h4>
+<ul>
+<li>实模式阶段
+<ul>
+<li>计算机加电前一段时间处于实模式</li>
+</ul>
+</li>
+<li>实模式寄存器
+<ul>
+<li>IP，AX，BX，CX，DX，SP，BP，SI，DI，FLAGS，CS，DS，SS，ES，FS，GS</li>
+</ul>
+</li>
+<li>实模式内存空间
+<ul>
+<li>20位物理地址</li>
+<li>1MB内存空间</li>
+<li>分段机制：段地址(16位)：偏移地址(16位)</li>
+</ul>
+</li>
+<li>实模式寻址
+<ul>
+<li>逻辑地址：段地址(16位) ：偏移地址(16位)</li>
+<li>物理地址= 段地址左移4位+ 偏移地址</li>
+</ul>
+</li>
+</ul>
+<h4 id="保护模式">保护模式</h4>
+<ul>
+<li>保护模式寻址
+<ul>
+<li>段基址=段基址( DS )</li>
+<li>全局描述符表/GDT
+<ul>
+<li>Global Descriptor Table</li>
+<li>全局唯一一个，每个进程可见</li>
+</ul>
+</li>
+<li>局部描述符表/LDT
+<ul>
+<li>Local Descriptor Table</li>
+<li>每个进程/任务一个，表内含有进程的各种私有段的描述符。</li>
+<li>LDT的描述符位于GDT中
+<ul>
+<li>LDT描述符</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>优化分段管理机制</li>
+<li>支持分⻚管理机制</li>
+<li>4GB内存空间（32位）</li>
+</ul>
+</li>
+<li>CPU特性
+<ul>
+<li>支持多任务</li>
+<li>支持特权级机制</li>
+<li>扩展寄存器和新增寄存器
+<ul>
+<li>EAX~EDX，EIP，ESP，ESI，EDI，EFLAGS</li>
+<li>CR0~CR4，GDTR，LDTR，IDTR，TR</li>
+</ul>
+</li>
+<li>控制寄存器CR0
+<ul>
+<li>PE: 保护模式/实模式</li>
+<li>MP: 有无数学协处理器</li>
+<li>EM: 有无仿真协处理器</li>
+<li>TS: 切换任务时自动设置</li>
+<li>ET: 协处理器的类型</li>
+<li>PG: 是否允许分页</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="描述符descriptor">描述符（Descriptor）</h4>
+<ul>
+<li>属性的描述
+<ul>
+<li>DPL:描述符特权级别Descriptor Privilege Level</li>
+<li>P：Present，是否在内存中（1：在内存）</li>
+<li>G：段的粒度（段长计量单位）
+<ul>
+<li>G=0, 字节(段最长1M)</li>
+<li>G=1 ,页面4KB（段最长4G）</li>
+</ul>
+</li>
+<li>S |TYPE：描述符的类型和特性<img src="file:///D:%5Cnextcloud%5Cmoyi%5C%E6%88%AA%E5%9B%BE%5CPasted%20image%2020231229103711.png" alt="" loading="lazy">
+<ul>
+<li>S=1（存储段）| S=0（系统段）</li>
+<li>TYPE=4位
+<ul>
+<li>存取属性、特性类型</li>
+<li>读，写，访问标志等</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>例子：quad 0x 00<em>C0 9A</em>80 0000 001F
+<ul>
+<li>结构<img src="file:///D:%5Cnextcloud%5Cmoyi%5C%E6%88%AA%E5%9B%BE%5CPasted%20image%2020231229104843.png" alt="" loading="lazy"><img src="file:///D:%5Cnextcloud%5Cmoyi%5C%E6%88%AA%E5%9B%BE%5CPasted%20image%2020231229105323.png" alt="" loading="lazy"></li>
+<li>G=1，P=1,DPL=00,S=1</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>描述符表（Descriptor Table）
+<ul>
+<li>存放描述符的数组/线性表</li>
+<li>⻓度：8字节的整数倍。</li>
+<li>分类
+<ul>
+<li>全局描述符表GDT</li>
+<li>局部描述符表LDT</li>
+<li>中断描述符表IDT</li>
+</ul>
+</li>
+<li>选择子(Selector) /16位/段寄存器
+<ul>
+<li>用于选择GDT/LDT等表中的描述符</li>
+<li>索引域（INDEX）
+<ul>
+<li>13位，描述符在描述符表中的序号<code>3-15</code></li>
+</ul>
+</li>
+<li>表标识域（TI，Table Indicator）
+<ul>
+<li>1位：GDT(0)|LDT(1)<code>2</code></li>
+</ul>
+</li>
+<li>请求特权级域（RPL）
+<ul>
+<li>2位，Request Privilege Level<code>0-1</code></li>
+</ul>
+</li>
+<li>选择子放在段寄存器中</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>GDTR（48位）
+<ul>
+<li>GDT的基址（32位）</li>
+<li>GDT的限长（16位）
+<ul>
+<li>GDT中描述符数量≤ 8k</li>
+</ul>
+</li>
+<li>lgdtr:更新GDTR</li>
+</ul>
+</li>
+<li>LDTR（16位）
+<ul>
+<li>选择子
+<ul>
+<li>选择GDT中的描述符/LDT描述符</li>
+</ul>
+</li>
+<li>lldtr:更新LDT/进程切换</li>
+</ul>
+</li>
+</ul>
+<h4 id="保护模式内存寻址段式地址转换">保护模式内存寻址：段式地址转换</h4>
+<ul>
+<li>把逻辑地址转换到物理地址/线性地址<img src="file:///D:%5Cnextcloud%5Cmoyi%5C%E6%88%AA%E5%9B%BE%5CPasted%20image%2020231229110112.png" alt="" loading="lazy"></li>
+</ul>
+<h2 id="设备管理概述">设备管理概述</h2>
+<h3 id="类型和特征">类型和特征</h3>
+<ul>
+<li>按交互对象分类
+<ul>
+<li>人机交互：显示设备、键盘、鼠标、打印机</li>
+<li>与CPU交互：磁盘、磁带、传感器、控制器</li>
+<li>计算机间交互：网卡、调制解调器</li>
+</ul>
+</li>
+<li>按交互方向分类
+<ul>
+<li>输入设备：键盘、扫描仪</li>
+<li>输出设备：显示设备、打印机</li>
+<li>双向设备：输入/输出：硬盘、软盘、网卡</li>
+</ul>
+</li>
+<li>按外设特性分类
+<ul>
+<li>使用特征：存储设备、输入设备、输出设备</li>
+<li>数据传输率：低速(键盘)、中速(打印机)、高速(网卡、磁盘)</li>
+</ul>
+</li>
+<li>按信息组织特征分类
+<ul>
+<li>字符设备
+<ul>
+<li>传输的基本单位是字符。例：键盘、串口</li>
+</ul>
+</li>
+<li>块设备
+<ul>
+<li>传输的基本单位是块。例：硬盘，磁盘</li>
+</ul>
+</li>
+<li>网络设备
+<ul>
+<li>采用socket套接字接口访问</li>
+<li>在全局空间有唯一名字，如eth0、eth1</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="设备管理功能">设备管理功能</h3>
+<ul>
+<li>目标：
+<ul>
+<li>1）提高设备读写效率
+<ul>
+<li>设备缓冲机制</li>
+</ul>
+</li>
+<li>（2）提高设备的利用率
+<ul>
+<li>设备分配（设备调度）</li>
+</ul>
+</li>
+<li>（3）为用户提供统一接口
+<ul>
+<li>实现设备对用户透明</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="状态跟踪">状态跟踪</h4>
+<ul>
+<li>记录设备的基本属性、状态、操作接口及进程访问信息
+<ul>
+<li>设备控制块（Device Control Block，DCB)
+<table>
+<thead>
+<tr>
+<th>设备名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>设备属性</td>
+</tr>
+<tr>
+<td>命令转换表</td>
+</tr>
+<tr>
+<td>在I/O总线上的设备地址</td>
+</tr>
+<tr>
+<td>设备状态</td>
+</tr>
+<tr>
+<td>当前用户进程指针</td>
+</tr>
+<tr>
+<td>I/O请求队列指针</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>设备名
+<ul>
+<li>设备的物理名</li>
+</ul>
+</li>
+<li>设备属性
+<ul>
+<li>设备当前状态（一组属性）</li>
+</ul>
+</li>
+<li>命令转换表
+<ul>
+<li>设备操作接口</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="设备分配">设备分配</h4>
+<ul>
+<li>按一定策略安全地分配和管理各种设备。
+<ul>
+<li>按相应算法把设备分配给请求该设备的进程，并把未分到设备的进程放入设备等待队列。</li>
+</ul>
+</li>
+</ul>
+<h4 id="设备映射">设备映射</h4>
+<ul>
+<li>设备逻辑名/友好名(Friendly Name)
+<ul>
+<li>用户编程时使用的名字（文件名/设备文件名）</li>
+<li>例：Linux： /dev/test</li>
+</ul>
+</li>
+<li>设备独立性/设备无关性
+<ul>
+<li>用户程序中使用统一接口访问逻辑设备，而不用考虑对应物理设备的特殊结构和操作方式。</li>
+</ul>
+</li>
+</ul>
+<h4 id="io缓冲区管理">I/O缓冲区管理</h4>
+<ul>
+<li>开辟和管理I/O缓冲区</li>
+<li>提高读写效率</li>
+</ul>
+<h4 id="设备控制设备驱动">设备控制/设备驱动</h4>
+<ul>
+<li>对物理设备进行I/O操作（IN/OUT指令）</li>
+<li>把应用对设备的读/写请求转换为对设备I/O操作。</li>
+<li>应用读写请求采用文件接口
+<ul>
+<li>open/read/write/close</li>
+<li>设备是文件</li>
+</ul>
+</li>
+<li>设备驱动程序的特点
+<ul>
+<li>设备驱动程序与硬件密切相关。</li>
+<li>设备必须要配置驱动程序</li>
+<li>动程序一般由设备厂商根据操作系统要求编写</li>
+</ul>
+</li>
+</ul>
+<h2 id="缓冲技术">缓冲技术</h2>
+<h3 id="缓冲作用">缓冲作用</h3>
+<ol>
+<li>连接不同数据传输速度的设备
+<ul>
+<li>CPU（设备驱动）与设备（控制器）之间传输数据</li>
+<li>内存中增加缓冲区</li>
+</ul>
+</li>
+<li>协调数据记录大小的不一致
+<ul>
+<li>进程之间或CPU与设备之间的数据记录大小不一致</li>
+<li>进程（结构）：设备（字节）</li>
+</ul>
+</li>
+<li>正确执行应用程序的语义拷贝
+<ul>
+<li>利用write( Data, Len)向磁盘写入数据Data</li>
+<li>方法1：应用等待内核写完磁盘再返回(实时性差)</li>
+<li>方法2：应用仅等内核写完内存即返回
+<ul>
+<li>事后由内核把缓冲区写到磁盘。(实时性好)</li>
+</ul>
+</li>
+<li>语义拷贝：确保事后拷贝的数据是正确版本</li>
+</ul>
+</li>
+</ol>
+<h3 id="linux缓冲机制应用">Linux缓冲机制应用</h3>
+<h4 id="典型的块设备">典型的块设备</h4>
+<ul>
+<li>硬盘、软盘、RAM DISK等</li>
+<li>块(block)和扇区
+<ul>
+<li>硬盘读/写/寻址：扇区</li>
+<li>文件读/写/寻址：块
+<ul>
+<li>块= 2n ×扇区</li>
+<li>Linux块= 1KB (n=1)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="linux缓冲机制">Linux缓冲机制</h4>
+<ul>
+<li>内存开辟高速缓冲区</li>
+<li>提前读
+<ul>
+<li>进程读时，其所需数据已被提前读到了缓冲区中，不需要启动外设去执行读操作。</li>
+</ul>
+</li>
+<li>延后写
+<ul>
+<li>进程写时，数据先存在缓冲区，等到特定事件发生或足够时间后（已延迟），再启动外设完成写入。</li>
+</ul>
+</li>
+<li>目的：
+<ul>
+<li>提高进程与外设数据传输效</li>
+<li>减少访问设备次数，提高设备访问的效率。</li>
+<li>内存开辟高速缓冲区</li>
+</ul>
+</li>
+<li>高速缓冲区(内存区)
+<ul>
+<li>按块分为缓冲块(数据块)，与磁盘块对应</li>
+<li>缓冲头（buffer_head）：描述缓冲块</li>
+</ul>
+<pre><code class="language-C++">struct buffer_head{
+char* b_data//指向缓冲块对应的数据区
+unsigned long b_blocknr//设备中的块号
+unsigned short b_dev//设备号
+unsigned char b_lock//表示该缓冲块是否已被锁定
+unsigned char b_count//缓冲块被多少个进程引用
+unsigned char b_dirt//延迟写字段，即脏位字段
+unsigned char b_uptodate//数据有效位字段
+struct task_struct* b_wait//指向访问缓冲块的等待队列
+}
+</code></pre>
+</li>
+<li>进程读写设备数据
+<ul>
+<li>进程read/write →文件访问请求→ 块读取bread( )</li>
+</ul>
+</li>
+<li>块读取函数bread(设备号,块号)
+<ul>
+<li>以(设备号, 块号)为索引搜索高速缓冲区，查找对应的缓冲块
+<ul>
+<li>若找到，直接读回</li>
+<li>若没有找到
+<ul>
+<li>分配一个新缓冲块</li>
+<li>调用ll_rw_block( )读相应磁盘块到新分配的缓冲块</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="组成">组成</h4>
+<ul>
+<li>Cache
+<ul>
+<li>高速缓冲寄存器【CPU ↔ 内存】</li>
+</ul>
+</li>
+<li>设备内部缓冲区
+<ul>
+<li>外设或I/O接口的内部缓冲区【端口】</li>
+</ul>
+</li>
+<li>内存缓冲区
+<ul>
+<li>应用广泛，使用灵活【CPU ↔ 接口/外设】</li>
+<li>应用开辟| 内核开辟</li>
+</ul>
+</li>
+<li>辅存缓冲区
+<ul>
+<li>开辟在辅存上【暂存内存数据，SWAP】</li>
+</ul>
+</li>
+</ul>
+<h4 id="实现">实现</h4>
+<ul>
+<li>单缓冲
+<ul>
+<li>缓冲区仅有1个单元</li>
+</ul>
+</li>
+<li>双缓冲
+<ul>
+<li>缓冲区有2个单元</li>
+</ul>
+</li>
+<li>环形缓冲
+<ul>
+<li>在双缓冲的基础上增加了更多的单元，并让首尾两个单元在逻辑上相连</li>
+<li>pStart起始指针</li>
+<li>pWrite输入指针</li>
+<li>pRead输出指针</li>
+</ul>
+</li>
+<li>缓冲池
+<ul>
+<li>多个缓冲区</li>
+<li>可供若干个进程共享</li>
+<li>可以支持输入，也可以支持输出</li>
+<li>提高缓冲区利用率，减少内存浪费</li>
+</ul>
+</li>
+</ul>
+<h2 id="设备驱动程序">设备驱动程序</h2>
+<ul>
+<li>定义设备操作接口与文件操作接口之间的映射</li>
+<li>实现设备的注册函数和注销函数</li>
+<li>设备注册
+<ul>
+<li>将用户定义的设备加入到系统的设备数组</li>
+</ul>
+</li>
+<li>设备注销
+<ul>
+<li>释放设备，将设备从系统的设备数组删除</li>
+</ul>
+</li>
+<li>编译驱动程序</li>
+<li>安装/删除驱动程序<pre><code>insmod RWDevState.ko
+rmmod RWDevState
+</code></pre>
+</li>
+<li>创建设备文件</li>
+</ul>
+<h3 id="驱动程序在系统中的地位">驱动程序在系统中的地位</h3>
+<h4 id="面向用户程序的接口">面向用户程序的接口</h4>
+<ul>
+<li>设备的打开与释放</li>
+<li>设备的读写操作</li>
+<li>设备的控制操作</li>
+<li>设备的中断处理</li>
+<li>设备的轮询处理</li>
+</ul>
+<h4 id="面向io管理器的接口">面向I/O管理器的接口</h4>
+<ul>
+<li>注册函数
+<ul>
+<li>insmod(命令)
+<ul>
+<li>module_init() (API)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>注销函数
+<ul>
+<li>rmmod (命令)
+<ul>
+<li>module_exit() (API)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>必需的数据结构</li>
+</ul>
+<h4 id="面向设备的接口">面向设备的接口</h4>
+<ul>
+<li>实现设备的端口操作
+<ul>
+<li>无条件传送</li>
+<li>查询传送</li>
+<li>中断传送</li>
+<li>DMA传送</li>
+</ul>
+</li>
+</ul>
+<h4 id="驱动程序工作在核态">驱动程序工作在核态</h4>
+<ul>
+<li>驱动程序工作在内核态</li>
+<li>应用程序和驱动程序之间传送数据
+<ul>
+<li>get_user( )</li>
+<li>put_user( )</li>
+<li>copy_from_user ( )</li>
+<li>copy_to_user ( )</li>
+</ul>
+</li>
+</ul>
+<h4 id="设备文件">设备文件</h4>
+<ul>
+<li>主设备号
+<ul>
+<li>标识该设备种类，标识驱动程序</li>
+<li>主设备号的范围：1-255</li>
+<li>Linux内核支持动态分配主设备号</li>
+</ul>
+</li>
+<li>次设备号
+<ul>
+<li>标识同一设备驱动程序的不同硬件设备</li>
+</ul>
+</li>
+</ul>
+<h2 id="设备分配-2">设备分配</h2>
+<h3 id="设备分类">设备分类</h3>
+<h4 id="独占设备">独占设备</h4>
+<ul>
+<li>不可抢占设备（普通外设或资源）
+<ul>
+<li>使用时抢占，释放后才能被其他进程申请到</li>
+<li>先申请，后使用（主动）</li>
+</ul>
+</li>
+</ul>
+<h4 id="共享设备">共享设备</h4>
+<ul>
+<li>可抢占设备（CPU，内存，硬盘）
+<ul>
+<li>允许多个作业或进程同时使用。</li>
+<li>不申请，直接用（被动+ 主动）</li>
+</ul>
+</li>
+</ul>
+<h4 id="虚拟设备">虚拟设备</h4>
+<ul>
+<li>借助虚拟技术，在共享设备上模拟独占设备。</li>
+</ul>
+<h3 id="分配方法">分配方法</h3>
+<h4 id="独享分配">独享分配</h4>
+<ul>
+<li>针对独占设备</li>
+<li>流程：申请→占用→释放
+<ul>
+<li>指进程使用设备之前先申请，申请成功开始使用，直到使用完再释放。</li>
+</ul>
+</li>
+<li>若设备已经被占用，则进程会被阻塞，被挂入设备对应的等待队列等待设备可用之时被唤醒。</li>
+</ul>
+<h4 id="共享分配">共享分配</h4>
+<ul>
+<li>针对共享设备
+<ul>
+<li>典型共享设备：硬盘</li>
+</ul>
+</li>
+<li>当进程申请使用共享设备时，操作系统能立即为其分配共享设备的一块空间（空分方式），不让进程产生阻塞。</li>
+<li>共享分配随时申请，随时可得。</li>
+</ul>
+<h4 id="虚拟分配">虚拟分配</h4>
+<ul>
+<li>虚拟技术
+<ul>
+<li>在一类物理设备上模拟另一类物理设备的技术</li>
+<li>通常借助辅存部分区域模拟独占设备，将独占设备转化为共享设备。</li>
+</ul>
+</li>
+<li>虚拟设备
+<ul>
+<li>用来模拟独占设备的<em>辅存区域</em>称为虚拟设备
+<ul>
+<li>具有独占设备的逻辑特点</li>
+</ul>
+</li>
+<li>输入井：模拟输入设备的辅存区域</li>
+<li>输出井：模拟输出设备的辅存区域</li>
+</ul>
+</li>
+<li>当进程申请独占设备时将对应虚拟设备分配给它
+<ul>
+<li>首先，采用共享分配为进程分配虚拟设备</li>
+<li>其次，将虚拟设备与对应的独占设备关联</li>
+<li>进程运行中仅与虚拟设备交互，提高了运行效率</li>
+</ul>
+</li>
+</ul>
+<h2 id="spool技术">SPOOL技术</h2>
+<h3 id="结构硬件">结构（硬件）</h3>
+<figure data-type="image" tabindex="2"><img src="file:///D:%5Cnextcloud%5Cmoyi%5C%E6%88%AA%E5%9B%BE%5CPasted%20image%2020231229133734.png" alt="" loading="lazy"></figure>
+<h4 id="输入和输出井">输入和输出井</h4>
+<ul>
+<li>磁盘上开辟出来的两个存储区域
+<ul>
+<li>输入井模拟脱机输入时的磁盘</li>
+<li>输出井模拟脱机输出时的磁盘</li>
+</ul>
+</li>
+</ul>
+<h4 id="输入缓冲区和输出缓冲区">输入缓冲区和输出缓冲区</h4>
+<ul>
+<li>内存中开辟的存储区域
+<ul>
+<li>输入缓冲区：暂存输入数据，以后再传送到输入井。</li>
+<li>输出缓冲区：暂存输出数据，以后再传送到输出设备。</li>
+</ul>
+</li>
+</ul>
+<h4 id="预输入程序">预输入程序</h4>
+<ul>
+<li>控制信息从独占设备输入到辅存，模拟脱机输入的卫星机</li>
+</ul>
+<h4 id="输入表">输入表</h4>
+<ul>
+<li>独占设备↔虚拟设备</li>
+</ul>
+<h4 id="缓输出程序">缓输出程序</h4>
+<ul>
+<li>控制信息从辅存输出到独占设备，模拟脱机输出的卫星机；</li>
+</ul>
+<h4 id="输出表">输出表</h4>
+<ul>
+<li>独占设备↔虚拟设备</li>
+</ul>
+<h4 id="井管理程序">井管理程序</h4>
+<ul>
+<li>控制用户程序和辅存之间的信息交换</li>
+</ul>
+<h3 id="优点">优点</h3>
+<ul>
+<li>“提高”了I/O速度</li>
+<li>将独占设备改造为“共享”设备
+<ul>
+<li>实现了虚拟设备功能</li>
+</ul>
+</li>
+</ul>
+<h2 id="文件和文件系统概念">文件和文件系统概念</h2>
+<h3 id="文件">文件</h3>
+<ul>
+<li>文件是计算机系统存放信息的一种形式，由若干信息项有序构成。</li>
+<li>文件具有唯一的文件名。</li>
+<li>用户通过读写指针来存取文件的信息项。</li>
+</ul>
+<h3 id="文件的分类">文件的分类</h3>
+<ul>
+<li>按文件的用途
+<ul>
+<li>系统文件</li>
+<li>库文件</li>
+<li>用户文件</li>
+</ul>
+</li>
+<li>按文件的操作权限
+<ul>
+<li>只读文件</li>
+<li>只写文件</li>
+<li>可执行文件</li>
+<li>可读可写文件</li>
+<li>不保护文件</li>
+</ul>
+</li>
+<li>按文件的存储时间
+<ul>
+<li>永久文件</li>
+<li>临时文件</li>
+</ul>
+</li>
+<li>按文件的性质
+<ul>
+<li>普通文件</li>
+<li>目录文件</li>
+<li>设备文件</li>
+</ul>
+</li>
+</ul>
+<h3 id="文件系统">文件系统</h3>
+<ul>
+<li>管理文件的机构
+<ul>
+<li>实现文件的创建、撤消、读写、修改、复制和存取控制等
+<ul>
+<li>方便用户以<em>文件名</em>存取文件</li>
+</ul>
+</li>
+<li>管理文件<em>存储设备</em>的空间和存取
+<ul>
+<li>高效利用存储空间和高效存取文件</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="文件结构">文件结构</h2>
+<h3 id="文件的逻辑结构">文件的逻辑结构</h3>
+<h4 id="记录式文件">记录式文件</h4>
+<ul>
+<li>信息项是记录，记录包含若干成员</li>
+<li>特点：
+<ul>
+<li>文件头部保存记录长和记录数信息</li>
+<li>浪费存储空间</li>
+</ul>
+</li>
+<li>分类
+<ul>
+<li>定长记录文件</li>
+<li>不定长记录文件</li>
+</ul>
+</li>
+</ul>
+<h4 id="流式文件">流式文件</h4>
+<ul>
+<li>信息项是字节</li>
+<li>特点
+<ul>
+<li>文件长度就是字节的数量</li>
+<li>文件无需额外说明信息或控制信息</li>
+</ul>
+</li>
+<li>现代OS把文件当作流式文件，由应用解释</li>
+</ul>
+<h3 id="文件的存取方法">文件的存取方法</h3>
+<ul>
+<li>顺序存取
+<ul>
+<li>按从前往后的顺序对文件信息项进行读/写直到定位到目标信息项为止</li>
+</ul>
+</li>
+<li>随机存储/直接访问
+<ul>
+<li>直接定位到文件目标信息项进行读写</li>
+<li>适合流式文件或定长记录文件</li>
+</ul>
+</li>
+</ul>
+<h3 id="文件的物理结构">文件的物理结构</h3>
+<ul>
+<li>文件在存储设备上的存储结构</li>
+<li>签掉合理利用储存空间，缩短I/O时间</li>
+<li>类型
+<ul>
+<li>连续文件
+<ul>
+<li>连续文件指文件存放在连续的存储块中。</li>
+</ul>
+</li>
+<li>串联文件
+<ul>
+<li>串联文件存放在离散的存储块中，每个存储块包含一个链接指针记录下一个存储块位置。</li>
+<li>例子：FAT文件系统
+<ul>
+<li>File Allocation Table，FAT，文件分配表</li>
+<li>文件分配表是一维数组，与存储设备空间对应，元素与存储块一一有序对应，每个元素存放文件下一个逻辑块所在存储块的块号。</li>
+<li>FAT16文件系统</li>
+<li>存储块（簇） = 64个扇区</li>
+<li>FAT元素16位宽,存储块(簇)数 ≤ 216簇</li>
+<li>磁盘容量<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>≤</mo><msup><mn>2</mn><mn>16</mn></msup><mi mathvariant="normal">簇</mi><mo>∗</mo><mn>64</mn><mi mathvariant="normal">扇</mi><mi mathvariant="normal">区</mi><mo>∗</mo><mn>512</mn><mi mathvariant="normal">字</mi><mi mathvariant="normal">节</mi><mo>=</mo><mn>2</mn><mi>G</mi><mi>B</mi></mrow><annotation encoding="application/x-tex">\le2^{16}簇* 64扇区* 512字节= 2GB</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">6</span></span></span></span></span></span></span></span></span><span class="mord cjk_fallback">簇</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span><span class="mord">4</span><span class="mord cjk_fallback">扇</span><span class="mord cjk_fallback">区</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord">1</span><span class="mord">2</span><span class="mord cjk_fallback">字</span><span class="mord cjk_fallback">节</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord mathdefault">G</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>索引文件
+<ul>
+<li>读取索引文件时应先读取索引表</li>
+<li>索引表本身占据额外的存储区域/缺点</li>
+<li>支持顺序和随机存取</li>
+<li>支持文件动态增长、插入、删除等</li>
+<li>实例：ext系列文件系统(inode索引节点文件)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="存储空间管理">存储空间管理</h2>
+<h3 id="磁盘存储空间管理">磁盘存储空间管理</h3>
+<ul>
+<li>管理和记录磁盘空间使用情况。</li>
+</ul>
+<h4 id="空闲文件目录">空闲文件目录</h4>
+<ul>
+<li>空闲文件：连续的空闲存储块组成的特殊文件。
+<ul>
+<li>存储设备上所有的空闲文件就代表了存储设备上的全部空闲空间。</li>
+</ul>
+</li>
+<li>空闲文件目录：为所有空闲文件建立的目录
+<ul>
+<li>记录空闲文件的首块号和存储块数(或其他方式)</li>
+</ul>
+</li>
+</ul>
+<h4 id="空闲块链">空闲块链</h4>
+<ul>
+<li>把所有空闲存储块用链表链接在一起。
+<ul>
+<li>当申请空闲块时，从链表头部摘取空闲块</li>
+<li>当回收存储块时，把空闲块加在链表尾部。</li>
+</ul>
+</li>
+</ul>
+<h4 id="位示图">位示图</h4>
+<ul>
+<li>一块特殊内存区域，每一位(bit)对应一个存储块，值1表示存储块空闲，0表示已占用。</li>
+</ul>
+<h3 id="文件目录">文件目录</h3>
+<ul>
+<li>功能
+<ul>
+<li>实现“按名存取”：系统根据文件名能找到指定文件。
+<ul>
+<li>文件目录记录文件的文件名、存放地址以及属性</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>目录文件
+<ul>
+<li>目录文件是文件目录的实现，由文件目录项构成</li>
+</ul>
+</li>
+<li>文件目录项
+<ul>
+<li>描述文件基本信息、使用信息和存取控制信息等。
+<ul>
+<li>基本信息：文件名、存储位置(存储块号)等</li>
+<li>使用信息：属性、大小、建立时间、修改时间等</li>
+<li>存取控制信息：文件存取权限</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>目录结构
+<ul>
+<li>单级目录
+<ul>
+<li>最简单的目录结构，全部文件都登记在同一目录中。</li>
+<li>简单、易于理解和实现</li>
+<li>缺点
+<ul>
+<li>查找速度慢| 不允许重名| 不便于文件共享</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>二级目录
+<ul>
+<li>第一级称为主目录(MFD)，第二级称为子目录或用户目(UFD)。
+<ul>
+<li>每个用户有一个子目录(用户目录)</li>
+</ul>
+</li>
+<li>解决文件重名的问题，不同用户可以使用相同名字。</li>
+</ul>
+</li>
+<li>树状目录
+<ul>
+<li>多级目录结构，二级目录结构的扩充</li>
+<li>目录结构如同倒置的树，树根是主目录(根目录)，枝结点是子目录，树叶描述文件。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="文件全名">文件全名</h3>
+<ul>
+<li>从根目录到文件为止整个通路上所有目录、子目录和文件的名字用”/”顺序连接构成的字符串称为文件全名。
+<ul>
+<li>路径名：文件全名中由目录和子目录组成的部分。
+<ul>
+<li>每个文件都有惟一的路径名。</li>
+</ul>
+</li>
+<li>路径名的表达形式
+<ul>
+<li>绝对路径名：从根目录直到文件的路径</li>
+<li>相对路径名：从指定目录到文件的路径</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>文件属性
+<ul>
+<li>相对路径名：从指定目录到文件的路径</li>
+<li>文件的属性一般存放在文件的（目录/文件 ）中。</li>
+</ul>
+</li>
+<li>文件操作
+<ul>
+<li>创建文件</li>
+<li>写文件</li>
+<li>读文件</li>
+<li>文件定位</li>
+<li>删除文件</li>
+<li>截短文件</li>
+<li>属性设置和读取</li>
+</ul>
+</li>
+<li>目录操作
+<ul>
+<li>创建目录</li>
+<li>删除目录<br>
+1,鸿蒙OS的技术架构分为内核层、系统服务层、框架层、应用层(√)<br>
+2,鸿蒙OS的技术特点为分布式软总线、分布式设备虚拟化、分布式数据管理、分布式任务调度、一次开发，多终端部署、系统统一，弹性部署(×)<br>
+3、鸿蒙OS技术架构从上往下分别为（A ）<br>
+A、应用层系统服务层框架层内核层<br>
+B、应用层框架层系统服务层应用层<br>
+C、系统服务层框架层应用层内核层<br>
+D、框架层内核层系统服务层应用层<br>
+4、鸿蒙OS具备（C）三大核心能力<br>
+A、分布式软总线、分布式设备虚拟化、分布式数据管理<br>
+B、分布式设备虚拟化、分布式数据管理、分布式任务调度<br>
+C、分布式软总线、分布式数据管理、分布式安全<br>
+D、分布式设备虚拟化、分布式数据管理、分布式安全<br>
+5、鸿蒙OS系统功能设计按照下列（C ）顺序从整体到局部逐级展开。<br>
+A.系统-&gt; 功能-&gt; 子系统-&gt; 模块B.模块-&gt; 功能-&gt; 子系统-&gt; 系统<br>
+C.系统-&gt; 子系统-&gt; 功能-&gt; 模块D.模块-&gt; 子系统-&gt; 功能-&gt; 系统<br>
+6，BUILD.gn文件中sources = [ &quot;LED.c&quot;, ] 表明编译生成静态库的源代码文件来源于LED.c （√ ）<br>
+7、vscode与Ubuntu通过命令（C）bossay@ip -A链接<br>
+A、scp B、vim C、ssh D、snp<br>
+8、程序编译完成后烧录到开发板中的文件存在于（B）文件中<br>
+A、device B、out C、build D、vendor<br>
+9、程序通过串口烧录到开发板中时，不需要选择auto burn选项（×）<br>
+10、烧录完成后、将Disconect切换成Connect就按下复位键运行程序的话、会导致程序重新烧录（√）</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>（1）已发群中“鸿蒙专题复习.pdf”要复习，是考试内容之一。<br>
+（2）进程调度算法，尤其是Linux进程调度基本原理（优先数调度）要搞懂，这是典型的调度算法，也是课程设计的内容。<br>
+（3）内存管理：理解分页存储管理和分段存储管理的地址映射的过程，这两种机制都不要求内存连续分配，理解这两种机制下程序装入，内存分配，地址映射的全过程。<br>
+（4）有/无快表时页式地址的映射机制，快表命中率80%，90%的含义，看课堂上PPT上的习题。<br>
+（5）P-V操作：<br>
+同步问题：识别哪些是“关键操作”，“有条件执行的操作”，“影响其他操作的操作”，P-V操作添加的位置：关键操作之前还是之后；<br>
+互斥问题：临界区/临界资源的访问<br>
+（6）设备管理和文件管理二章：简答题会多些，主要是概念为主。</p>
+</blockquote>
+<ol>
+<li>计算机通过硬件中断机制完成由用户态到核态的转换</li>
+<li>程序设计中无法实现屏蔽中断</li>
+<li>”访管“指令仅能在用户态下使用</li>
+<li>广义指令即系统调用</li>
+<li>trap指令负责由用户态转换成核态</li>
+<li>内部中断类似整数除0，无法通过异常处理程序恢复，无法回到原来中断处</li>
+<li>PC值由中断指令隐程序自动保存，通用寄存器由操作系统保存</li>
+<li>区分核态与用户态是为了保护操作系统</li>
+<li>用户通过内部中断进入内核态，</li>
+<li>MBR大小是512B</li>
+<li>段式系统共享比页式共享方便</li>
+<li>在分区管理下，导致碎片的原因是作业连续存储</li>
+<li>进程是资源分配的基本单位（不管有没有线程），没线程，进程是CPU调度的基本单位，有线程，线程是CPU调度的基本单位</li>
+</ol>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://moyihust.github.io/post/dai-ma-sui-xiang-lu-day13-er-cha-shu/">
+                  <h3 class="post-title">
+                    代码随想录day13-二叉树
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

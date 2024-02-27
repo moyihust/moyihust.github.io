@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>代码随想录day7 | moyihust的小站</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://moyihust.github.io/favicon.ico?v=1709003230734">
+<link rel="stylesheet" href="https://moyihust.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="##hash table2
+四数之和2
+给你四个整数数组 nums1、nums2、nums3 和 nums4 ，数组长度都是 n ，请你计算有多少个元组 (i, j, k, l) 能满足：
+0 &lt;= i, j, k, l &lt; n..." />
+    <meta name="keywords" content="algorithm" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://moyihust.github.io">
+        <img src="https://moyihust.github.io/images/avatar.png?v=1709003230734" class="site-logo">
+        <h1 class="site-title">moyihust的小站</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="https://moyihust.github.io/post/moyihust" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://moyihust.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">代码随想录day7</h2>
+            <div class="post-date">2023-10-17</div>
+            
+            <div class="post-content" v-pre>
+              <p>##hash table2</p>
+<h3 id="四数之和2"><a href="https://leetcode.cn/problems/4sum-ii/">四数之和2</a></h3>
+<p>给你四个整数数组 nums1、nums2、nums3 和 nums4 ，数组长度都是 n ，请你计算有多少个元组 (i, j, k, l) 能满足：</p>
+<p>0 &lt;= i, j, k, l &lt; n<br>
+nums1[i] + nums2[j] + nums3[k] + nums4[l] == 0</p>
+<p>本题解题步骤：<br>
+<sub>将4数之和变成两数之和</sub><br>
+首先定义 一个unordered_map，key放a和b两数之和，value 放a和b两数之和出现的次数。<br>
+遍历大A和大B数组，统计两个数组元素之和，和出现的次数，放到map中。<br>
+定义int变量count，用来统计 a+b+c+d = 0 出现的次数。<br>
+在遍历大C和大D数组，找到如果 0-(c+d) 在map中出现过的话，就用count把map中key对应的value也就是出现次数统计出来。<br>
+最后返回统计值 count 就可以了</p>
+<pre><code class="language-C++">class Solution {
+public:
+    int fourSumCount(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2, vector&lt;int&gt;&amp; nums3, vector&lt;int&gt;&amp; nums4) {
+        unordered_map&lt;int,int&gt; comp;
+        for(int a:nums1)
+        {
+            for(int b:nums2)
+            {
+                comp[a+b]++;
+            }
+        }
+        int count=0;
+        for(int c:nums3)
+        {
+            for(int d:nums4)
+            {
+                if(comp.find(0-(c+d))!=comp.end())
+                {
+                    count+=comp[0-(c+d)];
+                }
+            }
+        }
+        return count;
+    }
+};
+</code></pre>
+<h3 id="赎金信"><a href="https://leetcode.cn/problems/ransom-note/description/">赎金信</a></h3>
+<p>给你两个字符串：ransomNote 和 magazine ，判断 ransomNote 能不能由 magazine 里面的字符构成。</p>
+<p>如果可以，返回 true ；否则返回 false 。</p>
+<p>magazine 中的每个字符只能在 ransomNote 中使用一次。</p>
+<p>将magazine的字符记录出现次数，如果ransomNote出现就减一，如果<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">&lt;1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>则说明用完了也无法成功。</p>
+<pre><code class="language-C++">class Solution {
+public:
+    bool canConstruct(string ransomNote, string magazine) {
+        int list[26]={0};
+        for(char m:magazine)
+        {
+            list[m-'a']++;
+        }
+        bool tag=true;
+        for(char r:ransomNote)
+        {
+            if(list[r-'a']&lt;1)
+            {
+                tag=false;
+                break;
+            }
+            else
+            {
+                list[r-'a']--;
+            }
+        }
+        return tag;
+    }
+};
+</code></pre>
+<p>###<a href="https://leetcode.cn/problems/3sum/">三数之和</a><br>
+给你一个整数数组 nums ，判断是否存在三元组 [nums[i], nums[j], nums[k]] 满足 i != j、i != k 且 j != k ，同时还满足 nums[i] + nums[j] + nums[k] == 0 。请</p>
+<p>你返回所有和为 0 且不重复的三元组。</p>
+<p>注意：答案中不可以包含重复的三元组。</p>
+<p>双指针法：</p>
+<pre><code class="language-C++">class Solution {
+public:
+    vector&lt;vector&lt;int&gt;&gt; threeSum(vector&lt;int&gt;&amp; nums) {
+        vector&lt;vector&lt;int&gt;&gt; result;
+        sort(nums.begin(), nums.end());
+        for (int i = 0; i &lt; nums.size(); i++) {
+            if (nums[i] &gt; 0) {
+                return result;
+            }
+
+            if (i &gt; 0 &amp;&amp; nums[i] == nums[i - 1]) {
+                continue;
+            }
+            int left = i + 1;
+            int right = nums.size() - 1;
+            while (right &gt; left) {
+
+                if (nums[i] + nums[left] + nums[right] &gt; 0) right--;
+                else if (nums[i] + nums[left] + nums[right] &lt; 0) left++;
+                else {
+                    result.push_back(vector&lt;int&gt;{nums[i], nums[left], nums[right]});
+                    // 去重逻辑应该放在找到一个三元组之后，对b 和 c去重
+                    while (right &gt; left &amp;&amp; nums[right] == nums[right - 1]) right--;
+                    while (right &gt; left &amp;&amp; nums[left] == nums[left + 1]) left++;
+
+                    // 找到答案时，双指针同时收缩
+                    right--;
+                    left++;
+                }
+            }
+
+        }
+        return result;
+    }
+};
+</code></pre>
+<h3 id="四数之和"><a href="https://leetcode.cn/problems/4sum">四数之和</a></h3>
+<p>给你一个由 n 个整数组成的数组 nums ，和一个目标值 target 。请你找出并返回满足下述全部条件且不重复的四元组 [nums[a], nums[b], nums[c], nums[d]] （若两个四元组元素一一对应，则认为两个四元组重复）：</p>
+<p>0 &lt;= a, b, c, d &lt; n<br>
+a、b、c 和 d 互不相同<br>
+nums[a] + nums[b] + nums[c] + nums[d] == target<br>
+你可以按 任意顺序 返回答案 。</p>
+<p>在三数之和上添加一重循环</p>
+<pre><code class="language-C++">class Solution {
+public:
+    vector&lt;vector&lt;int&gt;&gt; fourSum(vector&lt;int&gt;&amp; nums, int target) {
+        vector&lt;vector&lt;int&gt;&gt; ans;
+        sort(nums.begin(), nums.end());
+        for(int k=0;k&lt;nums.size();k++)
+        {
+            if (k &gt; 0 &amp;&amp; nums[k] == nums[k - 1]) {
+                continue;
+            }
+            for(int i=k+1;i&lt;nums.size();i++)
+            {
+
+                // 对nums[i]去重
+                if (i &gt; k + 1 &amp;&amp; nums[i] == nums[i - 1]) {
+                    continue;
+                }
+                 int left = i + 1;
+                int right = nums.size() - 1;
+                while (right &gt; left) {
+                    // nums[k] + nums[i] + nums[left] + nums[right] &gt; target 会溢出
+                    if ((long) nums[k] + nums[i] + nums[left] + nums[right] &gt; target) {
+                        right--;
+                    // nums[k] + nums[i] + nums[left] + nums[right] &lt; target 会溢出
+                    } else if ((long) nums[k] + nums[i] + nums[left] + nums[right]  &lt; target) {
+                        left++;
+                    } else {
+                        ans.push_back(vector&lt;int&gt;{nums[k], nums[i], nums[left], nums[right]});
+                        // 对nums[left]和nums[right]去重
+                        while (right &gt; left &amp;&amp; nums[right] == nums[right - 1]) right--;
+                        while (right &gt; left &amp;&amp; nums[left] == nums[left + 1]) left++;
+
+                        // 找到答案时，双指针同时收缩
+                        right--;
+                        left++;
+                    }
+                }
+
+            }
+        }
+        return ans;
+    }
+};。
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://moyihust.github.io/tag/r2vm0nDqk/" class="tag">
+                    algorithm
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://moyihust.github.io/post/dai-ma-sui-xiang-lu-day5/">
+                  <h3 class="post-title">
+                    代码随想录day6
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

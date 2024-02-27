@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>软安课设faq | moyihust的小站</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://moyihust.github.io/favicon.ico?v=1709003230734">
+<link rel="stylesheet" href="https://moyihust.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="FQA
+dll注入后无法成功hook messagebox
+未在dllattach中break
+BOOL WINAPI DllMain( HMODULE hModule,
+                       DWORD  ul_r..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://moyihust.github.io">
+        <img src="https://moyihust.github.io/images/avatar.png?v=1709003230734" class="site-logo">
+        <h1 class="site-title">moyihust的小站</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="https://moyihust.github.io/post/moyihust" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://moyihust.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">软安课设faq</h2>
+            <div class="post-date">2024-02-27</div>
+            
+            <div class="post-content" v-pre>
+              <h3 id="fqa">FQA</h3>
+<p>dll注入后无法成功hook messagebox<br>
+未在dllattach中break</p>
+<pre><code class="language-C++">BOOL WINAPI DllMain( HMODULE hModule,
+                       DWORD  ul_reason_for_call,
+                       LPVOID lpReserved
+                     )
+{
+    switch (ul_reason_for_call)
+    {
+    case DLL_PROCESS_ATTACH:
+    {
+        DisableThreadLibraryCalls(hModule);
+        DetourTransactionBegin();
+        DetourUpdateThread(GetCurrentThread());
+        DetourAttach(&amp;(PVOID&amp;)OldMessageBoxA, NewMessageBoxA);
+        DetourAttach(&amp;(PVOID&amp;)OldMessageBoxW, NewMessageBoxW);
+        DetourTransactionCommit();
+        break;&lt;-here
+    }
+    case DLL_THREAD_ATTACH:
+    case DLL_THREAD_DETACH:
+    case DLL_PROCESS_DETACH:
+        DetourTransactionBegin();
+        DetourUpdateThread(GetCurrentThread());
+        DetourDetach(&amp;(PVOID&amp;)OldMessageBoxA, NewMessageBoxA);
+        DetourDetach(&amp;(PVOID&amp;)OldMessageBoxW, NewMessageBoxW);
+        DetourTransactionCommit();
+        break;
+    }
+    return TRUE;
+}
+
+</code></pre>
+<hr>
+<p><strong>commit message格式</strong></p>
+<pre><code class="language-text">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;
+</code></pre>
+<p><strong>type(必须)</strong></p>
+<p>用于说明git commit的类别，只允许使用下面的标识。</p>
+<p>feat：新功能（feature）。</p>
+<p>fix/to：修复bug，可以是QA发现的BUG，也可以是研发自己发现的BUG。</p>
+<ul>
+<li>fix：产生diff并自动修复此问题。适合于一次提交直接修复问题</li>
+<li>to：只产生diff不自动修复此问题。适合于多次提交。最终修复问题提交时使用fix</li>
+</ul>
+<p>docs：文档（documentation）。</p>
+<p>style：格式（不影响代码运行的变动）。</p>
+<p>refactor：重构（即不是新增功能，也不是修改bug的代码变动）。</p>
+<p>perf：优化相关，比如提升性能、体验。</p>
+<p>test：增加测试。</p>
+<p>chore：构建过程或辅助工具的变动。</p>
+<p>revert：回滚到上一个版本。</p>
+<p>merge：代码合并。</p>
+<p>sync：同步主线或分支的Bug。</p>
+<p><strong>scope(可选)</strong></p>
+<p>scope用于说明 commit 影响的范围，比如数据层、控制层、视图层等等，视项目不同而不同。</p>
+<p>例如在Angular，可以是location，browser，compile，compile，rootScope， ngHref，ngClick，ngView等。如果你的修改影响了不止一个scope，你可以使用*代替。</p>
+<p><strong>subject(必须)</strong></p>
+<p>subject是commit目的的简短描述，<strong>不超过50个字符</strong></p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://moyihust.github.io/post/cao-zuo-xi-tong-fu-xi/">
+                  <h3 class="post-title">
+                    操作系统复习
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>
